@@ -1,0 +1,101 @@
+---
+import type { ImageMetadata } from 'astro';
+import ImageBlock from './ImageBlock.astro';
+import LeafletMap from './LeafletMap.astro';
+
+interface ImageData {
+  src: ImageMetadata;
+  alt: string;
+}
+
+interface MapData {
+  lat: number;
+  lng: number;
+  zoom: number;
+  geojson?: string;
+}
+
+interface Props {
+  id: string;
+  title?: string;
+  content: string;
+  images?: ImageData[];
+  map?: MapData;
+  /** Even index → images right; odd → images left */
+  index?: number;
+  /** Renders the section with a dark brand background (highlight style) */
+  highlight?: boolean;
+}
+
+const { id, title, content, images = [], map, index = 0, highlight = false } = Astro.props;
+const imagesRight = index % 2 === 0;
+const hasImages = images.length > 0;
+const hasRightCol = hasImages || !!map;
+
+// Convert plain text with *italic* to simple HTML
+const htmlContent = content
+  .replace(/\*([^*]+)\*/g, '<em>$1</em>')
+  .split('\n\n')
+  .filter(Boolean)
+  .map((p) => `<p>${p.trim()}</p>`)
+  .join('');
+---
+
+<section
+  id={id}
+  class:list={[
+    'scroll-mt-24 py-20',
+    highlight ? 'bg-brand-800 text-white' : 'bg-white',
+  ]}
+  aria-labelledby={title ? `section-${id}-heading` : undefined}
+>
+  <div class="mx-auto max-w-7xl px-6">
+    <div
+      class:list={[
+        'grid items-start gap-12',
+        hasRightCol ? 'grid-cols-1 lg:grid-cols-2' : 'grid-cols-1',
+        hasRightCol && imagesRight ? 'lg:[&>*:first-child]:order-last' : '',
+      ]}
+    >
+      <!-- Text -->
+      <div class="flex flex-col justify-center" data-animate="animate-fade-in-up">
+        {title && (
+          <h2
+            id={`section-${id}-heading`}
+            class:list={[
+              'font-display text-3xl font-bold mb-6',
+              highlight ? 'text-white' : 'text-base-900',
+            ]}
+          >
+            {title}
+          </h2>
+        )}
+        <div
+          class:list={[
+            'prose-content space-y-0 text-base leading-relaxed',
+            highlight ? 'text-brand-100' : 'text-base-700',
+          ]}
+          set:html={htmlContent}
+        />
+      </div>
+
+      <!-- Right column: images and/or map -->
+      {hasRightCol && (
+        <div class="flex flex-col gap-6" data-animate="animate-fade-in-up" data-delay="150ms">
+        {map && (
+        <LeafletMap
+            lat={map.lat}
+            lng={map.lng}
+            zoom={map.zoom}
+            geojson={map.geojson}
+            label={title}
+        />
+        )}
+          {hasImages && (
+            <ImageBlock images={images} position={imagesRight ? 'right' : 'left'} />
+          )}
+        </div>
+      )}
+    </div>
+  </div>
+</section>

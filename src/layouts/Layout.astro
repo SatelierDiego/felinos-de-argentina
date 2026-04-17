@@ -1,23 +1,117 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+interface Props {
+  title: string;
+  description: string;
+  canonicalUrl?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  jsonLd?: Record<string, unknown>[];
+}
+
+const { title, description, canonicalUrl, image, type, jsonLd } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <SEO
+      title={title}
+      description={description}
+      canonicalUrl={canonicalUrl}
+      image={image}
+      type={type}
+      jsonLd={jsonLd}
+    />
+    <!-- Phosphor Icons (regular weight via CDN) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"
+    />
+    <!-- Leaflet CSS – loaded globally so it is always in <head> -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+  </head>
+  <body class="flex min-h-screen flex-col bg-stone-50 text-stone-900 antialiased">
+    <Header />
+    <main class="flex-1">
+      <slot />
+    </main>
+    <Footer />
+    <script is:inline>
+      // Scroll animation via IntersectionObserver
+      // Elements with [data-animate] start hidden and get their animation class on enter.
+      (function () {
+        if (typeof IntersectionObserver === 'undefined') {
+          // Fallback: just make everything visible
+          document.querySelectorAll('[data-animate]').forEach(function (el) {
+            el.style.opacity = '1';
+          });
+          return;
+        }
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            var el = entry.target;
+            var anim = el.dataset.animate;
+            var delay = el.dataset.delay;
+            if (delay) el.style.animationDelay = delay;
+            el.classList.add(anim);
+            el.classList.remove('opacity-0');
+            observer.unobserve(el);
+          });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('[data-animate]').forEach(function (el) {
+          el.classList.add('opacity-0');
+          observer.observe(el);
+        });
+      })();
+    </script>
+    <script is:inline>
+      // Image error placeholder: JS only adds the class "image-not-found" to the
+      // parent element. All visual rendering is handled by CSS (::after).
+      (function () {
+        function applyPlaceholder(img) {
+          if (img.dataset.placeholderApplied) return;
+          img.dataset.placeholderApplied = "1";
+          var parent = img.parentElement;
+          if (!parent) return;
+          parent.classList.add("image-not-found");
+        }
+
+        document.querySelectorAll("img").forEach(function (img) {
+          if (img.complete && img.naturalWidth === 0) {
+            applyPlaceholder(img);
+          } else if (!img.complete) {
+            img.addEventListener("error", function () { applyPlaceholder(img); }, { once: true });
+          }
+        });
+
+        document.addEventListener("error", function (e) {
+          if (e.target && e.target.tagName === "IMG") {
+            applyPlaceholder(e.target);
+          }
+        }, true);
+      })();
+    </script>
+  </body>
+</html>

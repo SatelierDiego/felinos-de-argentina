@@ -1,0 +1,108 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface GalleryItem {
+  src: ImageMetadata;
+  alt: string;
+  autor: string;
+}
+
+interface Props {
+  items: GalleryItem[];
+  title?: string;
+  speciesName?: string;
+}
+
+const { items, title = 'Galería', speciesName } = Astro.props;
+
+if (items.length === 0) return;
+
+const galleryId = `gallery-${Math.random().toString(36).slice(2, 8)}`;
+
+const CELL_CLASSES = [
+  'bento-c1',
+  'bento-c2',
+  'bento-c3',
+  'bento-c4',
+  'bento-c5',
+  'bento-c6',
+  'bento-c7',
+  'bento-c8',
+  'bento-c9',
+  'bento-c10',
+];
+---
+
+<section class="py-20 bg-[#0e0e0d]" aria-labelledby={`${galleryId}-heading`}>
+  <div class="mx-auto max-w-7xl px-[clamp(12px,2vw,24px)]">
+
+    <header class="flex items-baseline justify-between mb-[clamp(12px,2vw,24px)] px-[2px]">
+      <h2
+        id={`${galleryId}-heading`}
+        class="font-display font-normal text-[#f0ede8] tracking-[-0.02em] text-[clamp(22px,3.5vw,48px)]"
+      >
+        {title}{speciesName && <> <em class="italic text-[#AFA9EC] not-italic">{speciesName}</em></>}
+      </h2>
+      <span class="uppercase tracking-[0.1em] text-[#5f5e5a] text-[clamp(11px,1.1vw,13px)]">
+        {items.slice(0, 10).length} fotos
+      </span>
+    </header>
+
+    <div class="bento-gallery">
+      {items.slice(0, 10).map((item, i) => (
+        <a
+          href={item.src.src}
+          class:list={[
+            CELL_CLASSES[i],
+            'glightbox',
+            'group relative overflow-hidden cursor-pointer block',
+            'rounded-[clamp(10px,1.5vw,18px)]',
+          ]}
+          data-animate="animate-fade-in-up"
+          data-delay={`${i * 80}ms`}
+          data-gallery={galleryId}
+          data-glightbox={`description: © ${item.autor}`}
+          aria-label={`${item.alt} — foto de ${item.autor}`}
+        >
+          <Image
+            src={item.src}
+            alt={item.alt}
+            width={item.src.width}
+            height={item.src.height}
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none"
+            loading="lazy"
+            decoding="async"
+          />
+
+          <!-- Overlay -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 motion-reduce:transition-none z-10" />
+
+          <!-- Lupa centrada -->
+          <div class="absolute inset-0 flex items-center justify-center z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 motion-reduce:transition-none">
+            <i class="ph ph-magnifying-glass text-white text-[clamp(24px,3vw,40px)] drop-shadow-lg" aria-hidden="true"></i>
+          </div>
+
+          <!-- Meta -->
+          <div class="absolute bottom-0 left-0 right-0 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-[transform,opacity] duration-300 motion-reduce:transition-none z-20 p-[clamp(10px,1.5vw,18px)]">
+            <p class="text-white leading-snug mb-[3px] text-[clamp(13px,1.4vw,18px)] font-medium">{item.alt}</p>
+            <p class="text-white/60 font-light tracking-[0.07em] uppercase text-[clamp(9px,0.85vw,11px)]">© {item.autor}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  import GLightbox from 'glightbox';
+  import 'glightbox/dist/css/glightbox.css';
+
+  GLightbox({
+    selector: '.glightbox',
+    touchNavigation: true,
+    loop: true,
+    descPosition: 'bottom',
+  });
+</script>

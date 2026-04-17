@@ -1,0 +1,101 @@
+---
+interface Props {
+  lat: number;
+  lng: number;
+  zoom: number;
+  geojson?: string;
+  label?: string;
+}
+
+const { lat, lng, zoom, geojson, label = 'Distribución' } = Astro.props;
+---
+
+<div
+  class="leaflet-map-container h-180 w-full rounded overflow-hidden shadow-md ring-1 ring-base-200"
+  aria-label={`Mapa de distribución: ${label}`}
+  role="application"
+  data-lat={lat}
+  data-lng={lng}
+  data-zoom={zoom}
+  data-geojson={geojson ?? ''}
+></div>
+
+<script>
+  async function initMap(container: HTMLElement) {
+    // Assign a unique ID if the element doesn't have one yet
+    if (!container.id) {
+      container.id = `leaflet-map-${Math.random().toString(36).slice(2, 9)}`;
+    }
+
+    // Dynamically import Leaflet ESM bundle (named exports, no default)
+    const { map: createMap, tileLayer, geoJSON } = await import(
+      'https://unpkg.com/leaflet@1.9.4/dist/leaflet-src.esm.js' as string
+    );
+
+    const lat = parseFloat(container.dataset.lat ?? '0');
+    const lng = parseFloat(container.dataset.lng ?? '0');
+    const zoom = parseInt(container.dataset.zoom ?? '5', 10);
+    const geojsonUrl = container.dataset.geojson ?? '';
+
+    const map = createMap(container).setView([lat, lng], zoom);
+
+    tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      maxZoom: 18,
+    }).addTo(map);
+
+    if (geojsonUrl) {
+      try {
+        const res = await fetch(geojsonUrl);
+        const data = await res.json();
+        geoJSON(data, {
+          style: {
+            color: '#e17100',
+            weight: 2,
+            fillColor: '#e17100',
+            fillOpacity: 0.4,
+          },
+        }).addTo(map);
+      } catch {
+        // GeoJSON unavailable – render map without layer
+      }
+    }
+
+    // Invalidate after two animation frames to ensure the container has
+    // been painted and has non-zero dimensions
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        map.invalidateSize();
+      });
+    });
+  }
+
+  function observeMapContainers() {
+    const containers = document.querySelectorAll<HTMLElement>('.leaflet-map-container');
+
+    if (!containers.length) return;
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              observer.unobserve(entry.target);
+              initMap(entry.target as HTMLElement);
+            }
+          }
+        },
+        { threshold: 0.05 },
+      );
+      containers.forEach((el) => observer.observe(el));
+    } else {
+      containers.forEach(initMap);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', observeMapContainers);
+  } else {
+    observeMapContainers();
+  }
+</script>

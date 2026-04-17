@@ -1,0 +1,17 @@
+---
+interface Props {
+  title: string;
+  icon: string;
+  description: string;
+}
+
+const { title, icon, description } = Astro.props;
+---
+
+<article class="flex flex-col gap-4 rounded bg-white p-6 shadow-sm ring-1 ring-base-100 transition-shadow hover:shadow-md w-full h-full">
+  <div class="flex h-12 w-12 items-center justify-center rounded bg-accent-50 text-accent-600">
+    <i class={`ph ph-${icon}`} style="font-size: 1.5rem;" aria-hidden="true"></i>
+  </div>
+  <h3 class="font-display text-lg font-bold text-base-900">{title}</h3>
+  <p class="text-sm leading-relaxed text-base-600">{description}</p>
+</article>

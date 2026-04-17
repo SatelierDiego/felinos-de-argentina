@@ -1,11 +1,229 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
+import SectionBlock from '../components/SectionBlock.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const homeEntries = await getCollection('home');
+const home = homeEntries[0]!.data;
+const felinosOrdenados = [...home.felinos].sort((a, b) =>
+  a.title.localeCompare(b.title, 'es')
+);
+
+const siteUrl = 'https://felinosdeargentina.org';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Felinos de Argentina',
+    url: siteUrl,
+    description: 'Divulgación científica sobre los felinos silvestres de Argentina y Sudamérica.',
+  },
+];
+
+const introContent = home.intro.paragraphs.join('\n\n');
+const contentContent = home.content.paragraphs.join('\n\n');
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="Felinos de Argentina | Divulgación científica"
+  description="Conocé los felinos silvestres de Argentina: gato andino, puma, yaguareté y más. Información sobre su biología, hábitat y conservación."
+  jsonLd={jsonLd}
+>
+
+  <!-- ── Hero ─────────────────────────────────────────────────── -->
+  <section
+    class="relative isolate overflow-hidden bg-stone-950 text-white"
+    style="min-height: 88vh;"
+    aria-labelledby="hero-heading"
+  >
+    <Image
+      src={home.hero.image}
+      alt=""
+      width={1920}
+      height={1080}
+      class="absolute inset-0 h-full w-full object-cover"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+    />
+    <div
+      class="absolute inset-0"
+      style="background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.72) 100%);"
+      aria-hidden="true"
+    ></div>
+
+    <div class="relative flex flex-col justify-end h-full" style="min-height: 88vh;">
+      <div class="mx-auto w-full max-w-7xl px-6 pb-20 md:pb-28">
+        <h1
+          id="hero-heading"
+          class="font-display font-bold text-white max-w-2xl text-balance"
+          style="font-size: var(--text-display); line-height: var(--text-display--line-height);"
+        >
+          {home.hero.title}
+        </h1>
+        <p class="mt-5 max-w-lg text-base text-white/70 leading-relaxed">
+          {home.hero.subtitle}
+        </p>
+        <div class="mt-8">
+          <a
+            href="/felinos/"
+            class="inline-flex items-center gap-2 border border-white/80 px-6 py-3 text-sm font-semibold text-white uppercase tracking-widest hover:bg-white hover:text-stone-900 transition-[background-color,color] duration-200"
+          >
+            Explorar especies
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Intro ─────────────────────────────────────────────────── -->
+  <SectionBlock
+    id="intro"
+    content={introContent}
+  />
+
+  <!-- ── Highlight ─────────────────────────────────────────────── -->
+  <SectionBlock
+    id="highlight"
+    title={home.highlight.title}
+    content={home.highlight.content}
+    highlight={true}
+  />
+
+  <!-- ── Content ───────────────────────────────────────────────── -->
+  <SectionBlock
+    id="contexto"
+    content={contentContent}
+  />
+
+  <!-- ── Species grid ──────────────────────────────────────────── -->
+  <section class="py-24 bg-white" aria-labelledby="species-heading">
+    <div class="mx-auto max-w-7xl px-6">
+
+      <div class="flex items-end justify-between mb-14">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[0.18em] text-stone-400 mb-3">
+            Biodiversidad felina
+          </p>
+          <h2
+            id="species-heading"
+            class="font-display font-bold text-stone-900 text-balance"
+            style="font-size: var(--text-headline); line-height: var(--text-headline--line-height);"
+          >
+            Los felinos de Argentina
+          </h2>
+        </div>
+        <a
+          href="/felinos/"
+          class="hidden sm:inline-flex items-center gap-2 text-sm font-semibold text-stone-500 uppercase tracking-widest hover:text-stone-900 transition-[color] duration-150"
+        >
+          Ver todos
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- 11 items en 4 cols. Los últimos 3 van en un li col-span-4 con flex centrado. -->
+      <ul
+        class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 list-none p-0 m-0 border border-stone-200"
+        role="list"
+      >
+        {felinosOrdenados.slice(0, 8).map((felino, i) => (
+          <li
+            class="bg-white border-r border-b border-stone-200"
+            data-animate="animate-fade-in-up"
+            data-delay={`${i * 60}ms`}
+          >
+            <a
+              href={`/felinos/${felino.slug}/`}
+              class="group relative flex flex-col h-full overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-amber-500"
+            >
+              <div class="aspect-square overflow-hidden bg-stone-100">
+                <Image
+                  src={felino.image.src}
+                  alt={felino.image.alt}
+                  width={400}
+                  height={400}
+                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 motion-reduce:transition-none">
+                <div class="flex items-center justify-between gap-2 p-4 w-full translate-y-3 group-hover:translate-y-0 transition-transform duration-300 motion-reduce:transition-none">
+                  <div class="flex flex-col gap-0.5 min-w-0">
+                    <p class="font-semibold text-white leading-snug truncate">
+                      {felino.title}
+                    </p>
+                    <p class="text-xs italic text-white/70 truncate">
+                      {felino.scientific_name}
+                    </p>
+                  </div>
+                  <i class="ph ph-arrow-right text-xl text-white shrink-0" aria-hidden="true"></i>
+                </div>
+              </div>
+            </a>
+          </li>
+        ))}
+
+        <!-- Último row: li que ocupa todo el ancho, con los 3 items centrados -->
+        <li class="col-span-2 sm:col-span-3 lg:col-span-4 border-stone-200 flex justify-center border-t">
+          {felinosOrdenados.slice(8).map((felino, i) => (
+            <div
+              class:list={['w-1/2 sm:w-1/3 lg:w-1/4 bg-white border-stone-200', i > 0 ? 'border-l' : '']}
+              data-animate="animate-fade-in-up"
+              data-delay={`${(8 + i) * 60}ms`}
+            >
+              <a
+                href={`/felinos/${felino.slug}/`}
+                class="group relative flex flex-col h-full overflow-hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-amber-500"
+              >
+                <div class="aspect-square overflow-hidden bg-stone-100">
+                  <Image
+                    src={felino.image.src}
+                    alt={felino.image.alt}
+                    width={400}
+                    height={400}
+                    class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 motion-reduce:transition-none">
+                  <div class="flex items-center justify-between gap-2 p-4 w-full translate-y-3 group-hover:translate-y-0 transition-transform duration-300 motion-reduce:transition-none">
+                    <div class="flex flex-col gap-0.5 min-w-0">
+                      <p class="font-semibold text-white leading-snug truncate">
+                        {felino.title}
+                      </p>
+                      <p class="text-xs italic text-white/70 truncate">
+                        {felino.scientific_name}
+                      </p>
+                    </div>
+                    <i class="ph ph-arrow-right text-xl text-white shrink-0" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </a>
+            </div>
+          ))}
+        </li>
+      </ul>
+
+      <div class="mt-8 sm:hidden">
+        <a
+          href="/felinos/"
+          class="inline-flex items-center gap-2 text-sm font-semibold text-stone-500 uppercase tracking-widest hover:text-stone-900 transition-[color] duration-150"
+        >
+          Ver todos los felinos
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
 </Layout>

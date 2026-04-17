@@ -1,0 +1,153 @@
+---
+import { getCollection } from 'astro:content';
+
+const felinos = await getCollection('felinos');
+const pathname = Astro.url.pathname;
+
+const felinosActive = pathname === '/felinos/' || pathname.startsWith('/felinos/');
+---
+
+<header class="sticky top-0 z-50 border-b border-base-200 bg-base-50/90 backdrop-blur-sm">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2 no-underline" aria-label="Felinos de Argentina – inicio">
+      <span class="font-display text-xl font-bold text-base-900 tracking-tight">
+        Felinos<span class="text-accent-600">AR</span>
+      </span>
+    </a>
+
+    <!-- Nav -->
+    <nav aria-label="Navegación principal">
+      <ul class="flex items-center gap-8 list-none m-0 p-0">
+
+        <!-- Felinos dropdown -->
+        <li class="relative" id="felinos-menu">
+          <button
+            id="felinos-trigger"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="felinos-dropdown"
+            class:list={[
+              'flex items-center gap-1 text-base font-medium transition-colors duration-150 cursor-pointer bg-transparent border-0 p-0',
+              felinosActive
+                ? 'text-accent-600 border-b-2 border-accent-500 pb-0.5'
+                : 'text-base-600 hover:text-base-900',
+            ]}
+          >
+            Felinos
+            <svg
+              id="felinos-chevron"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-3.5 w-3.5 transition-transform duration-200"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </button>
+
+          <!-- Dropdown panel -->
+          <div
+            id="felinos-dropdown"
+            role="menu"
+            aria-labelledby="felinos-trigger"
+            class="absolute left-1/2 -translate-x-1/2 top-full mt-3 hidden w-56 rounded bg-white shadow-lg ring-1 ring-base-200 overflow-hidden"
+          >
+            <!-- Ver todos -->
+            <a
+              href="/felinos/"
+              role="menuitem"
+              class:list={[
+                'flex items-center gap-2 px-4 py-2.5 text-xs font-semibold uppercase tracking-widest border-b border-base-100 transition-colors',
+                pathname === '/felinos/'
+                  ? 'text-accent-600 bg-accent-50'
+                  : 'text-base-400 hover:text-base-700 hover:bg-base-50',
+              ]}
+            >
+              Ver todos los felinos
+            </a>
+
+            <!-- Species list -->
+            {felinos.map((entry) => {
+              const href = `/felinos/${entry.data.slug}/`;
+              const isActive = pathname === href;
+              return (
+                <a
+                  href={href}
+                  role="menuitem"
+                  class:list={[
+                    'flex flex-col px-4 py-3 transition-colors border-b border-base-50 last:border-0',
+                    isActive
+                      ? 'bg-accent-50 text-accent-700'
+                      : 'text-base-700 hover:bg-base-50',
+                  ]}
+                >
+                  <span class="text-sm font-medium leading-snug">{entry.data.hero.title}</span>
+                  <span class="text-xs text-base-400 italic">{entry.data.scientific_name}</span>
+                </a>
+              );
+            })}
+          </div>
+        </li>
+
+        <!-- Libros -->
+        <li>
+          {(() => {
+            const isActive = pathname === '/libros/';
+            return (
+              <a
+                href="/libros/"
+                class:list={[
+                  'text-base font-medium transition-colors duration-150 no-underline',
+                  isActive
+                    ? 'text-accent-600 border-b-2 border-accent-500 pb-0.5'
+                    : 'text-base-600 hover:text-base-900',
+                ]}
+                aria-current={isActive ? 'page' : undefined}
+              >
+                Libros
+              </a>
+            );
+          })()}
+        </li>
+
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const trigger = document.getElementById('felinos-trigger');
+  const dropdown = document.getElementById('felinos-dropdown');
+  const chevron = document.getElementById('felinos-chevron');
+  const menu = document.getElementById('felinos-menu');
+
+  function open() {
+    dropdown?.classList.remove('hidden');
+    trigger?.setAttribute('aria-expanded', 'true');
+    chevron?.classList.add('rotate-180');
+  }
+
+  function close() {
+    dropdown?.classList.add('hidden');
+    trigger?.setAttribute('aria-expanded', 'false');
+    chevron?.classList.remove('rotate-180');
+  }
+
+  trigger?.addEventListener('click', () => {
+    const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+    isOpen ? close() : open();
+  });
+
+  // Close when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!menu?.contains(e.target as Node)) close();
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') close();
+  });
+</script>
