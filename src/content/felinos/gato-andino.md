@@ -16,10 +16,16 @@ conservation_status_ar: "En Peligro"
 conservation_status_iucn: "En peligro"
 
 stats:
-    weight: "4–8 kg"
-    length: "57–65 cm de cuerpo + 42–48 cm de cola"
+    weight: "4–6 kg"
+    size:
+        - body: "57–65 cm"
+        - tail: "42–48 cm"
+        - alzada: "30-40 cm"
     diet: "Roedores (chinchillones, pericotes), aves e insectos"
     habitat: "Puna y Altos Andes rocosos, entre 1000 y 5000 msnm"
+    habits: Terrestre
+    activity: Todo el día
+    generationTime: Desconocido
 
 sections:
     - id: "appearance"
@@ -37,8 +43,8 @@ sections:
 
           En su área de distribución habita también el Gato de los Pajonales (*Leopardus colocolo*), con el que puede ser confundido a simple vista, sin embargo, es posible distinguirlos por el rinario, menos coloreado en el Gato de los Pajonales, y la cola, más larga en el Gato andino.
       images:
-        - src: "../../assets/images/felinos/leopardus-jacobitus/apariencia-1.jpg"
-          alt: "Gato andino mostrando su pelaje característico"
+          - src: "../../assets/images/felinos/leopardus-jacobitus/apariencia-1.jpg"
+            alt: "Gato andino mostrando su pelaje característico"
 
     - id: "behavior"
       title: "Comportamiento"

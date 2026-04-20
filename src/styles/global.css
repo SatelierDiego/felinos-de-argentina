@@ -2,155 +2,142 @@
 @import "@midudev/tailwind-animations";
 
 @theme {
-  /* ── Fonts ─────────────────────────────────────── */
-  --font-sans: "Open Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Lora", ui-serif, Georgia, serif;
-  --font-display: "Quicksand", "Open Sans", ui-sans-serif, sans-serif;
-  --font-mono: ui-monospace, "Cascadia Code", monospace;
+    /* ── Fonts ─────────────────────────────────────── */
+    --font-sans: "Open Sans", ui-sans-serif, system-ui, sans-serif;
+    --font-serif: "Lora", ui-serif, Georgia, serif;
+    --font-display: "Quicksand", "Open Sans", ui-sans-serif, sans-serif;
+    --font-mono: ui-monospace, "Cascadia Code", monospace;
 
-  /* ── Primitive palette ─────────────────────────── */
-  --color-stone-50: #faf9f7;
-  --color-stone-100: #f2ede8;
-  --color-stone-200: #e4d9cf;
-  --color-stone-300: #cebfb1;
-  --color-stone-400: #b39e8c;
-  --color-stone-500: #9a7f6a;
-  --color-stone-600: #7e6454;
-  --color-stone-700: #654f42;
-  --color-stone-800: #4e3c32;
-  --color-stone-900: #3a2c26;
-  --color-stone-950: #241a16;
+    /* ── Semantic design tokens ────────────────────── */
+    /* accent-400 ≈ logo color (#f0aa5a) */
 
-  --color-amber-50: #fffbf0;
-  --color-amber-100: #fef3cc;
-  --color-amber-200: #fce59a;
-  --color-amber-300: #fad165;
-  --color-amber-400: #f7bc38;
-  --color-amber-500: #e8a118;
-  --color-amber-600: #c47f10;
-  --color-amber-700: #9a5f0c;
-  --color-amber-800: #764709;
-  --color-amber-900: #563308;
+    /* Base: neutros para fondos, bordes y texto general */
+    --color-base-50: var(--color-stone-50);
+    --color-base-100: var(--color-stone-100);
+    --color-base-200: var(--color-stone-200);
+    --color-base-300: var(--color-stone-300);
+    --color-base-400: var(--color-stone-400);
+    --color-base-500: var(--color-stone-500);
+    --color-base-600: var(--color-stone-600);
+    --color-base-700: var(--color-stone-700);
+    --color-base-800: var(--color-stone-800);
+    --color-base-900: var(--color-stone-900);
+    --color-base-950: var(--color-stone-950);
 
-  --color-forest-50: #f3f7f4;
-  --color-forest-100: #deeee3;
-  --color-forest-200: #baddc8;
-  --color-forest-300: #8dc4a8;
-  --color-forest-400: #5ea485;
-  --color-forest-500: #3d8569;
-  --color-forest-600: #2d6b54;
-  --color-forest-700: #265545;
-  --color-forest-800: #1f4337;
-  --color-forest-900: #18342c;
-  --color-forest-950: #0d1f1a;
+    /* Accent: #f0aa5a — énfasis, interacciones, CTA */
+    --color-accent-50:  #fef9ef;
+    --color-accent-100: #feefd5;
+    --color-accent-200: #fddcaa;
+    --color-accent-300: #fbc87e;
+    --color-accent-400: #f0aa5a;
+    --color-accent-500: #e48d30;
+    --color-accent-600: #c97220;
+    --color-accent-700: #a35918;
+    --color-accent-800: #7c4213;
+    --color-accent-900: #552d0d;
+    --color-accent-950: #2c1607;
 
-  --color-danger-400: #f87171;
-  --color-danger-600: #dc2626;
+    /* Highlight: #327864 — identidad, secciones destacadas */
+    --color-highlight-50:  #f0faf6;
+    --color-highlight-100: #d6f0e6;
+    --color-highlight-200: #aee0cc;
+    --color-highlight-300: #7fcbb0;
+    --color-highlight-400: #52b292;
+    --color-highlight-500: #3d9478;
+    --color-highlight-600: #327864;
+    --color-highlight-700: #275e4f;
+    --color-highlight-800: #1c4438;
+    --color-highlight-900: #112b23;
+    --color-highlight-950: #091710;
 
-  /* ── Semantic design tokens ────────────────────── */
+    /* Alternative: #644628 — marrón, elementos secundarios */
+    --color-alternative-50:  #faf6f1;
+    --color-alternative-100: #f2e8d8;
+    --color-alternative-200: #e2ccaf;
+    --color-alternative-300: #cfae82;
+    --color-alternative-400: #b88d57;
+    --color-alternative-500: #9b7040;
+    --color-alternative-600: #7d5831;
+    --color-alternative-700: #644628;
+    --color-alternative-800: #4a3420;
+    --color-alternative-900: #312218;
+    --color-alternative-950: #1a120d;
 
-  /* Base: neutros para fondos, bordes y texto general */
-  --color-base-50:  var(--color-stone-50);
-  --color-base-100: var(--color-stone-100);
-  --color-base-200: var(--color-stone-200);
-  --color-base-300: var(--color-stone-300);
-  --color-base-400: var(--color-stone-400);
-  --color-base-500: var(--color-stone-500);
-  --color-base-600: var(--color-stone-600);
-  --color-base-700: var(--color-stone-700);
-  --color-base-800: var(--color-stone-800);
-  --color-base-900: var(--color-stone-900);
-  --color-base-950: var(--color-stone-950);
+    /* ── Spacing scale ─────────────────────────────── */
+    --spacing-18: 4.5rem;
+    --spacing-88: 22rem;
+    --spacing-128: 32rem;
 
-  /* Accent: color de énfasis, interacciones, CTA */
-  --color-accent-50:  var(--color-amber-50);
-  --color-accent-100: var(--color-amber-100);
-  --color-accent-200: var(--color-amber-200);
-  --color-accent-300: var(--color-amber-300);
-  --color-accent-400: var(--color-amber-400);
-  --color-accent-500: var(--color-amber-500);
-  --color-accent-600: var(--color-amber-600);
-  --color-accent-700: var(--color-amber-700);
-  --color-accent-800: var(--color-amber-800);
-  --color-accent-900: var(--color-amber-900);
+    /* ── Border radius ─────────────────────────────── */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-2xl: 1.5rem;
 
-  /* Brand: color de identidad, highlight, secciones destacadas */
-  --color-brand-50:  var(--color-forest-50);
-  --color-brand-100: var(--color-forest-100);
-  --color-brand-200: var(--color-forest-200);
-  --color-brand-300: var(--color-forest-300);
-  --color-brand-400: var(--color-forest-400);
-  --color-brand-500: var(--color-forest-500);
-  --color-brand-600: var(--color-forest-600);
-  --color-brand-700: var(--color-forest-700);
-  --color-brand-800: var(--color-forest-800);
-  --color-brand-900: var(--color-forest-900);
-  --color-brand-950: var(--color-forest-950);
-
-  /* ── Spacing scale ─────────────────────────────── */
-  --spacing-18: 4.5rem;
-  --spacing-88: 22rem;
-  --spacing-128: 32rem;
-
-  /* ── Border radius ─────────────────────────────── */
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
-  --radius-2xl: 1.5rem;
-
-  /* ── Typography scale ──────────────────────────── */
-  --text-2xs: 0.65rem;
-  --text-display: clamp(2.5rem, 6vw, 5rem);
-  --text-display--line-height: 1.05;
-  --text-headline: clamp(1.75rem, 3.5vw, 3rem);
-  --text-headline--line-height: 1.15;
+    /* ── Typography scale ──────────────────────────── */
+    --text-display: clamp(2.5rem, 6vw, 5rem);
+    --text-display--line-height: 1.05;
+    --text-headline: clamp(1.75rem, 3.5vw, 3rem);
+    --text-headline--line-height: 1.15;
 }
 
 /* ── Global base styles ────────────────────────── */
 @layer base {
-  html {
-    scroll-behavior: smooth;
-    font-family: var(--font-sans);
-    color: var(--color-base-900);
-    background-color: var(--color-base-50);
-  }
+    html {
+        scroll-behavior: smooth;
+        font-family: var(--font-sans);
+        color: var(--color-base-900);
+        background-color: var(--color-base-50);
+    }
 
-  h1, h2, h3 {
-    font-family: var(--font-display);
-    font-weight: 700;
-    line-height: 1.2;
-  }
+    h1,
+    h2,
+    h3 {
+        font-family: var(--font-display);
+        font-weight: 700;
+        line-height: 1.2;
+    }
 
-  p {
-    line-height: 1.75;
-  }
+    p {
+        line-height: 1.75;
+    }
 
-  ::selection {
-    background-color: var(--color-accent-200);
-    color: var(--color-base-900);
-  }
+    ::selection {
+        background-color: var(--color-accent-200);
+        color: var(--color-base-900);
+    }
 
-  :focus-visible {
-    outline: 2px solid var(--color-accent-500);
-    outline-offset: 3px;
-    border-radius: var(--radius-sm);
-  }
+    :focus-visible {
+        outline: 2px solid var(--color-accent-500);
+        outline-offset: 3px;
+        border-radius: var(--radius-sm);
+    }
+
+    a {
+        color: var(--color-accent-700);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+
+    a:hover {
+        color: var(--color-accent-900);
+    }
 }
 
 /* ── Prose-like rich text ──────────────────────── */
 .prose-content p + p {
-  margin-top: 1.25rem;
+    margin-top: 1.25rem;
 }
 
 .prose-content em {
-  font-style: italic;
+    font-style: italic;
 }
 
 /* ── Leaflet overrides ─────────────────────────── */
 .leaflet-container {
-  font-family: var(--font-sans) !important;
-  z-index: 0;
+    font-family: var(--font-sans) !important;
+    z-index: 0;
 }
 
 /* ── Image error placeholder ───────────────────── */
@@ -161,109 +148,207 @@
  * ::after   → "Imagen no encontrada" label
  */
 @utility image-not-found {
-  position: relative;
+    position: relative;
 
-  & > img {
-    visibility: hidden;
-  }
+    & > img {
+        visibility: hidden;
+    }
 
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: #e7e5e4;
-    background-image:
-      radial-gradient(rgb(0 0 0 / 0.10) 1px, transparent 1px),
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'/%3E%3Cpath d='M104,208H40a8,8,0,0,1-8-8V56a8,8,0,0,1,8-8H216a8,8,0,0,1,8,8V88l-48,16-16,40-40,16Z' fill='none' stroke='%2378716c' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'/%3E%3Cpath d='M137.73,208l7.94-23.8,39-15.58,15.58-39,23.8-7.94V200a8,8,0,0,1-8,8Z' fill='none' stroke='%2378716c' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'/%3E%3Cpath d='M32,168.69l54.34-54.35a8,8,0,0,1,11.32,0l39,39' fill='none' stroke='%2378716c' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'/%3E%3C/svg%3E");
-    background-repeat: repeat, no-repeat;
-    background-size: 20px 20px, auto;
-    background-position: 0 0, center calc(50% - 1.25rem);
-  }
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: #e7e5e4;
+        background-image:
+            radial-gradient(rgb(0 0 0 / 0.1) 1px, transparent 1px),
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'/%3E%3Cpath d='M104,208H40a8,8,0,0,1-8-8V56a8,8,0,0,1,8-8H216a8,8,0,0,1,8,8V88l-48,16-16,40-40,16Z' fill='none' stroke='%2378716c' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'/%3E%3Cpath d='M137.73,208l7.94-23.8,39-15.58,15.58-39,23.8-7.94V200a8,8,0,0,1-8,8Z' fill='none' stroke='%2378716c' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'/%3E%3Cpath d='M32,168.69l54.34-54.35a8,8,0,0,1,11.32,0l39,39' fill='none' stroke='%2378716c' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'/%3E%3C/svg%3E");
+        background-repeat: repeat, no-repeat;
+        background-size:
+            20px 20px,
+            auto;
+        background-position:
+            0 0,
+            center calc(50% - 1.25rem);
+    }
 
-  &::after {
-    content: "Imagen no encontrada";
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding-bottom: calc(50% - 3.5rem);
-    color: #78716c;
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
+    &::after {
+        content: "Imagen no encontrada";
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding-bottom: calc(50% - 3.5rem);
+        color: #78716c;
+        font-size: 0.7rem;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+    }
 }
 
 /* ── Bento gallery grid ─────────────────────────── */
 @utility bento-gallery {
-  display: grid;
-  width: 100%;
-  gap: clamp(6px, 1vw, 12px);
-  grid-template-columns: repeat(4, 1fr);
+    display: grid;
+    width: 100%;
+    gap: clamp(6px, 1vw, 12px);
+    grid-template-columns: repeat(4, 1fr);
 
-  @media (max-width: 900px) { grid-template-columns: repeat(2, 1fr); }
-  @media (max-width: 540px) { grid-template-columns: 1fr; }
+    @media (max-width: 900px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 540px) {
+        grid-template-columns: 1fr;
+    }
 }
 
 @utility bento-c1 {
-  grid-column: 1 / 3; grid-row: 1 / 3;
-  min-height: clamp(260px, 32vw, 480px);
-  @media (max-width: 900px) { grid-column: 1 / 3; grid-row: 1; min-height: clamp(200px, 45vw, 360px); }
-  @media (max-width: 540px) { grid-column: 1; grid-row: 1; min-height: 260px; }
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    min-height: clamp(260px, 32vw, 480px);
+    @media (max-width: 900px) {
+        grid-column: 1 / 3;
+        grid-row: 1;
+        min-height: clamp(200px, 45vw, 360px);
+    }
+    @media (max-width: 540px) {
+        grid-column: 1;
+        grid-row: 1;
+        min-height: 260px;
+    }
 }
 @utility bento-c2 {
-  grid-column: 3; grid-row: 1;
-  min-height: clamp(110px, 14vw, 230px);
-  @media (max-width: 900px) { grid-column: 1; grid-row: 2; min-height: clamp(120px, 22vw, 220px); }
-  @media (max-width: 540px) { grid-column: 1; grid-row: 2; min-height: 200px; }
+    grid-column: 3;
+    grid-row: 1;
+    min-height: clamp(110px, 14vw, 230px);
+    @media (max-width: 900px) {
+        grid-column: 1;
+        grid-row: 2;
+        min-height: clamp(120px, 22vw, 220px);
+    }
+    @media (max-width: 540px) {
+        grid-column: 1;
+        grid-row: 2;
+        min-height: 200px;
+    }
 }
 @utility bento-c3 {
-  grid-column: 4; grid-row: 1;
-  min-height: clamp(110px, 14vw, 230px);
-  @media (max-width: 900px) { grid-column: 2; grid-row: 2; min-height: clamp(120px, 22vw, 220px); }
-  @media (max-width: 540px) { grid-column: 1; grid-row: 3; min-height: 200px; }
+    grid-column: 4;
+    grid-row: 1;
+    min-height: clamp(110px, 14vw, 230px);
+    @media (max-width: 900px) {
+        grid-column: 2;
+        grid-row: 2;
+        min-height: clamp(120px, 22vw, 220px);
+    }
+    @media (max-width: 540px) {
+        grid-column: 1;
+        grid-row: 3;
+        min-height: 200px;
+    }
 }
 @utility bento-c4 {
-  grid-column: 3; grid-row: 2;
-  min-height: clamp(110px, 14vw, 230px);
-  @media (max-width: 900px) { grid-column: 1; grid-row: 3; min-height: clamp(120px, 22vw, 220px); }
-  @media (max-width: 540px) { grid-column: 1; grid-row: 4; min-height: 200px; }
+    grid-column: 3;
+    grid-row: 2;
+    min-height: clamp(110px, 14vw, 230px);
+    @media (max-width: 900px) {
+        grid-column: 1;
+        grid-row: 3;
+        min-height: clamp(120px, 22vw, 220px);
+    }
+    @media (max-width: 540px) {
+        grid-column: 1;
+        grid-row: 4;
+        min-height: 200px;
+    }
 }
 @utility bento-c5 {
-  grid-column: 4; grid-row: 2;
-  min-height: clamp(110px, 14vw, 230px);
-  @media (max-width: 900px) { grid-column: 2; grid-row: 3; min-height: clamp(120px, 22vw, 220px); }
-  @media (max-width: 540px) { grid-column: 1; grid-row: 5; min-height: 200px; }
+    grid-column: 4;
+    grid-row: 2;
+    min-height: clamp(110px, 14vw, 230px);
+    @media (max-width: 900px) {
+        grid-column: 2;
+        grid-row: 3;
+        min-height: clamp(120px, 22vw, 220px);
+    }
+    @media (max-width: 540px) {
+        grid-column: 1;
+        grid-row: 5;
+        min-height: 200px;
+    }
 }
 @utility bento-c6 {
-  grid-column: 1; grid-row: 3;
-  min-height: clamp(120px, 15vw, 240px);
-  @media (max-width: 900px) { grid-column: 1; grid-row: 4; min-height: clamp(120px, 22vw, 220px); }
-  @media (max-width: 540px) { grid-column: 1; grid-row: 6; min-height: 200px; }
+    grid-column: 1;
+    grid-row: 3;
+    min-height: clamp(120px, 15vw, 240px);
+    @media (max-width: 900px) {
+        grid-column: 1;
+        grid-row: 4;
+        min-height: clamp(120px, 22vw, 220px);
+    }
+    @media (max-width: 540px) {
+        grid-column: 1;
+        grid-row: 6;
+        min-height: 200px;
+    }
 }
 @utility bento-c7 {
-  grid-column: 2 / 4; grid-row: 3;
-  min-height: clamp(120px, 15vw, 240px);
-  @media (max-width: 900px) { grid-column: 2; grid-row: 4; min-height: clamp(120px, 22vw, 220px); }
-  @media (max-width: 540px) { grid-column: 1; grid-row: 7; min-height: 200px; }
+    grid-column: 2 / 4;
+    grid-row: 3;
+    min-height: clamp(120px, 15vw, 240px);
+    @media (max-width: 900px) {
+        grid-column: 2;
+        grid-row: 4;
+        min-height: clamp(120px, 22vw, 220px);
+    }
+    @media (max-width: 540px) {
+        grid-column: 1;
+        grid-row: 7;
+        min-height: 200px;
+    }
 }
 @utility bento-c8 {
-  grid-column: 4; grid-row: 3;
-  min-height: clamp(120px, 15vw, 240px);
-  @media (max-width: 900px) { grid-column: 1 / 3; grid-row: 5; min-height: clamp(120px, 22vw, 200px); }
-  @media (max-width: 540px) { grid-column: 1; grid-row: 8; min-height: 200px; }
+    grid-column: 4;
+    grid-row: 3;
+    min-height: clamp(120px, 15vw, 240px);
+    @media (max-width: 900px) {
+        grid-column: 1 / 3;
+        grid-row: 5;
+        min-height: clamp(120px, 22vw, 200px);
+    }
+    @media (max-width: 540px) {
+        grid-column: 1;
+        grid-row: 8;
+        min-height: 200px;
+    }
 }
 @utility bento-c9 {
-  grid-column: 1 / 3; grid-row: 4;
-  min-height: clamp(110px, 13vw, 200px);
-  @media (max-width: 900px) { grid-column: 1; grid-row: 6; min-height: clamp(120px, 22vw, 220px); }
-  @media (max-width: 540px) { grid-column: 1; grid-row: 9; min-height: 200px; }
+    grid-column: 1 / 3;
+    grid-row: 4;
+    min-height: clamp(110px, 13vw, 200px);
+    @media (max-width: 900px) {
+        grid-column: 1;
+        grid-row: 6;
+        min-height: clamp(120px, 22vw, 220px);
+    }
+    @media (max-width: 540px) {
+        grid-column: 1;
+        grid-row: 9;
+        min-height: 200px;
+    }
 }
 @utility bento-c10 {
-  grid-column: 3 / 5; grid-row: 4;
-  min-height: clamp(110px, 13vw, 200px);
-  @media (max-width: 900px) { grid-column: 2; grid-row: 6; min-height: clamp(120px, 22vw, 220px); }
-  @media (max-width: 540px) { grid-column: 1; grid-row: 10; min-height: 200px; }
+    grid-column: 3 / 5;
+    grid-row: 4;
+    min-height: clamp(110px, 13vw, 200px);
+    @media (max-width: 900px) {
+        grid-column: 2;
+        grid-row: 6;
+        min-height: clamp(120px, 22vw, 220px);
+    }
+    @media (max-width: 540px) {
+        grid-column: 1;
+        grid-row: 10;
+        min-height: 200px;
+    }
 }

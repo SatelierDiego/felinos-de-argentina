@@ -1,114 +1,130 @@
 ---
-import { getCollection } from 'astro:content';
-import { Image } from 'astro:assets';
-import Layout from '../../layouts/Layout.astro';
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
 
-const librosEntries = await getCollection('libros');
+const librosEntries = await getCollection("libros");
 const books = librosEntries[0]!.data.books;
 
 const coverImages = import.meta.glob<{ default: ImageMetadata }>(
-  '/src/assets/images/libros/*.jpg',
-  { eager: true }
+    "/src/assets/images/libros/*.jpg",
+    { eager: true },
 );
 
 function getCover(path: string): ImageMetadata {
-  // content stores paths like "/src/assets/libros/foo.jpg"; resolve to actual location
-  const filename = path.split('/').pop()!;
-  const key = `/src/assets/images/libros/${filename}`;
-  const mod = coverImages[key];
-  if (!mod) throw new Error(`Cover image not found: ${key}`);
-  return mod.default;
+    // content stores paths like "/src/assets/libros/foo.jpg"; resolve to actual location
+    const filename = path.split("/").pop()!;
+    const key = `/src/assets/images/libros/${filename}`;
+    const mod = coverImages[key];
+    if (!mod) throw new Error(`Cover image not found: ${key}`);
+    return mod.default;
 }
 ---
 
 <Layout
-  title="Libros recomendados | Felinos de Argentina"
-  description="Una selección de publicaciones científicas y de divulgación sobre los felinos silvestres de Argentina y América del Sur."
+    title="Libros recomendados | Felinos de Argentina"
+    description="Una selección de publicaciones científicas y de divulgación sobre los felinos silvestres de Argentina y América del Sur."
 >
-  <!-- Header -->
-  <section class="bg-stone-900 py-20 text-white">
-    <div class="mx-auto max-w-7xl px-6">
-      <h1
-        class="font-display font-bold text-white"
-        style="font-size: var(--text-headline); line-height: var(--text-headline--line-height);"
-        data-animate="animate-fade-in-up"
-      >
-        Libros recomendados
-      </h1>
-      <p
-        class="mt-4 max-w-xl text-stone-400 leading-relaxed"
-        data-animate="animate-fade-in-up"
-        data-delay="150ms"
-      >
-        Una selección de publicaciones científicas y de divulgación sobre los felinos
-        silvestres de Argentina y América del Sur.
-      </p>
-    </div>
-  </section>
+    <!-- Header -->
+    <section class="bg-stone-900 py-20 text-white">
+        <div class="mx-auto max-w-7xl px-6">
+            <h1
+                class="font-display font-bold text-white"
+                style="font-size: var(--text-headline); line-height: var(--text-headline--line-height);"
+                data-animate="animate-fade-in-up"
+            >
+                Libros recomendados
+            </h1>
+            <p
+                class="mt-4 max-w-xl text-stone-400 leading-relaxed"
+                data-animate="animate-fade-in-up"
+                data-delay="150ms"
+            >
+                Una selección de publicaciones científicas y de divulgación
+                sobre los felinos silvestres de Argentina y América del Sur.
+            </p>
+        </div>
+    </section>
 
-  <!-- Books grid -->
-  <section class="py-20 bg-stone-50">
-    <div class="mx-auto max-w-7xl px-6">
-      <ul class="grid grid-cols-1 gap-8 md:grid-cols-2 list-none p-0 m-0">
-        {books.map((book, i) => (
-          <li
-            data-animate="animate-fade-in-up"
-            data-delay={`${i * 60}ms`}
-          >
-            <article class="flex flex-row bg-white rounded-lg overflow-hidden shadow-sm ring-1 ring-stone-100 h-full">
-              <figure class="shrink-0 w-44 sm:w-48 overflow-hidden bg-stone-100">
-                <Image
-                  src={getCover(book.cover)}
-                  alt={`Portada de ${book.title}`}
-                  width={200}
-                  height={300}
-                  class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                  loading="lazy"
-                />
-              </figure>
+    <!-- Books grid -->
+    <section class="py-20 bg-stone-50">
+        <div class="mx-auto max-w-7xl px-6">
+            <ul class="grid grid-cols-1 gap-8 md:grid-cols-2 list-none p-0 m-0">
+                {
+                    books.map((book, i) => (
+                        <li
+                            data-animate="animate-fade-in-up"
+                            data-delay={`${i * 60}ms`}
+                        >
+                            <article class="flex flex-col lg:flex-row bg-white rounded-lg overflow-hidden shadow-sm ring-1 ring-stone-100 h-full">
+                                {(() => {
+                                    const cover = getCover(book.cover);
+                                    return (
+                                        <figure class="relative shrink-0 p-1 lg:p-5 w-full lg:w-44 max-h-52 lg:max-h-full sm:w-48 overflow-hidden bg-stone-100 flex items-center justify-center">
+                                            <div
+                                                class="absolute inset-0 scale-110 bg-cover bg-center blur-lg brightness-75"
+                                                style={`background-image: url(${cover.src})`}
+                                                aria-hidden="true"
+                                            />
+                                            <Image
+                                                src={cover}
+                                                alt={`Portada de ${book.title}`}
+                                                width={200}
+                                                height={300}
+                                                class="relative z-10 w-full lg:object-cover object-contain max-h-full mx-auto transition-transform duration-500 hover:scale-105"
+                                                loading="lazy"
+                                            />
+                                        </figure>
+                                    );
+                                })()}
 
-              <div class="flex flex-col gap-3 flex-1 p-5 min-w-0">
-                <div class="flex flex-col gap-1">
-                  <h2 class="font-display text-lg font-bold text-stone-900 leading-snug">
-                    {book.title}
-                  </h2>
-                  <p class="text-xs text-stone-400 uppercase tracking-wide">
-                    {book.authors.join(', ')} · {book.year}
-                  </p>
-                  <p class="text-xs text-stone-400 italic">
-                    {book.editorial}
-                  </p>
-                </div>
+                                <div class="flex flex-col gap-3 flex-1 p-5 min-w-0">
+                                    <div class="flex flex-col gap-1">
+                                        <h2 class="font-display text-lg font-bold text-stone-900 leading-snug">
+                                            {book.title}
+                                        </h2>
+                                        <p class="text-xs text-stone-400 uppercase tracking-wide">
+                                            {book.authors.join(", ")} ·{" "}
+                                            {book.year}
+                                        </p>
+                                        <p class="text-xs text-stone-400 italic">
+                                            {book.editorial}
+                                        </p>
+                                    </div>
 
-                <p class="text-sm text-stone-600 leading-relaxed flex-1">
-                  {book.description.trim()}
-                </p>
+                                    <p class="text-sm text-stone-600 leading-relaxed flex-1">
+                                        {book.description.trim()}
+                                    </p>
 
-                {book.links.length > 0 && (
-                  <div class="flex flex-wrap gap-2 pt-1">
-                    {book.links.map((link, li) => (
-                      <a
-                        href={link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class:list={[
-                          'inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full transition-colors duration-150',
-                          li === 0
-                            ? 'bg-amber-500 text-white hover:bg-amber-600'
-                            : 'bg-stone-100 text-stone-600 hover:bg-stone-200',
-                        ]}
-                      >
-                        {link.label}
-                        <i class="ph ph-arrow-up-right" aria-hidden="true"></i>
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </article>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
+                                    {book.links.length > 0 && (
+                                        <div class="flex flex-wrap gap-2 pt-1">
+                                            {book.links.map((link, li) => (
+                                                <a
+                                                    href={link.url}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    class:list={[
+                                                        "inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full transition-colors duration-150",
+                                                        li === 0
+                                                            ? "bg-amber-500 text-white hover:bg-amber-600"
+                                                            : "bg-stone-100 text-stone-600 hover:bg-stone-200",
+                                                    ]}
+                                                >
+                                                    {link.label}
+                                                    <i
+                                                        class="ph ph-arrow-up-right"
+                                                        aria-hidden="true"
+                                                    />
+                                                </a>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            </article>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+    </section>
 </Layout>

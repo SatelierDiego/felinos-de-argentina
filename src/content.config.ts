@@ -37,7 +37,11 @@ const fotografosCollection = defineCollection({
   schema: z.object({
     fotografos: z.array(z.object({
       nombre: z.string(),
-      url: z.string().url(),
+      contacto: z.array(z.object({
+        titulo: z.string(),
+        url: z.string().url(),
+      })).optional(),
+      felinos: z.array(z.string()).optional(),
     })),
   }),
 });
@@ -72,9 +76,12 @@ const felinosCollection = defineCollection({
 
     stats: z.object({
       weight: z.string(),
-      length: z.string(),
+      size: z.array(z.object({ body: z.string().optional(), tail: z.string().optional(), alzada: z.string().nullish() })),
       diet: z.string(),
       habitat: z.string(),
+      activity: z.string().nullish(),
+      habits: z.string().nullish(),
+      generationTime: z.string().nullish(),
     }).optional(),
 
     sections: z.array(

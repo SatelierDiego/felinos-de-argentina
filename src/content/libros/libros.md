@@ -1,19 +1,5 @@
 ---
 books:
-    - title: "Los que se van. Tomo 3. Mamíferos"
-      authors:
-          - "Juan Carlos Chebez"
-      editorial: "Editorial Albatros"
-      year: 2008
-      cover: "/src/assets/libros/los-que-se-van-209x300.jpg"
-      description: |
-          Tercer tomo de la serie dedicado a los mamíferos amenazados de Argentina. Describe 58 especies con fichas individuales que incluyen fotografías, mapas de distribución, características morfológicas y estado de conservación.
-      links:
-          - label: "Comprar"
-            url: "#"
-          - label: "Más info"
-            url: "#"
-
     - title: "Felinos de Sudamérica"
       authors:
           - "Javier Pereira"
@@ -27,17 +13,33 @@ books:
           - label: "Comprar"
             url: "#"
 
-    - title: "100 mamíferos Argentinos"
+    - title: "Yaguareté. Vida, leyenda y esperanza de la Verdadera Fiera en Argentina"
       authors:
-          - "Marcelo Canevari"
-          - "Carlos Fernández Balboa"
-      editorial: "Editorial Albatros"
-      year: 2003
-      cover: "/src/assets/libros/100-mamiferos-argentinos-199x300.jpg"
+          - "Norberto Ángel Nigro"
+          - "Nicolás Lodeiro Ocampo"
+      editorial: "Red Yaguareté"
+      year: 2025
+      cover: "/src/assets/libros/yaguarete-vida-leyenda-esperanza-190x300.jpg"
       description: |
-          Selección de las 100 especies más representativas de las más de 300 que habitan Argentina. Cada ficha incluye fotografía, mapa de distribución y estado de conservación.
+          Recorre un cuarto de siglo de trabajo en conservación del yaguareté en Argentina, con mirada científica, histórica y cultural. Con 496 páginas y 600 fotografías a color, aborda la biología, su relación con el ser humano y los desafíos para su supervivencia.
       links:
           - label: "Comprar"
+            url: "https://articulo.mercadolibre.com.ar/MLA-2069083332-yaguarete-vida-leyenda-y-esperanza-de-la-verdadera-fiera-_JM"
+          - label: "Más info"
+            url: "https://redyaguarete.org.ar/"
+
+    - title: "Los que se van. Tomo 3. Mamíferos"
+      authors:
+          - "Juan Carlos Chebez"
+      editorial: "Editorial Albatros"
+      year: 2008
+      cover: "/src/assets/libros/los-que-se-van-209x300.jpg"
+      description: |
+          Tercer tomo de la serie dedicado a los mamíferos amenazados de Argentina. Describe 58 especies con fichas individuales que incluyen fotografías, mapas de distribución, características morfológicas y estado de conservación.
+      links:
+          - label: "Comprar"
+            url: "#"
+          - label: "Más info"
             url: "#"
 
     - title: "Los mamíferos de la Argentina y la región austral de Sudamérica"
@@ -61,6 +63,19 @@ books:
       cover: "/src/assets/libros/guia-de-mamiferos-del-sur-de-america-del-sur-204x300.jpg"
       description: |
           Guía ilustrada que cubre 190 especies de mamíferos terrestres y marinos del sur de Sudamérica. Incluye información sobre hábitat, comportamiento y conservación, con mapas de distribución.
+      links:
+          - label: "Comprar"
+            url: "#"
+
+    - title: "100 mamíferos Argentinos"
+      authors:
+          - "Marcelo Canevari"
+          - "Carlos Fernández Balboa"
+      editorial: "Editorial Albatros"
+      year: 2003
+      cover: "/src/assets/libros/100-mamiferos-argentinos-199x300.jpg"
+      description: |
+          Selección de las 100 especies más representativas de las más de 300 que habitan Argentina. Cada ficha incluye fotografía, mapa de distribución y estado de conservación.
       links:
           - label: "Comprar"
             url: "#"
@@ -106,19 +121,4 @@ books:
       links:
           - label: "Comprar"
             url: "#"
-
-    - title: "Yaguareté. Vida, leyenda y esperanza de la Verdadera Fiera en Argentina"
-      authors:
-          - "Norberto Ángel Nigro"
-          - "Nicolás Lodeiro Ocampo"
-      editorial: "Red Yaguareté"
-      year: 2025
-      cover: "/src/assets/libros/yaguarete-vida-leyenda-esperanza-171x300.jpg"
-      description: |
-          Recorre un cuarto de siglo de trabajo en conservación del yaguareté en Argentina, con mirada científica, histórica y cultural. Con 496 páginas y 600 fotografías a color, aborda la biología, su relación con el ser humano y los desafíos para su supervivencia.
-      links:
-          - label: "Comprar"
-            url: "https://articulo.mercadolibre.com.ar/MLA-2069083332-yaguarete-vida-leyenda-y-esperanza-de-la-verdadera-fiera-_JM"
-          - label: "Más info"
-            url: "https://redyaguarete.org.ar/"
 ---

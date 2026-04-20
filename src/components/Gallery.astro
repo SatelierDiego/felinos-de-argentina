@@ -34,20 +34,8 @@ const CELL_CLASSES = [
 ];
 ---
 
-<section class="py-20 bg-[#0e0e0d]" aria-labelledby={`${galleryId}-heading`}>
+<section class="py-20 bg-[#0e0e0d]">
   <div class="mx-auto max-w-7xl px-[clamp(12px,2vw,24px)]">
-
-    <header class="flex items-baseline justify-between mb-[clamp(12px,2vw,24px)] px-[2px]">
-      <h2
-        id={`${galleryId}-heading`}
-        class="font-display font-normal text-[#f0ede8] tracking-[-0.02em] text-[clamp(22px,3.5vw,48px)]"
-      >
-        {title}{speciesName && <> <em class="italic text-[#AFA9EC] not-italic">{speciesName}</em></>}
-      </h2>
-      <span class="uppercase tracking-[0.1em] text-[#5f5e5a] text-[clamp(11px,1.1vw,13px)]">
-        {items.slice(0, 10).length} fotos
-      </span>
-    </header>
 
     <div class="bento-gallery">
       {items.slice(0, 10).map((item, i) => (

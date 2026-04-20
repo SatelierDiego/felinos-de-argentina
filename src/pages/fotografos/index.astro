@@ -1,56 +1,98 @@
 ---
-import { getCollection } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
 
-const entries = await getCollection('fotografos');
+const entries = await getCollection("fotografos");
 const fotografos = entries[0]!.data.fotografos
-  .slice()
-  .sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'));
+    .slice()
+    .sort((a, b) => a.nombre.localeCompare(b.nombre, "es"));
 
-const siteUrl = 'https://felinosdeargentina.org';
+const felinosEntries = await getCollection("felinos");
+const felinosByScientificName = new Map(
+    felinosEntries.map((f) => [f.data.scientific_name.toLowerCase(), f.data.slug])
+);
+
+function getSlug(scientificName: string): string | undefined {
+    return felinosByScientificName.get(scientificName.toLowerCase());
+}
+
+const siteUrl = "https://felinosdeargentina.org";
 const pageUrl = `${siteUrl}/fotografos/`;
 ---
 
 <Layout
-  title="Fotógrafos | Felinos de Argentina"
-  description="Fotógrafos que colaboraron con imágenes para Felinos de Argentina."
-  canonicalUrl={pageUrl}
+    title="Fotógrafos | Felinos de Argentina"
+    description="Fotógrafos que colaboraron con imágenes para Felinos de Argentina."
+    canonicalUrl={pageUrl}
 >
-  <section class="bg-base-900 py-20 text-white">
-    <div class="mx-auto max-w-7xl px-6">
-      <h1
-        class="font-display font-bold text-white"
-        style="font-size: var(--text-headline); line-height: var(--text-headline--line-height);"
-      >
-        Fotógrafos
-      </h1>
-      <p class="mt-4 max-w-xl text-base-400 leading-relaxed">
-        Agradecemos a los fotógrafos que hicieron posible este proyecto con su trabajo.
-      </p>
-    </div>
-  </section>
-
-  <section class="py-20 bg-white">
-    <div class="mx-auto max-w-7xl px-6">
-      <ul class="divide-y divide-base-100 list-none p-0 m-0">
-        {fotografos.map((f) => (
-          <li class="flex items-center justify-between gap-6 py-5">
-            <span class="font-medium text-base-900">{f.nombre}</span>
-            <a
-              href={f.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-1.5 text-sm text-accent-600 hover:text-accent-800 transition-colors"
+    <section class="bg-base-900 py-20 text-white">
+        <div class="mx-auto max-w-7xl px-6">
+            <h1
+                class="font-display font-bold text-white"
+                style="font-size: var(--text-headline); line-height: var(--text-headline--line-height);"
             >
-              {f.url.replace(/^https?:\/\//, '')}
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-              </svg>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </section>
+                Fotógrafos
+            </h1>
+            <p class="mt-4 max-w-xl text-base-400 leading-relaxed">
+                Agradecemos a los fotógrafos que hicieron posible este proyecto
+                con su trabajo.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="mx-auto max-w-7xl px-6">
+            <ul class="divide-y divide-base-100 list-none p-0 m-0">
+                {
+                    fotografos.map((f) => {
+                        const felinos = (f.felinos ?? [])
+                            .slice()
+                            .sort((a, b) => a.localeCompare(b, "es"));
+                        return (
+                            <li class="flex items-center justify-between gap-6 py-5">
+                                <div class="flex flex-col gap-0.5">
+                                    <span class="font-medium text-base-900">{f.nombre}</span>
+                                    {felinos.length > 0 && (
+                                        <p class="text-xs text-stone-400 tracking-wide">
+                                            {felinos.map((nombre, i) => {
+                                                const slug = getSlug(nombre);
+                                                return (
+                                                    <>
+                                                        {slug ? (
+                                                            <a
+                                                                href={`/felinos/${slug}/`}
+                                                                class="hover:text-stone-600 transition-colors"
+                                                            >
+                                                                {nombre}
+                                                            </a>
+                                                        ) : (
+                                                            <span>{nombre}</span>
+                                                        )}
+                                                        {i < felinos.length - 1 && ", "}
+                                                    </>
+                                                );
+                                            })}
+                                        </p>
+                                    )}
+                                </div>
+                                <div class="flex flex-wrap gap-2 justify-end">
+                                    {(f.contacto ?? []).map((c) => (
+                                        <a
+                                            href={c.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-stone-100 text-stone-600 hover:bg-stone-200 transition-colors duration-150"
+                                        >
+                                            {c.titulo}
+                                            <i class="ph ph-arrow-up-right" aria-hidden="true" />
+                                        </a>
+                                    ))}
+                                </div>
+                            </li>
+                        );
+                    })
+                }
+            </ul>
+        </div>
+    </section>
 </Layout>
