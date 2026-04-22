@@ -16,16 +16,16 @@ conservation_status_ar: "En Peligro Crítico"
 conservation_status_iucn: "Casi amenazado"
 
 stats:
-    weight: "70–90 kg (hasta 135 kg)"
+    weight: "50–100 kg"
     size:
-        - body: "150–170 cm"
-        - tail: "~80 cm"
-        - alzada:
+        - body: "100–185 cm"
+        - tail: "45-80 cm"
+        - alzada: "55-75 cm"
     diet: "Tapires, carpinchos, pecaríes, corzuelas, armadillos, yacarés, peces y aves"
     habitat: "Selvas tropicales y subtropicales, bosque chaqueño, esteros y pantanales"
-    habits:
-    activity:
-    generationTime:
+    habits: "Terrestre"
+    activity: "Todo el día"
+    generationTime: "7 años"
 
 sections:
     - id: "appearance"
@@ -61,7 +61,7 @@ sections:
 
           Su distribución geográfica abarca desde el sur de México hasta el extremo norte de Argentina, en forma discontinua. Hasta comienzos del siglo XX se extendía desde el sur de los Estados Unidos hasta el norte de la Patagonia argentina, pero actualmente ha desaparecido de amplias zonas, incluyendo los Estados Unidos, El Salvador, Uruguay y la mayor parte de Argentina.
 
-          Actualmente en Argentina su área de distribución se redujo a las provincias de Misiones, Salta, Jujuy, Santiago del Estero, Chaco y Formosa. Se estima que quedan menos de 250 individuos: unos 120-150 en las yungas, alrededor de 20 en la zona chaqueña y 70-90 en la selva misionera.
+          Actualmente en Argentina su área de distribución se redujo a las provincias de Misiones, Salta, Jujuy, Santiago del Estero, Chaco y Formosa. Se estima que quedan entre 200 y 300 individuos: unos 100-200 en las yungas, menos de 20 en la zona chaqueña y 50-80 en la selva paranaense.
 
           El Yaguareté se encuentra protegido en el Parque Nacional Baritú, Parque Nacional Calilegua, Parque Nacional Copo, Parque Nacional El Impenetrable, Parque Nacional Río Pilcomayo, Parque Nacional Iguazú y en numerosas reservas provinciales.
       map:

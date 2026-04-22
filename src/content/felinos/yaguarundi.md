@@ -16,16 +16,16 @@ conservation_status_ar: "Preocupación menor"
 conservation_status_iucn: "Preocupación menor"
 
 stats:
-    weight: "3–9 kg"
+    weight: "3–8 kg"
     size:
         - body: "43–83 cm"
         - tail: "28–60 cm"
         - alzada:
     diet: "Mamíferos pequeños y medianos, aves, reptiles, peces, insectos y frutos"
     habitat: "Ambientes variados: selvas, bosques chaqueños, montes, sabanas, pajonales y malezales"
-    habits:
-    activity:
-    generationTime:
+    habits: "Terrestre"
+    activity: "Diurno"
+    generationTime: "6 años"
 
 sections:
     - id: "appearance"
@@ -33,7 +33,7 @@ sections:
       content: |
           El Yaguarundí es el felino americano más diferente del resto; por su coloración uniforme sólo recuerda al puma pero es mucho menor. Su forma alargada con cabeza pequeña y patas cortas han contribuido a que en algunas regiones de Argentina se lo conozca como "gato hurón".
 
-          Mide unos 43 a 83 cm de largo (cabeza y cuerpo) más unos 28 a 60 cm de cola. Su altura es de unos 33 cm en promedio y su peso va de los 3 a 9 kg.
+          Mide unos 43 a 83 cm de largo (cabeza y cuerpo) más unos 28 a 60 cm de cola. Su altura es de unos 33 cm en promedio y su peso va de los 3 a 8 kg.
 
           Se caracteriza por presentar el cuerpo alargado, la cabeza achatada, orejas pequeñas y redondeadas y cola larga. El pelaje es corto y uniforme sin manchas. En Argentina presenta dos fases de coloración, una pardo rojiza y otra gris oscura o negra. Ambas fases pueden aparecer simultáneamente en una misma población e incluso en una misma camada. Generalmente en bosques húmedos sería más frecuente la variante oscura, mientras que en ambientes secos y abiertos predominan las variantes más claras.
 
@@ -82,18 +82,21 @@ sections:
       images: []
 
 threats:
-    - title: "Destrucción y fragmentación del hábitat"
-      icon: "tree"
-      description: "La pérdida de hábitat por agricultura a gran escala es la principal amenaza para el Yaguarundí."
-
     - title: "Caza ilegal"
       icon: "warning"
       description: "Se lo caza como represalia por predación sobre aves de corral."
 
-bibliography:
-    - "de Oliveira, T. et al. (2015). Herpailurus yagouaroundi. The IUCN Red List of Threatened Species."
-    - "Sunquist, M. & Sunquist, F. (2002). Wild Cats of the World. University of Chicago Press."
-    - "Pereira, J. & Aprile, G. Felinos de Sudamérica. FVSA / WCS / Traffic."
+    - title: "Depredación por perros"
+      icon: "dog"
+      description: "Los ataques por perros domésticos o asilvestrados."
+
+    - title: "Atropellamientos"
+      icon: "car"
+      description: "Los atropellamientos en rutas son una amenaza directa."
+
+    - title: "Destrucción y fragmentación del hábitat"
+      icon: "tree"
+      description: "La pérdida de hábitat por agricultura a gran escala."
 
 gallery: []
 ---

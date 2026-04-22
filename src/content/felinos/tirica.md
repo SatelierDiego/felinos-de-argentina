@@ -16,16 +16,16 @@ conservation_status_ar: "Vulnerable"
 conservation_status_iucn: "Vulnerable"
 
 stats:
-    weight: "1.5–3 kg"
+    weight: "2–4 kg"
     size:
         - body: "40–55 cm"
         - tail: "25–40 cm"
-        - alzada:
+        - alzada: "22 a 30 cm"
     diet: "Mamíferos pequeños (roedores, comadrejas), lagartijas, aves, huevos y anfibios"
     habitat: "Selvas y bosques tropicales y subtropicales; selva paranaense en Misiones"
-    habits:
-    activity:
-    generationTime:
+    habits: "Terrestre"
+    activity: "Todo el día"
+    generationTime: 6 años
 
 sections:
     - id: "appearance"
@@ -47,7 +47,7 @@ sections:
       content: |
           Se conoce muy poco sobre sus costumbres en estado silvestre.
 
-          Es solitario, nocturno-crepuscular, pero con una considerable cantidad de actividad diurnal. En algunas zonas de Brasil parece que es mucho más diurno; además es un buen trepador aunque prefiere estar en el suelo.
+          Es solitario, nocturno-crepuscular, pero con una considerable cantidad de actividad diurna. En algunas zonas de Brasil parece que es mucho más diurno; además es un buen trepador aunque prefiere estar en el suelo.
 
           Se alimenta de mamíferos pequeños como roedores y comadrejas, lagartijas, pájaros, huevos y anfibios.
 
@@ -57,7 +57,7 @@ sections:
     - id: "distribution"
       title: "Hábitat y distribución"
       content: |
-          Al Tirica se lo encuentra en selvas y bosques tropicales y subtropicales, desde el nivel del mar hasta los 4500 metros de altura. Desde Costa Rica hasta el sur de Brasil y norte de Argentina.
+          Al Tirica se lo encuentra en selvas y bosques tropicales y subtropicales, desde el nivel del mar hasta los 2.000 metros de altura. Desde el sur de Brasil, este de Paraguay, y norte de Argentina.
 
           En Argentina se lo encuentra en Misiones en las selvas del tipo paranaense, incluso en formaciones en galería, "capones" (isletas de selva alta en zonas de campo) y "capueras" (montes en recuperación sumamente tupidos y bastante bajos). Además habitaría la zona de yungas en su transición con la zona chaqueña, aunque sobre esta población del noroeste la documentación disponible y registros son sumamente escasos.
 
@@ -85,6 +85,10 @@ threats:
     - title: "Fragmentación y pérdida del hábitat"
       icon: "tree"
       description: "La principal amenaza para el Tirica es la pérdida del hábitat forestal por desmonte y transformación ambiental."
+
+    - title: "Atropellamiento en rutas"
+      icon: "car"
+      description: "Son frecuentemente atropellamientos en rutas y caminos."
 
     - title: "Caza ilegal"
       icon: "warning"

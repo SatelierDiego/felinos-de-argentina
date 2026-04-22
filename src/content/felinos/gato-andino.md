@@ -4,7 +4,7 @@ slug: "gato-andino"
 hero:
     title: "Gato Andino"
     subtitle: "Uno de los felinos más amenazados de América, habitante de los Andes áridos y extremos."
-    image: "../../assets/images/felinos/leopardus-jacobitus/leopardus-jacobitus-juan-reppucci-hero.jpg"
+    image: "../../assets/images/felinos/leopardus-jacobita/leopardus-jacobita-juan-reppucci-hero.jpg"
     alt: "Gato andino sobre rocas en ambiente de alta montaña"
 
 seo:
@@ -23,15 +23,15 @@ stats:
         - alzada: "30-40 cm"
     diet: "Roedores (chinchillones, pericotes), aves e insectos"
     habitat: "Puna y Altos Andes rocosos, entre 1000 y 5000 msnm"
-    habits: Terrestre
-    activity: Todo el día
-    generationTime: Desconocido
+    habits: "Terrestre"
+    activity: "Todo el día"
+    generationTime: "Desconocido"
 
 sections:
     - id: "appearance"
       title: "Tamaño y apariencia"
       content: |
-          El Gato Andino es un felino mediano, con un tamaño aproximado que dobla al del gato doméstico. Tiene un largo que oscila entre los 57 y los 65 cm a los que hay que sumar entre 42 y 48 cm correspondientes a la cola. Tiene un peso que va desde los 4 a los 8 kg.
+          El Gato Andino es un felino mediano, con un tamaño aproximado que dobla al del gato doméstico. Tiene un largo que oscila entre los 57 y los 65 cm a los que hay que sumar entre 42 y 48 cm correspondientes a la cola. Tiene un peso que va desde los 4 a los 6 kg.
 
           Presenta un pelaje muy largo y grueso, especialmente en lo dorsal, y un diseño que consiste en manchas color café amarillentas con forma variable de fajas, estrías o puntos sobre un fondo grisáceo o plomizo, que se disponen de manera vertical en ambos flancos del cuerpo, dando la apariencia de franjas continuas. La cola es muy larga –siendo un 70% del resto del cuerpo– gruesa y fajada con seis a nueve anillos oscuros que se ensanchan hacia la punta.
 
@@ -41,9 +41,9 @@ sections:
 
           Sus orejas son relativamente largas y el rinario es negro.
 
-          En su área de distribución habita también el Gato de los Pajonales (*Leopardus colocolo*), con el que puede ser confundido a simple vista, sin embargo, es posible distinguirlos por el rinario, menos coloreado en el Gato de los Pajonales, y la cola, más larga en el Gato andino.
+          En su área de distribución habita también el <a href="/felinos/gato-del.pajonal">Gato del Pajonal (*Leopardus colocolo*)</a>, con el que puede ser confundido a simple vista, sin embargo, es posible distinguirlos por el rinario, menos coloreado en el Gato de los Pajonales, y la cola, más larga en el Gato andino.
       images:
-          - src: "../../assets/images/felinos/leopardus-jacobitus/apariencia-1.jpg"
+          - src: "../../assets/images/felinos/leopardus-jacobita/apariencia-1.jpg"
             alt: "Gato andino mostrando su pelaje característico"
 
     - id: "behavior"
@@ -118,34 +118,34 @@ bibliography:
     - "Lucherini, M. & Merino, M.J. (2008). Perceptions of human–carnivore conflicts in the High Andes of Argentina. Mountain Research and Development, 28(1), 81–85."
 
 gallery:
-    - src: "../../assets/images/felinos/leopardus-jacobitus/leopardus-jacobitus-juan-reppucci-hero.jpg"
+    - src: "../../assets/images/felinos/leopardus-jacobita/leopardus-jacobita-juan-reppucci-hero.jpg"
       alt: "Gato andino sobre rocas en ambiente de alta montaña"
       autor: "Juan Reppucci"
-    - src: "../../assets/images/felinos/leopardus-jacobitus/apariencia-1.jpg"
+    - src: "../../assets/images/felinos/leopardus-jacobita/apariencia-1.jpg"
       alt: "Gato andino mostrando su pelaje característico"
       autor: "Juan Reppucci"
-    - src: "../../assets/images/felinos/leopardus-jacobitus/leopardus-jacobitus-juan-reppucci-hero.jpg"
+    - src: "../../assets/images/felinos/leopardus-jacobita/leopardus-jacobita-juan-reppucci-hero.jpg"
       alt: "Gato andino en su hábitat natural"
       autor: "Juan Reppucci"
-    - src: "../../assets/images/felinos/leopardus-jacobitus/apariencia-1.jpg"
+    - src: "../../assets/images/felinos/leopardus-jacobita/apariencia-1.jpg"
       alt: "Gato andino de frente"
       autor: "Juan Reppucci"
-    - src: "../../assets/images/felinos/leopardus-jacobitus/leopardus-jacobitus-juan-reppucci-hero.jpg"
+    - src: "../../assets/images/felinos/leopardus-jacobita/leopardus-jacobita-juan-reppucci-hero.jpg"
       alt: "Gato andino en la puna"
       autor: "Juan Reppucci"
-    - src: "../../assets/images/felinos/leopardus-jacobitus/apariencia-1.jpg"
+    - src: "../../assets/images/felinos/leopardus-jacobita/apariencia-1.jpg"
       alt: "Gato andino entre rocas"
       autor: "Juan Reppucci"
-    - src: "../../assets/images/felinos/leopardus-jacobitus/leopardus-jacobitus-juan-reppucci-hero.jpg"
+    - src: "../../assets/images/felinos/leopardus-jacobita/leopardus-jacobita-juan-reppucci-hero.jpg"
       alt: "Gato andino descansando"
       autor: "Juan Reppucci"
-    - src: "../../assets/images/felinos/leopardus-jacobitus/apariencia-1.jpg"
+    - src: "../../assets/images/felinos/leopardus-jacobita/apariencia-1.jpg"
       alt: "Gato andino en alerta"
       autor: "Juan Reppucci"
-    - src: "../../assets/images/felinos/leopardus-jacobitus/leopardus-jacobitus-juan-reppucci-hero.jpg"
+    - src: "../../assets/images/felinos/leopardus-jacobita/leopardus-jacobita-juan-reppucci-hero.jpg"
       alt: "Gato andino al amanecer"
       autor: "Juan Reppucci"
-    - src: "../../assets/images/felinos/leopardus-jacobitus/apariencia-1.jpg"
+    - src: "../../assets/images/felinos/leopardus-jacobita/apariencia-1.jpg"
       alt: "Gato andino en ambiente rocoso"
       autor: "Juan Reppucci"
 ---

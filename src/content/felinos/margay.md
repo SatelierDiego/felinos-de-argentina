@@ -16,15 +16,16 @@ conservation_status_ar: "Vulnerable"
 conservation_status_iucn: "Casi amenazado"
 
 stats:
-    weight: "2–5 kg"
+    weight: "1–5 kg"
     size:
-        - body: "90–120 cm"
-        - alzada:
+        - body: "45–80 cm"
+        - tail: "30–50 cm"
+        - alzada: "35-40 cm"
     diet: "Roedores, marsupiales arborícolas, aves, lagartos, peces y excepcionalmente pequeños monos"
     habitat: "Selvas húmedas paranaenses y de yungas; siempre en marco forestal"
-    habits:
-    activity:
-    generationTime:
+    habits: Terrestre
+    activity: "Nocturno / Crepuscular"
+    generationTime: "6 años"
 
 sections:
     - id: "appearance"
@@ -75,7 +76,7 @@ sections:
 
           La desaparición, degradación y fragmentación de su hábitat es, al igual que en la mayoría de las especies de animales silvestres, su principal amenaza. El Margay es un felino raro en toda su área de distribución, y la presión humana, sobre todo a través de los desmontes para el uso agrícola del suelo, genera una tendencia decreciente en sus poblaciones.
 
-          El Ocelote (*Leopardus pardalis*), más abundante y de mayor tamaño, parece generar —ya sea por competencia de nicho ecológico o peleas interespecíficas— una presión negativa sobre sus poblaciones, factor acrecentado por la fragmentación de su hábitat.
+          El <a href="felinos/ocelote">Ocelote (*Leopardus pardalis*)</a>, más abundante y de mayor tamaño, parece generar —ya sea por competencia de nicho ecológico o peleas interespecíficas— una presión negativa sobre sus poblaciones, factor acrecentado por la fragmentación de su hábitat.
       images: []
 
 threats:

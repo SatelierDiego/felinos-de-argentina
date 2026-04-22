@@ -8,10 +8,10 @@ hero:
     alt: "Gato del pajonal entre pajonales"
 
 seo:
-    title: "Gato del Pajonal (Leopardus colocola) | Felinos de Argentina"
+    title: "Gato del Pajonal (Leopardus colocolo) | Felinos de Argentina"
     description: "Información sobre el gato del pajonal: características, hábitat, comportamiento y amenazas. Un felino críptico de los Andes y las planicies sudamericanas."
 
-scientific_name: "Leopardus colocola"
+scientific_name: "Leopardus colocolo"
 conservation_status_ar: "Vulnerable"
 conservation_status_iucn: "Casi Amenazado"
 
@@ -20,12 +20,12 @@ stats:
     size:
         - body: "53–65 cm"
         - tail: "23–30 cm"
-        - alzada:
+        - alzada: "28 a 35 cm"
     diet: "Aves terrestres, roedores medianos (cuises, chinchillones, vizcachas) y huevos"
     habitat: "Pastizales altos, matorrales secos, puna, monte, espinal y estepa patagónica"
-    habits: Terrestre
-    activity: Nocturno
-    generationTime: 7 años
+    habits: "Terrestre"
+    activity: "Nocturno y crepuscular"
+    generationTime: "7 años"
 
 sections:
     - id: "appearance"
@@ -33,7 +33,7 @@ sections:
       content: |
           El Gato del Pajonal es un felino de cabeza redonda, cuerpo robusto y patas cortas, de pelaje largo y con las orejas en punta, lo que recuerda vagamente al lince.
 
-          Es de tamaño pequeño, midiendo entre 53 y 65 cm, a lo que hay que agregar la cola, con unos 23 a 30 cm. Tiene un peso aproximado de 2 a 4 kg.
+          Es de tamaño pequeño, midiendo entre 53 y 65 cm, a lo que hay que agregar la cola, con unos 23 a 30 cm. Tiene un peso aproximado de 2 a 5 kg.
 
           Presenta varias diferencias geográficas, aunque siempre conservando su característico largo pelaje. Su coloración tiene como rasgo fundamental que las patas delanteras están rayadas transversalmente de pardo oscuro a negro. Por lo común el dorso es grisáceo y las patas amarillentas, anaranjadas o acaneladas, pudiendo la cola ser de color uniforme o tener anillos incompletos o difusos. La parte trasera de las orejas es usualmente gris o negra. El rinario por lo general es rosado.
 
@@ -97,11 +97,11 @@ threats:
       description: "Se lo persigue activamente con perros o cepos por considerarlo dañino para las aves de corral."
 
     - title: "Atropellamientos"
-      icon: "warning"
+      icon: "car"
       description: "Los atropellamientos en rutas son una causa de mortalidad directa, especialmente en zonas de alta circulación."
 
 bibliography:
-    - "Napolitano, C. et al. (2015). Leopardus colocola. The IUCN Red List of Threatened Species."
+    - "Napolitano, C. et al. (2015). Leopardus colocolo. The IUCN Red List of Threatened Species."
     - "Pereira, J. & Aprile, G. Felinos de Sudamérica. FVSA / WCS / Traffic."
     - "García-Perea, R. (1994). The pampas cat group (genus Lynchailurus Severtzov, 1858): a systematic and biogeographic review. American Museum Novitates."
 

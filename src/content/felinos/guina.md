@@ -20,12 +20,12 @@ stats:
     size:
         - body: "39–48 cm"
         - tail: "20–25 cm"
-        - alzada:
+        - alzada: "20 a 25 cm"
     diet: "Roedores (ratón oliváceo, laucha de pies negros, monito de monte), aves, reptiles e invertebrados"
     habitat: "Bosques andinos de Nothofagus y selva valdiviana con sotobosque denso"
-    habits:
-    activity:
-    generationTime:
+    habits: "Terrestre"
+    activity: "Nocturno / Crepuscular"
+    generationTime: "6 años"
 
 sections:
     - id: "appearance"
@@ -87,6 +87,10 @@ threats:
     - title: "Pérdida y fragmentación del hábitat"
       icon: "tree"
       description: "La principal amenaza: destrucción de los bosques australes de Nothofagus por tala y reemplazo por forestaciones exóticas."
+
+    - title: "Fragmentación de poblaciones"
+      icon: "map"
+      description: "Está ausente en fragmentos de bosque desconectados, por lo que los corredores son importantes para su conservación."
 
     - title: "Caza como represalia"
       icon: "warning"

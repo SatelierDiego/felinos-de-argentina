@@ -4,7 +4,7 @@ slug: "ocelote"
 hero:
     title: "Ocelote"
     subtitle: "El felino manchado más grande del norte argentino, símbolo de los bosques subtropicales y el Chaco."
-    image: "../../assets/images/felinos/leopardus-jacobitus/leopardus-jacobitus-juan-reppucci-hero.jpg"
+    image: "../../assets/images/felinos/leopardus-jacobita/leopardus-jacobita-juan-reppucci-hero.jpg"
     alt: "Ocelote entre la vegetación del bosque chaqueño"
 
 seo:
@@ -16,22 +16,22 @@ conservation_status_ar: "Vulnerable"
 conservation_status_iucn: "Preocupación menor"
 
 stats:
-    weight: "8–16 kg"
+    weight: "7–16 kg"
     size:
         - body: "115–145 cm"
         - tail: "40–45 cm"
         - alzada:
     diet: "Roedores, aves, reptiles, peces, armadillos, corzuelas y pecaríes"
     habitat: "Selvas tupidas, Chaco Oriental, Yungas y ambientes con densa cobertura vegetal"
-    habits:
-    activity:
-    generationTime:
+    habits: "Terrestre"
+    activity: "Todo el día"
+    generationTime: "8 años"
 
 sections:
     - id: "appearance"
       title: "Tamaño y apariencia"
       content: |
-          El Ocelote es un felino de tamaño intermedio entre el Tirica (*Leopardus guttulus*) y el Puma (*Puma concolor*). Mide entre 115 y 145 cm de largo total, de los cuales 40 a 45 cm corresponden a la cola. El peso oscila entre los 8 y los 16 kg, siendo el macho más grande y pesado que la hembra.
+          El Ocelote es un felino de tamaño intermedio entre el Tirica (*Leopardus guttulus*) y el Puma (*Puma concolor*). Mide entre 115 y 145 cm de largo total, de los cuales 40 a 45 cm corresponden a la cola. El peso oscila entre los 7 y los 16 kg, siendo el macho más grande y pesado que la hembra.
 
           En el dorso y las partes superiores ostenta un fondo bayo mientras que en las partes inferiores el fondo es blanco, y sobre ambos sectores se disponen ocelos o manchas alargadas de borde negro que encierran un color pardo-ocráceo y que suelen formar bandas en los flancos. Dos líneas recorren desde sus orejas hasta la parte superior de los ojos, y otras dos atraviesan las mejillas. La cola se halla por lo general rodeada de anillos negros. Sus muslos, patas y frente están salpicados por manchas irregulares.
 
@@ -51,7 +51,7 @@ sections:
 
           Parece tener dos técnicas de caza: perseguir a su presa muy lenta y sigilosamente de modo activo, o simplemente sentarse a esperar entre 30 a 60 minutos para luego desplazarse a otra área y recomenzar el acecho.
 
-          Su época de cría abarca desde octubre a enero, y da a luz entre 1 y 4 cachorros. El período de gestación aproximado es de 70 días. Como todos los gatos necesita de grandes territorios: estudios indican que una población de 500 ocelotes tendría un requerimiento de territorio de poco más de 600.000 hectáreas. En el Parque Nacional Iguazú se estima una densidad de entre 13 y 20 individuos por cada 100 km². Su longevidad máxima en cautiverio fue de 20 años.
+          Su época de cría abarca desde octubre a enero, y da a luz entre 1 y 4 cachorros. El período de gestación aproximado es de 70 a 85 días. Como todos los gatos necesita de grandes territorios: estudios indican que una población de 500 ocelotes tendría un requerimiento de territorio de poco más de 600.000 hectáreas. En el Parque Nacional Iguazú se estima una densidad de entre 5 y 17 individuos por cada 100 km². Su longevidad máxima en cautiverio fue de 20 años.
       images: []
 
     - id: "distribution"
@@ -91,7 +91,7 @@ threats:
       description: "Persiste la caza ilegal para comercializar su piel y la caza por ataques a animales de granja."
 
     - title: "Tráfico para mascotismo"
-      icon: "warning"
+      icon: "cage"
       description: "El tráfico ilegal de ejemplares vivos para mascotas es otra de las amenazas que enfrenta el Ocelote."
 
 bibliography:

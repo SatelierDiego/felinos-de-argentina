@@ -16,16 +16,16 @@ conservation_status_ar: "Preocupación menor"
 conservation_status_iucn: "Preocupación menor"
 
 stats:
-    weight: "34–105 kg (excepcionalmente 120 kg)"
+    weight: "30–80 kg"
     size:
         - body: "85–150 cm"
         - tail: "45–85 cm"
-        - alzada:
+        - alzada: "60-80 cm"
     diet: "Ungulados medianos y grandes, también aves, roedores e insectos según disponibilidad"
     habitat: "Todos los ambientes: estepa, bosque, selva, monte, yungas y alta montaña hasta 5000 msnm"
-    habits:
-    activity:
-    generationTime:
+    habits: "Terrestre"
+    activity: "Todo el día"
+    generationTime: "7 años"
 
 sections:
     - id: "appearance"
@@ -47,7 +47,7 @@ sections:
 
           De movimientos rápidos y silenciosos, es un corredor veloz, muy poderoso en el salto y un hábil nadador; trepa a los árboles con agilidad, pudiendo subir o bajar de ellos con un solo salto de más de 10 metros. No puede rugir y al igual que los gatos domésticos vocaliza silbidos agudos, gruñidos y ronroneos.
 
-          Su territorio varía entre 56 y 375 km², de acuerdo a la disponibilidad de presas. El territorio del macho es mayor y generalmente se superpone con el área de acción de varias hembras, marcado por pequeñas pilas de hojas y cortezas que arranca y apila cuando se afila las garras, rociadas con orina y excrementos.
+          Su territorio en Argentina varía entre 25 y 210 km², llegando a ser de 375 km² en américa del norte, de acuerdo a la disponibilidad de presas. El territorio del macho es mayor y generalmente se superpone con el área de acción de varias hembras, marcado por pequeñas pilas de hojas y cortezas que arranca y apila cuando se afila las garras, rociadas con orina y excrementos.
 
           Consume una amplia variedad de presas siendo considerado un generalista: insectos, reptiles, aves y mamíferos de todos los tamaños. En Argentina incluye mulitas, lagartijas, liebres, monos, pecaríes, corzuelas, ñandúes, guanacos, vicuñas, huemules y animales domésticos. Puede recorrer largas distancias en búsqueda de alimento y captura sus presas mediante el acecho o tras cortas persecuciones.
 

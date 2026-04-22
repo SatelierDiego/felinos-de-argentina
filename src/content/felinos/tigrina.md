@@ -16,38 +16,38 @@ conservation_status_ar: "Vulnerable"
 conservation_status_iucn: "Vulnerable"
 
 stats:
-    weight: "1.5–3 kg"
+    weight: "2–3 kg"
     size:
         - body: "38–59 cm"
         - tail: "20–42 cm"
-        - alzada:
+        - alzada: "20 a 30 cm"
     diet: "Roedores, aves, lagartijas, ranas e invertebrados"
-    habitat: "Selva pedemontana y bosque montano de las Yungas (600–2.500 msnm)"
-    habits:
-    activity:
-    generationTime:
+    habitat: "Selva pedemontana y bosque montano de las Yungas"
+    habits: "Terrestre"
+    activity: "Nocturno / Crepuscular"
+    generationTime: "5 años"
 
 sections:
     - id: "appearance"
       title: "Tamaño y apariencia"
       content: |
-          El Tigrina es uno de los felinos más pequeños de Argentina, con un peso de entre 1,5 y 3 kg. Su cuerpo compacto y su cola relativamente larga le otorgan gran agilidad tanto en el suelo como en la vegetación.
+          El Tigrina es uno de los felinos más pequeños de Argentina, con un peso de entre 2 y 3 kg. Su cuerpo compacto y su cola relativamente larga le otorgan gran agilidad tanto en el suelo como en la vegetación.
 
           Su pelaje presenta un fondo ocre amarillento con manchas negras de forma variable, dispuestas en rosetas abiertas o manchas simples sobre el cuerpo y las extremidades. La cola muestra anillos oscuros bien definidos. En algunas poblaciones se registran individuos melánicos.
 
-          Es morfológicamente muy similar al Gato Tigre del Sur (*Leopardus guttulus*), del que fue separado taxonómicamente en 2013 mediante análisis moleculares. En la práctica, la distribución geográfica —las Yungas del noroeste para *L. tigrinus* y Misiones para *L. guttulus*— es el criterio más útil para diferenciarlos en Argentina.
+          Es morfológicamente muy similar al <a href="/felinos/tirica">Tirica (*Leopardus guttulus*)</a> , del que fue separado taxonómicamente en 2013 mediante análisis moleculares. En la práctica, la distribución geográfica —las Yungas del noroeste para *L. tigrinus* y Misiones para *L. guttulus*— es el criterio más útil para diferenciarlos en Argentina.
       images: []
 
     - id: "behavior"
       title: "Comportamiento"
       content: |
-          El Tigrina lleva una vida solitaria y sus hábitos son principalmente nocturnos y crepusculares. Es una especie terrestre con capacidad escansorial, es decir, puede trepar con destreza cuando las circunstancias lo requieren.
+          El Tigrina lleva una vida solitaria y sus hábitos son principalmente nocturnos y crepusculares. Es una especie terrestre con capacidad de trepar cuando las circunstancias lo requieren.
 
           Se alimenta de presas pequeñas: roedores, aves, lagartijas, ranas e invertebrados. Su dieta variada refleja un comportamiento oportunista adaptado a los recursos disponibles en cada ambiente.
 
-          En zonas de coexistencia con otras especies de félidos, se han descrito mecanismos de segregación espacial y temporal del nicho. Particularmente, se ha observado que sus densidades pueden ser mayores donde el ocelote (*Leopardus pardalis*) es escaso o está ausente.
+          Se ha observado que sus densidades pueden ser mayores donde el ocelote (*Leopardus pardalis*) es escaso o está ausente.
 
-          Los datos reproductivos provienen en gran parte de individuos en cautividad. La gestación dura entre 55 y 76 días, el ciclo es poliéstrico sin estacionalidad marcada y las camadas son de una cría, raramente dos o tres.
+          Los datos reproductivos provienen en gran parte de individuos en cautividad. La gestación dura entre 55 y 76 días, sin estacionalidad marcada y las camadas son de una cría, raramente dos o tres.
       images: []
 
     - id: "distribution"
@@ -55,7 +55,7 @@ sections:
       content: |
           En Argentina, el Tigrina es exclusivo de la ecorregión de las Yungas. Su presencia está confirmada en las provincias de Jujuy y Salta, ocupando los pisos de selva pedemontana, selva montana y bosque montano entre los 600 y los 2.500 metros sobre el nivel del mar. No existen registros confirmados en Tucumán ni en Catamarca.
 
-          La selva pedemontana, que concentraba gran parte de su hábitat potencial, fue transformada en un 90 % por la agricultura intensiva; se estima que el hábitat potencial total de la especie se redujo un 48 %. El área de ocupación actual es muy reducida —menos de 500 km²—, y es el félido menos frecuentemente registrado en los relevamientos de la región.
+          La selva pedemontana, que concentraba gran parte de su hábitat potencial, fue transformada en un 90 % por la agricultura intensiva; se estima que el hábitat potencial total de la especie se redujo un 48 %. El área de ocupación actual es muy reducida —menos de 500 km²—, y es el felino menos frecuentemente registrado en los relevamientos de la región.
 
           Se lo encuentra tanto dentro como fuera de áreas protegidas, con registros ocasionales en bordes de bosque y ambientes ribereños, aunque estos entornos son considerados subóptimos o de tránsito. No existen registros en cultivos ni en áreas de uso antrópico intensivo.
       map:
@@ -68,7 +68,7 @@ sections:
     - id: "situation"
       title: "Situación"
       content: |
-          El Tigrina está categorizado como Vulnerable (VU) tanto a nivel nacional (SAREM 2019, criterio A2c) como a nivel global (UICN 2016). En evaluaciones nacionales previas fue considerado Amenazado bajo la Res. SAyDS 1030/04.
+          El Tigrina está categorizado como Vulnerable (VU) tanto a nivel nacional (SAREM 2019, criterio A2c) como a nivel global (UICN 2016). En evaluaciones nacionales previas fue considerado Amenazado.
 
           Se estima que la población argentina se redujo un 30 % en las últimas tres generaciones —aproximadamente 15 años— a causa de la pérdida, degradación y fragmentación del hábitat. La especie muestra una tendencia poblacional decreciente, aunque no existen programas de monitoreo específicos en el noroeste argentino.
 
@@ -90,9 +90,13 @@ threats:
       icon: "warning"
       description: "La especie es cazada por represalia ante la depredación de aves de corral y, en menor medida, por comercio ilegal de pieles y mascotas."
 
-    - title: "Depredación por perros y atropellamientos"
-      icon: "warning"
-      description: "La presencia de perros domésticos en zonas rurales y la infraestructura vial generan mortalidad directa y representan amenazas crecientes."
+    - title: "Depredación por perros"
+      icon: "dog"
+      description: "La presencia de perros domésticos en zonas rurales genera mortalidad directa."
+
+    - title: "Atropellamientos"
+      icon: "car"
+      description: "Los atropellamientos en rutas y caminos causan un importante impacto en las poblaciones."
 
 bibliography:
     - "Perovic, P.G. et al. (2019). Leopardus tigrinus. En: SAyDS–SAREM (eds.) Categorización 2019 de los mamíferos de Argentina según su riesgo de extinción. Lista Roja de los mamíferos de Argentina."

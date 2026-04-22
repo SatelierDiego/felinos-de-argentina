@@ -16,16 +16,16 @@ conservation_status_ar: "Preocupación menor"
 conservation_status_iucn: "Preocupación menor"
 
 stats:
-    weight: "2–6 kg"
+    weight: "2–8 kg"
     size:
         - body: "42–66 cm"
         - tail: "24–36 cm"
-        - alzada:
+        - alzada: "20 a 35 cm"
     diet: "Pequeños mamíferos, aves, reptiles, anfibios y peces"
     habitat: "Ambientes muy variados: sabanas, montes, selvas en galería, desde el nivel del mar hasta 3300 msnm"
-    habits:
-    activity:
-    generationTime:
+    habits: "Terrestre"
+    activity: "Todo el día"
+    generationTime: "8 años"
 
 sections:
     - id: "appearance"
@@ -51,9 +51,9 @@ sections:
 
           Se alimenta de pequeños mamíferos, aves, reptiles, anfibios y peces.
 
-          El área de acción de las hembras es de unos 3,5 km², mientras que los machos tienen un territorio 3 veces mayor, que marcan con orina y excrementos.
+          El área de acción es de entre 0,2 y 5,5 km² según la zona, que marcan con orina y excrementos.
 
-          Las hembras dan a luz generalmente en una cueva o en un hueco luego de una gestación de 74 a 76 días; suelen tener una camada anual de 1 a 4 crías, alcanzando la madurez sexual al año y medio o dos años.
+          Las hembras dan a luz generalmente en una cueva o en un hueco luego de una gestación de 66 a 78 días; suelen tener una camada anual de 1 a 4 crías, alcanzando la madurez sexual al año y medio o dos años.
 
           El Gato Montés puede llegar a vivir hasta los 14 o 15 años en estado silvestre y unos 21 años en cautiverio.
       images: []
@@ -90,16 +90,16 @@ threats:
       icon: "warning"
       description: "Se lo sigue cazando ilegalmente por su piel y, sobre todo, en represalia por depredación sobre aves de corral."
 
+    - title: "Atropellamientos"
+      icon: "car"
+      description: "Los atropellamientos en rutas y caminos son una causa de mortalidad directa y creciente."
+
     - title: "Destrucción y fragmentación del hábitat"
       icon: "tree"
       description: "El desmonte y la expansión agropecuaria reducen y fragmentan los ambientes naturales de la especie."
 
-    - title: "Atropellamientos"
-      icon: "warning"
-      description: "Los atropellamientos en rutas y caminos son una causa de mortalidad directa y creciente."
-
-    - title: "Depredación por perros domésticos"
-      icon: "warning"
+    - title: "Depredación por perros"
+      icon: "dog"
       description: "Los perros domésticos y asilvestrados representan una amenaza directa para sus poblaciones."
 
 bibliography:
