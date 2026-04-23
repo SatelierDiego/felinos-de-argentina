@@ -4,7 +4,7 @@ slug: "ocelote"
 hero:
     title: "Ocelote"
     subtitle: "El felino manchado más grande del norte argentino, símbolo de los bosques subtropicales y el Chaco."
-    image: "../../assets/images/felinos/leopardus-jacobita/leopardus-jacobita-juan-reppucci-hero.jpg"
+    image: "/src/assets/images/headshots/leopardus-pardalis.jpg"
     alt: "Ocelote entre la vegetación del bosque chaqueño"
 
 seo:

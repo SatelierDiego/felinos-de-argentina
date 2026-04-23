@@ -4,7 +4,7 @@ slug: "gato-montes"
 hero:
     title: "Gato Montés"
     subtitle: "El felino más distribuido de Argentina, presente desde la Patagonia hasta el norte subtropical."
-    image: "../../assets/images/felinos/leopardus-jacobita/leopardus-jacobita-juan-reppucci-hero.jpg"
+    image: "/src/assets/images/headshots/leopardus-geoffroyi.jpg"
     alt: "Gato montés entre la vegetación"
 
 seo:

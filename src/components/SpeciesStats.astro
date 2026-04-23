@@ -1,282 +1,211 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+type SizeEntry = { body?: string; tail?: string; alzada?: string | null };
+
 interface Stats {
-    weight: string;
-    size: Array<{ body?: string; tail?: string; alzada?: string }>;
-    diet: string;
-    habitat: string;
-    activity?: string;
-    habits?: string;
-    generationTime?: string;
+	silouette?: ImageMetadata;
+	weight: string;
+	size: SizeEntry[];
+	diet: string;
+	habitat: string;
+	activity?: string | null;
+	habits?: string | null;
+	generationTime?: string | null;
 }
 
 interface Props {
-    scientificName: string;
-    commonName: string;
-    conservationStatusIucn: string;
-    conservationStatusAr: string;
-    stats: Stats;
+	scientificName: string;
+	commonName: string;
+	conservationStatusIucn: string;
+	conservationStatusAr: string;
+	stats: Stats;
 }
 
 const {
-    scientificName,
-    commonName,
-    conservationStatusIucn,
-    conservationStatusAr,
-    stats,
+	scientificName,
+	commonName,
+	conservationStatusIucn,
+	conservationStatusAr,
+	stats,
 } = Astro.props;
 
 const iucnBadge: Record<string, { dot: string; label: string }> = {
-    "En peligro crítico": { dot: "bg-red-500", label: "CR" },
-    "En peligro": { dot: "bg-red-400", label: "EN" },
-    "En Peligro": { dot: "bg-red-400", label: "EN" },
-    Vulnerable: { dot: "bg-amber-400", label: "VU" },
-    "Casi amenazado": { dot: "bg-yellow-300", label: "NT" },
-    "Preocupación menor": { dot: "bg-forest-400", label: "LC" },
+	"En peligro crítico": { dot: "bg-red-500", label: "CR" },
+	"En peligro": { dot: "bg-red-400", label: "EN" },
+	"En Peligro": { dot: "bg-red-400", label: "EN" },
+	Vulnerable: { dot: "bg-amber-400", label: "VU" },
+	"Casi amenazado": { dot: "bg-yellow-300", label: "NT" },
+	"Preocupación menor": { dot: "bg-forest-400", label: "LC" },
 };
 
 const iucn = iucnBadge[conservationStatusIucn] ?? {
-    dot: "bg-stone-400",
-    label: "—",
+	dot: "bg-stone-400",
+	label: "—",
 };
 const ar = iucnBadge[conservationStatusAr] ?? {
-    dot: "bg-stone-400",
-    label: "—",
+	dot: "bg-stone-400",
+	label: "—",
 };
 ---
 
-<section class="bg-highlight-900 text-white px-8 py-6">
-    <article class="mx-auto max-w-5xl flex gap-5">
-        <!-- Columna izquierda: 1fr -->
-        <div
-            class="w-1/4 shrink-0 flex flex-col gap-4 border-r border-stone-800 pr-6"
-        >
-            <div>
-                <h1
-                    class="font-display font-bold text-xl text-white leading-tight"
-                >
-                    {commonName}
-                </h1>
-                <p class="text-sm text-stone-500 italic">{scientificName}</p>
-            </div>
+<section class="bg-accent-950 text-white px-8 py-6">
+	<article class="mx-auto max-w-5xl">
+		<div>
+			<h1 class="font-display font-bold text-xl text-stone-100 leading-tight">
+				{commonName}
+			</h1>
+			<p class="text-sm text-stone-300 italic">{scientificName}</p>
+		</div>
+		<div class="flex gap-5">
+			<div class="w-1/4 shrink-0 flex flex-col gap-4 border-r border-stone-800 pr-6">
+				{stats.silouette && (
+					<Image
+						src={stats.silouette}
+						alt={"silueta de " + commonName}
+						width={250}
+						height={250}
+						class="mx-auto"
+						loading="lazy"
+					/>
+				)}
 
-            <svg
-                viewBox="0 0 160 90"
-                class="w-full h-auto text-stone-700"
-                fill="currentColor"
-                aria-hidden="true"
-            >
-                <ellipse cx="80" cy="54" rx="42" ry="20"></ellipse>
-                <circle cx="119" cy="38" r="16"></circle>
-                <polygon points="110,25 114,12 120,25"></polygon>
-                <polygon points="118,25 124,12 129,25"></polygon>
-                <ellipse cx="133" cy="42" rx="7" ry="5"></ellipse>
-                <path
-                    d="M38,52 Q18,42 10,28 Q6,20 12,16 Q17,13 20,18 Q16,26 26,36 Q38,46 50,54 Z"
-                ></path>
-                <rect x="112" y="70" width="8" height="18" rx="3"></rect>
-                <rect x="124" y="72" width="8" height="16" rx="3"></rect>
-                <rect x="60" y="70" width="8" height="18" rx="3"></rect>
-                <rect x="72" y="72" width="8" height="16" rx="3"></rect>
-            </svg>
+				<div>
+					<h2 class="text-xs font-bold uppercase tracking-[0.18em] text-stone-500 mb-0.5">
+						Peso
+					</h2>
+					<p class="font-display font-bold text-sm text-white leading-none">
+						{stats.weight}
+					</p>
+				</div>
+				<div class="flex gap-4">
+					{stats.size.map((s) => (
+						<>
+							{s.body && (
+								<div>
+									<h2 class="text-xs font-bold uppercase tracking-[0.18em] text-stone-500 mb-0.5">
+										Cuerpo
+									</h2>
+									<p class="font-display font-bold text-sm text-white leading-none">
+										{s.body}
+									</p>
+								</div>
+							)}
+							{s.tail && (
+								<div>
+									<h2 class="text-xs font-bold uppercase tracking-[0.18em] text-stone-500 mb-0.5">
+										Cola
+									</h2>
+									<p class="font-display font-bold text-sm text-white leading-none">
+										{s.tail}
+									</p>
+								</div>
+							)}
+							{s.alzada && (
+								<div>
+									<h2 class="text-xs font-bold uppercase tracking-[0.18em] text-stone-500 mb-0.5">
+										Alzada
+									</h2>
+									<p class="font-display font-bold text-sm text-white leading-none">
+										{s.alzada}
+									</p>
+								</div>
+							)}
+						</>
+					))}
+				</div>
+			</div>
 
-            <div>
-                <h2
-                    class="text-xs font-bold uppercase tracking-[0.18em] text-stone-500 mb-0.5"
-                >
-                    Peso
-                </h2>
-                <p
-                    class="font-display font-bold text-sm text-white leading-none"
-                >
-                    {stats.weight}
-                </p>
-            </div>
-            <div class="flex gap-4">
-                {
-                    stats.size.map((s) => (
-                        <>
-                            {s.body && (
-                                <div>
-                                    <h2 class="text-xs font-bold uppercase tracking-[0.18em] text-stone-500 mb-0.5">
-                                        Cuerpo
-                                    </h2>
-                                    <p class="font-display font-bold text-sm text-white leading-none">
-                                        {s.body}
-                                    </p>
-                                </div>
-                            )}
-                            {s.tail && (
-                                <div>
-                                    <h2 class="text-xs font-bold uppercase tracking-[0.18em] text-stone-500 mb-0.5">
-                                        Cola
-                                    </h2>
-                                    <p class="font-display font-bold text-sm text-white leading-none">
-                                        {s.tail}
-                                    </p>
-                                </div>
-                            )}
-                            {s.alzada && (
-                                <div>
-                                    <h2 class="text-xs font-bold uppercase tracking-[0.18em] text-stone-500 mb-0.5">
-                                        Alzada
-                                    </h2>
-                                    <p class="font-display font-bold text-sm text-white leading-none">
-                                        {s.alzada}
-                                    </p>
-                                </div>
-                            )}
-                        </>
-                    ))
-                }
-            </div>
-        </div>
+			<div class="flex-1 flex flex-col gap-5">
+				<div class="flex flex-col gap-2">
+					<h2 class="text-xs font-bold uppercase tracking-[0.18em] text-stone-500">
+						Estado de conservación
+					</h2>
+					<div class="flex gap-6">
+						<div>
+							<h3 class="text-xs font-bold uppercase tracking-[0.18em] text-stone-600 mb-1">
+								Argentina
+							</h3>
+							<div class="flex items-center gap-1.5 mb-0.5">
+								<span class:list={["h-2 w-2 rounded-full shrink-0", ar.dot]}></span>
+								<span class="font-display font-bold text-lg text-white leading-none">
+									{ar.label}
+								</span>
+							</div>
+							<p class="text-xs text-stone-400 leading-snug">{conservationStatusAr}</p>
+						</div>
+						<div>
+							<h3 class="text-xs font-bold uppercase tracking-[0.18em] text-stone-600 mb-1">
+								IUCN
+							</h3>
+							<div class="flex items-center gap-1.5 mb-0.5">
+								<span class:list={["h-2 w-2 rounded-full shrink-0", iucn.dot]}></span>
+								<span class="font-display font-bold text-lg text-white leading-none">
+									{iucn.label}
+								</span>
+							</div>
+							<p class="text-xs text-stone-400 leading-snug">{conservationStatusIucn}</p>
+						</div>
+					</div>
+				</div>
 
-        <!-- Columna derecha: 3fr -->
-        <div class="flex-1 flex flex-col gap-5">
-            <!-- Estado de conservación -->
-            <div class="flex flex-col gap-2">
-                <h2
-                    class="text-xs font-bold uppercase tracking-[0.18em] text-stone-500"
-                >
-                    Estado de conservación
-                </h2>
-                <div class="flex gap-6">
-                    <div>
-                        <h3
-                            class="text-xs font-bold uppercase tracking-[0.18em] text-stone-600 mb-1"
-                        >
-                            Argentina
-                        </h3>
-                        <div class="flex items-center gap-1.5 mb-0.5">
-                            <span
-                                class:list={[
-                                    "h-2 w-2 rounded-full shrink-0",
-                                    ar.dot,
-                                ]}></span>
-                            <span
-                                class="font-display font-bold text-lg text-white leading-none"
-                                >{ar.label}</span
-                            >
-                        </div>
-                        <p class="text-xs text-stone-400 leading-snug">
-                            {conservationStatusAr}
-                        </p>
-                    </div>
-                    <div>
-                        <h3
-                            class="text-xs font-bold uppercase tracking-[0.18em] text-stone-600 mb-1"
-                        >
-                            IUCN
-                        </h3>
-                        <div class="flex items-center gap-1.5 mb-0.5">
-                            <span
-                                class:list={[
-                                    "h-2 w-2 rounded-full shrink-0",
-                                    iucn.dot,
-                                ]}></span>
-                            <span
-                                class="font-display font-bold text-lg text-white leading-none"
-                                >{iucn.label}</span
-                            >
-                        </div>
-                        <p class="text-xs text-stone-400 leading-snug">
-                            {conservationStatusIucn}
-                        </p>
-                    </div>
-                </div>
-            </div>
+				<div class="flex items-start gap-3">
+					<i class="ph ph-bone text-amber-500 mt-0.5 shrink-0 text-base" aria-hidden="true"></i>
+					<div>
+						<h2 class="text-xs font-bold uppercase tracking-[0.18em] text-stone-400 mb-0.5">
+							Dieta
+						</h2>
+						<p class="text-xs text-stone-200 leading-snug">{stats.diet}</p>
+					</div>
+				</div>
 
-            <!-- Dieta -->
-            <div class="flex items-start gap-3">
-                <i
-                    class="ph ph-bone text-amber-500 mt-0.5 shrink-0 text-base"
-                    aria-hidden="true"></i>
-                <div>
-                    <h2
-                        class="text-xs font-bold uppercase tracking-[0.18em] text-stone-400 mb-0.5"
-                    >
-                        Dieta
-                    </h2>
-                    <p class="text-xs text-stone-200 leading-snug">
-                        {stats.diet}
-                    </p>
-                </div>
-            </div>
+				<div class="flex items-start gap-3">
+					<i class="ph ph-mountains text-forest-400 mt-0.5 shrink-0 text-base" aria-hidden="true"></i>
+					<div>
+						<h2 class="text-xs font-bold uppercase tracking-[0.18em] text-stone-400 mb-0.5">
+							Hábitat
+						</h2>
+						<p class="text-xs text-stone-200 leading-snug">{stats.habitat}</p>
+					</div>
+				</div>
 
-            <!-- Hábitat -->
-            <div class="flex items-start gap-3">
-                <i
-                    class="ph ph-mountains text-forest-400 mt-0.5 shrink-0 text-base"
-                    aria-hidden="true"></i>
-                <div>
-                    <h2
-                        class="text-xs font-bold uppercase tracking-[0.18em] text-stone-400 mb-0.5"
-                    >
-                        Hábitat
-                    </h2>
-                    <p class="text-xs text-stone-200 leading-snug">
-                        {stats.habitat}
-                    </p>
-                </div>
-            </div>
-
-            <!-- Hábitos + Actividad + Tiempo generacional -->
-            <div class="flex gap-6">
-                {
-                    stats.habits && (
-                        <div class="flex items-start gap-2">
-                            <i
-                                class="ph ph-paw-print text-stone-400 mt-0.5 shrink-0 text-base"
-                                aria-hidden="true"
-                            />
-                            <div>
-                                <p class="text-xs font-bold uppercase tracking-[0.18em] text-stone-500 mb-0.5">
-                                    Hábitos
-                                </p>
-                                <p class="text-xs text-stone-300 leading-snug">
-                                    {stats.habits}
-                                </p>
-                            </div>
-                        </div>
-                    )
-                }
-                {
-                    stats.activity && (
-                        <div class="flex items-start gap-2">
-                            <i
-                                class="ph ph-moon text-stone-400 mt-0.5 shrink-0 text-base"
-                                aria-hidden="true"
-                            />
-                            <div>
-                                <p class="text-xs font-bold uppercase tracking-[0.18em] text-stone-500 mb-0.5">
-                                    Actividad
-                                </p>
-                                <p class="text-xs text-stone-300 leading-snug">
-                                    {stats.activity}
-                                </p>
-                            </div>
-                        </div>
-                    )
-                }
-                {
-                    stats.generationTime && (
-                        <div class="flex items-start gap-2">
-                            <i
-                                class="ph ph-hourglass text-stone-400 mt-0.5 shrink-0 text-base"
-                                aria-hidden="true"
-                            />
-                            <div>
-                                <p class="text-xs font-bold uppercase tracking-[0.18em] text-stone-500 mb-0.5">
-                                    Tiempo generacional
-                                </p>
-                                <p class="text-xs text-stone-300 leading-snug">
-                                    {stats.generationTime}
-                                </p>
-                            </div>
-                        </div>
-                    )
-                }
-            </div>
-        </div>
-    </article>
+				<div class="flex gap-6">
+					{stats.habits && (
+						<div class="flex items-start gap-2">
+							<i class="ph ph-paw-print text-stone-400 mt-0.5 shrink-0 text-base" aria-hidden="true" />
+							<div>
+								<p class="text-xs font-bold uppercase tracking-[0.18em] text-stone-500 mb-0.5">
+									Hábitos
+								</p>
+								<p class="text-xs text-stone-300 leading-snug">{stats.habits}</p>
+							</div>
+						</div>
+					)}
+					{stats.activity && (
+						<div class="flex items-start gap-2">
+							<i class="ph ph-moon text-stone-400 mt-0.5 shrink-0 text-base" aria-hidden="true" />
+							<div>
+								<p class="text-xs font-bold uppercase tracking-[0.18em] text-stone-500 mb-0.5">
+									Actividad
+								</p>
+								<p class="text-xs text-stone-300 leading-snug">{stats.activity}</p>
+							</div>
+						</div>
+					)}
+					{stats.generationTime && (
+						<div class="flex items-start gap-2">
+							<i class="ph ph-hourglass text-stone-400 mt-0.5 shrink-0 text-base" aria-hidden="true" />
+							<div>
+								<p class="text-xs font-bold uppercase tracking-[0.18em] text-stone-500 mb-0.5">
+									Tiempo generacional
+								</p>
+								<p class="text-xs text-stone-300 leading-snug">{stats.generationTime}</p>
+							</div>
+						</div>
+					)}
+				</div>
+			</div>
+		</div>
+	</article>
 </section>

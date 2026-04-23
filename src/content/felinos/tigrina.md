@@ -4,7 +4,7 @@ slug: "tigrina"
 hero:
     title: "Tigrina"
     subtitle: "El felino manchado más escaso de las Yungas argentinas, restringido a los bosques subtropicales de Jujuy y Salta."
-    image: "../../assets/images/felinos/leopardus-jacobita/leopardus-jacobita-juan-reppucci-hero.jpg"
+    image: "/src/assets/images/headshots/leopardus-tigrinus.jpg"
     alt: "Tigrina entre la vegetación de las yungas"
 
 seo:

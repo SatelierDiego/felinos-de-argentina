@@ -4,7 +4,7 @@ slug: "puma"
 hero:
     title: "Puma"
     subtitle: "El felino con mayor distribución geográfica de América, presente en casi todos los ambientes de Argentina."
-    image: "../../assets/images/felinos/leopardus-jacobita/leopardus-jacobita-juan-reppucci-hero.jpg"
+    image: "/src/assets/images/headshots/puma-concolor.jpg"
     alt: "Puma sobre rocas en un ambiente semiárido patagónico"
 
 seo:

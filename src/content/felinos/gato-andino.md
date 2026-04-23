@@ -4,7 +4,7 @@ slug: "gato-andino"
 hero:
     title: "Gato Andino"
     subtitle: "Uno de los felinos más amenazados de América, habitante de los Andes áridos y extremos."
-    image: "../../assets/images/felinos/leopardus-jacobita/leopardus-jacobita-juan-reppucci-hero.jpg"
+    image: "/src/assets/images/felinos/leopardus-jacobita/leopardus-jacobita-juan-reppucci-hero.jpg"
     alt: "Gato andino sobre rocas en ambiente de alta montaña"
 
 seo:
@@ -43,7 +43,7 @@ sections:
 
           En su área de distribución habita también el <a href="/felinos/gato-del.pajonal">Gato del Pajonal (*Leopardus colocolo*)</a>, con el que puede ser confundido a simple vista, sin embargo, es posible distinguirlos por el rinario, menos coloreado en el Gato de los Pajonales, y la cola, más larga en el Gato andino.
       images:
-          - src: "../../assets/images/felinos/leopardus-jacobita/apariencia-1.jpg"
+          - src: "/src/assets/images/felinos/leopardus-jacobita/apariencia-1.jpg"
             alt: "Gato andino mostrando su pelaje característico"
 
     - id: "behavior"
@@ -118,34 +118,34 @@ bibliography:
     - "Lucherini, M. & Merino, M.J. (2008). Perceptions of human–carnivore conflicts in the High Andes of Argentina. Mountain Research and Development, 28(1), 81–85."
 
 gallery:
-    - src: "../../assets/images/felinos/leopardus-jacobita/leopardus-jacobita-juan-reppucci-hero.jpg"
+    - src: "/src/assets/images/felinos/leopardus-jacobita/leopardus-jacobita-juan-reppucci-hero.jpg"
       alt: "Gato andino sobre rocas en ambiente de alta montaña"
       autor: "Juan Reppucci"
-    - src: "../../assets/images/felinos/leopardus-jacobita/apariencia-1.jpg"
+    - src: "/src/assets/images/felinos/leopardus-jacobita/apariencia-1.jpg"
       alt: "Gato andino mostrando su pelaje característico"
       autor: "Juan Reppucci"
-    - src: "../../assets/images/felinos/leopardus-jacobita/leopardus-jacobita-juan-reppucci-hero.jpg"
+    - src: "/src/assets/images/felinos/leopardus-jacobita/leopardus-jacobita-juan-reppucci-hero.jpg"
       alt: "Gato andino en su hábitat natural"
       autor: "Juan Reppucci"
-    - src: "../../assets/images/felinos/leopardus-jacobita/apariencia-1.jpg"
+    - src: "/src/assets/images/felinos/leopardus-jacobita/apariencia-1.jpg"
       alt: "Gato andino de frente"
       autor: "Juan Reppucci"
-    - src: "../../assets/images/felinos/leopardus-jacobita/leopardus-jacobita-juan-reppucci-hero.jpg"
+    - src: "/src/assets/images/felinos/leopardus-jacobita/leopardus-jacobita-juan-reppucci-hero.jpg"
       alt: "Gato andino en la puna"
       autor: "Juan Reppucci"
-    - src: "../../assets/images/felinos/leopardus-jacobita/apariencia-1.jpg"
+    - src: "/src/assets/images/felinos/leopardus-jacobita/apariencia-1.jpg"
       alt: "Gato andino entre rocas"
       autor: "Juan Reppucci"
-    - src: "../../assets/images/felinos/leopardus-jacobita/leopardus-jacobita-juan-reppucci-hero.jpg"
+    - src: "/src/assets/images/felinos/leopardus-jacobita/leopardus-jacobita-juan-reppucci-hero.jpg"
       alt: "Gato andino descansando"
       autor: "Juan Reppucci"
-    - src: "../../assets/images/felinos/leopardus-jacobita/apariencia-1.jpg"
+    - src: "/src/assets/images/felinos/leopardus-jacobita/apariencia-1.jpg"
       alt: "Gato andino en alerta"
       autor: "Juan Reppucci"
-    - src: "../../assets/images/felinos/leopardus-jacobita/leopardus-jacobita-juan-reppucci-hero.jpg"
+    - src: "/src/assets/images/felinos/leopardus-jacobita/leopardus-jacobita-juan-reppucci-hero.jpg"
       alt: "Gato andino al amanecer"
       autor: "Juan Reppucci"
-    - src: "../../assets/images/felinos/leopardus-jacobita/apariencia-1.jpg"
+    - src: "/src/assets/images/felinos/leopardus-jacobita/apariencia-1.jpg"
       alt: "Gato andino en ambiente rocoso"
       autor: "Juan Reppucci"
 ---

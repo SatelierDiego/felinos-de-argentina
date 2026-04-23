@@ -4,7 +4,7 @@ slug: "tirica"
 hero:
     title: "Tirica"
     subtitle: "Un pequeño felino manchado de la selva atlántica, críticamente amenazado por la pérdida de su hábitat."
-    image: "../../assets/images/felinos/leopardus-jacobita/leopardus-jacobita-juan-reppucci-hero.jpg"
+    image: "/src/assets/images/headshots/leopardus-guttulus.jpg"
     alt: "Tirica entre la vegetación de la selva paranaense"
 
 seo:

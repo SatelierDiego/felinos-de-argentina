@@ -37,76 +37,76 @@ felinos:
       title: "Gato Andino"
       scientific_name: "Leopardus jacobitus"
       image:
-          src: "../../assets/images/headshots/leopardus-jacobitus.jpg"
+          src: "/src/assets/images/headshots/leopardus-jacobita.jpg"
           alt: "Gato andino en ambiente rocoso"
 
     - slug: "ocelote"
       title: "Ocelote"
       scientific_name: "Leopardus pardalis"
       image:
-          src: "../../assets/images/headshots/leopardus-pardalis.jpg"
+          src: "/src/assets/images/headshots/leopardus-pardalis.jpg"
           alt: "Ocelote en selva"
 
     - slug: "gato-del-pajonal"
       title: "Gato del Pajonal"
       scientific_name: "Leopardus colocolo"
       image:
-          src: "../../assets/images/headshots/leopardus-colocolo.jpg"
+          src: "/src/assets/images/headshots/leopardus-colocolo.jpg"
           alt: "Gato del pajonal en pastizal"
 
     - slug: "margay"
       title: "Margay"
       scientific_name: "Leopardus wiedii"
       image:
-          src: "../../assets/images/headshots/leopardus-wiedii.jpg"
+          src: "/src/assets/images/headshots/leopardus-wiedii.jpg"
           alt: "Margay en árbol"
 
     - slug: "puma"
       title: "Puma"
       scientific_name: "Puma concolor"
       image:
-          src: "../../assets/images/headshots/puma-concolor.jpg"
+          src: "/src/assets/images/headshots/puma-concolor.jpg"
           alt: "Puma en ambiente natural"
 
     - slug: "gato-montes"
       title: "Gato Montés"
       scientific_name: "Leopardus geoffroyi"
       image:
-          src: "../../assets/images/headshots/leopardus-geoffroyi.jpg"
+          src: "/src/assets/images/headshots/leopardus-geoffroyi.jpg"
           alt: "Gato montés"
 
     - slug: "gato-tigre-del-sur"
       title: "Tirica"
       scientific_name: "Leopardus guttulus"
       image:
-          src: "../../assets/images/headshots/leopardus-guttulus.jpg"
+          src: "/src/assets/images/headshots/leopardus-guttulus.jpg"
           alt: "Tirica en selva"
 
     - slug: "gato-tigre-del-norte"
       title: "Tigrina"
       scientific_name: "Leopardus tigrinus"
       image:
-          src: "../../assets/images/headshots/leopardus-tigrinus.jpg"
+          src: "/src/assets/images/headshots/leopardus-tigrinus.jpg"
           alt: "Tigrina"
 
     - slug: "yaguarete"
       title: "Yaguareté"
       scientific_name: "Panthera onca"
       image:
-          src: "../../assets/images/headshots/panthera-onca.jpg"
+          src: "/src/assets/images/headshots/panthera-onca.jpg"
           alt: "Yaguareté"
 
     - slug: "guina"
       title: "Gato Huiña"
       scientific_name: "Leopardus guigna"
       image:
-          src: "../../assets/images/headshots/leopardus-guigna.jpg"
+          src: "/src/assets/images/headshots/leopardus-guigna.jpg"
           alt: "Gato huiña en bosque"
 
     - slug: "yaguarundi"
       title: "Yaguarundí"
       scientific_name: "Herpailurus yagouaroundi"
       image:
-          src: "../../assets/images/headshots/herpailurus-yagouaroundi.jpg"
+          src: "/src/assets/images/headshots/herpailurus-yagouaroundi.jpg"
           alt: "Yaguarundí"
 ---

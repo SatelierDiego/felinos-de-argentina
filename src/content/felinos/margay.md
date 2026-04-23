@@ -4,7 +4,7 @@ slug: "margay"
 hero:
     title: "Margay"
     subtitle: "El felino más arborícola de América, dotado de adaptaciones únicas para la vida en el dosel forestal."
-    image: "../../assets/images/felinos/leopardus-jacobita/leopardus-jacobita-juan-reppucci-hero.jpg"
+    image: "/src/assets/images/headshots/leopardus-wiedii.jpg"
     alt: "Margay en las ramas de un árbol"
 
 seo:

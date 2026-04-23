@@ -4,7 +4,7 @@ slug: "yaguarete"
 hero:
     title: "Yaguareté"
     subtitle: "El mayor felino de América, símbolo de los grandes ecosistemas del norte argentino y especie en peligro crítico."
-    image: "../../assets/images/felinos/leopardus-jacobita/leopardus-jacobita-juan-reppucci-hero.jpg"
+    image: "/src/assets/images/headshots/panthera-onca.jpg"
     alt: "Yaguareté en el borde de un cuerpo de agua en el Chaco"
 
 seo:

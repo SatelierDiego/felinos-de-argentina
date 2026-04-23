@@ -4,7 +4,7 @@ slug: "yaguarundi"
 hero:
     title: "Yaguarundí"
     subtitle: "Un felino de aspecto inusual, sin manchas y de forma alargada, que habita desde el noroeste hasta el noreste argentino."
-    image: "../../assets/images/felinos/herpailurus-yagouaroundi/hero.jpg"
+    image: "/src/assets/images/felinos/herpailurus-yagouaroundi/hero.jpg"
     alt: "Yaguarundí entre la vegetación del monte chaqueño"
 
 seo:
@@ -16,6 +16,7 @@ conservation_status_ar: "Preocupación menor"
 conservation_status_iucn: "Preocupación menor"
 
 stats:
+    silouette: "/src/assets/images/felinos/herpailurus-yagouaroundi/silouette.svg"
     weight: "3–8 kg"
     size:
         - body: "43–83 cm"
@@ -39,7 +40,7 @@ sections:
 
           Por su silueta y apariencia el Yaguarundí recuerda más a un mustélido que a un verdadero felino.
       images:
-          - src: "../../assets/images/felinos/herpailurus-yagouaroundi/appearance.jpg"
+          - src: "/src/assets/images/felinos/herpailurus-yagouaroundi/appearance.jpg"
             alt: "Yaguarundí de cuerpo entero mirando hacia atrás"
 
     - id: "behavior"
@@ -55,7 +56,7 @@ sections:
 
           Tanto los machos como las hembras son territoriales. Marcan su territorio por medio de orina, dejando sus heces al descubierto y rasguñando la tierra, troncos y ramas. El Yaguarundí presenta un amplio repertorio de vocalizaciones que incluye unos 13 sonidos diferentes.
       images:
-          - src: "../../assets/images/felinos/herpailurus-yagouaroundi/behavior.jpg"
+          - src: "/src/assets/images/felinos/herpailurus-yagouaroundi/behavior.jpg"
             alt: "Pareja de yaguarundí"
 
     - id: "distribution"
@@ -67,7 +68,7 @@ sections:
 
           En Argentina su distribución geográfica ocupa, al menos parcialmente, todas las provincias al norte de Río Negro. Se puede encontrar en áreas protegidas de Buenos Aires, Catamarca, Chaco, Córdoba, Corrientes, Entre Ríos, Formosa, Jujuy, La Pampa, La Rioja, Mendoza, Misiones, Neuquén, Río Negro, Salta, San Juan, San Luis, Santa Fe, Santiago del Estero y Tucumán.
       map:
-          lat: -27.0
+          lat: -32.0
           lng: -62.0
           zoom: 5
           geojson: "/maps/herpailurus-yagouaroundi.geojson"
@@ -84,7 +85,7 @@ sections:
 
           En nuestro país, si bien es una especie que se observa con cierta frecuencia, esto podría deberse a sus hábitos diurnos y a su posible preferencia por ambientes de borde (caminos y ambientes riparios) frecuentemente transitados por personas, y no a una gran abundancia. Muestras sistemáticas con cámaras trampa indican que su abundancia local sería menor a la de otros felinos sintópicos.
       images:
-          - src: "../../assets/images/felinos/herpailurus-yagouaroundi/situation.jpg"
+          - src: "/src/assets/images/felinos/herpailurus-yagouaroundi/situation.jpg"
             alt: "Yaguarundí fotografiado en camino rural"
 
 threats:
@@ -105,34 +106,34 @@ threats:
       description: "La pérdida de hábitat por agricultura a gran escala."
 
 gallery:
-    - src: "../../assets/images/felinos/herpailurus-yagouaroundi/gallery/001.jpg"
+    - src: "/src/assets/images/felinos/herpailurus-yagouaroundi/gallery/001.jpg"
       alt: ""
       autor: "Alexander Oehrle"
-    - src: "../../assets/images/felinos/herpailurus-yagouaroundi/gallery/002.jpg"
+    - src: "/src/assets/images/felinos/herpailurus-yagouaroundi/gallery/002.jpg"
       alt: ""
       autor: "Anne-Marie Kalus"
-    - src: "../../assets/images/felinos/herpailurus-yagouaroundi/gallery/003.jpg"
+    - src: "/src/assets/images/felinos/herpailurus-yagouaroundi/gallery/003.jpg"
       alt: ""
       autor: "Anne-Marie Kalus"
-    - src: "../../assets/images/felinos/herpailurus-yagouaroundi/gallery/004.jpg"
+    - src: "/src/assets/images/felinos/herpailurus-yagouaroundi/gallery/004.jpg"
       alt: ""
       autor: "Anne-Marie Kalus"
-    - src: "../../assets/images/felinos/herpailurus-yagouaroundi/gallery/005.jpg"
+    - src: "/src/assets/images/felinos/herpailurus-yagouaroundi/gallery/005.jpg"
       alt: ""
       autor: "Anne-Marie Kalus"
-    - src: "../../assets/images/felinos/herpailurus-yagouaroundi/gallery/006.jpg"
+    - src: "/src/assets/images/felinos/herpailurus-yagouaroundi/gallery/006.jpg"
       alt: ""
       autor: "Alexander Oehrle"
-    - src: "../../assets/images/felinos/herpailurus-yagouaroundi/gallery/007.jpg"
+    - src: "/src/assets/images/felinos/herpailurus-yagouaroundi/gallery/007.jpg"
       alt: ""
       autor: "Anne-Marie Kalus"
-    - src: "../../assets/images/felinos/herpailurus-yagouaroundi/gallery/008.jpg"
+    - src: "/src/assets/images/felinos/herpailurus-yagouaroundi/gallery/008.jpg"
       alt: ""
       autor: "Anne-Marie Kalus"
-    - src: "../../assets/images/felinos/herpailurus-yagouaroundi/gallery/009.jpg"
+    - src: "/src/assets/images/felinos/herpailurus-yagouaroundi/gallery/009.jpg"
       alt: ""
       autor: "Anne-Marie Kalus"
-    - src: "../../assets/images/felinos/herpailurus-yagouaroundi/gallery/010.jpg"
+    - src: "/src/assets/images/felinos/herpailurus-yagouaroundi/gallery/010.jpg"
       alt: ""
       autor: "Anne-Marie Kalus"
 ---
