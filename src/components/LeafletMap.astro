@@ -10,8 +10,9 @@ interface Props {
 const { lat, lng, zoom, geojson, label = "Distribución" } = Astro.props;
 ---
 
+<div class="rounded-card shadow-card ring-1 ring-base-200">
 <div
-    class="leaflet-map-container h-180 w-full rounded overflow-hidden shadow-md ring-1 ring-base-200"
+    class="leaflet-map-container h-180 w-full rounded-card overflow-hidden"
     aria-label={`Mapa de distribución: ${label}`}
     role="application"
     data-lat={lat}
@@ -19,6 +20,7 @@ const { lat, lng, zoom, geojson, label = "Distribución" } = Astro.props;
     data-zoom={zoom}
     data-geojson={geojson ?? ""}
 >
+</div>
 </div>
 
 <script>

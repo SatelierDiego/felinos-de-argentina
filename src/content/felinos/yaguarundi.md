@@ -4,7 +4,7 @@ slug: "yaguarundi"
 hero:
     title: "Yaguarundí"
     subtitle: "Un felino de aspecto inusual, sin manchas y de forma alargada, que habita desde el noroeste hasta el noreste argentino."
-    image: "../../assets/images/felinos/leopardus-jacobitus/leopardus-jacobitus-juan-reppucci-hero.jpg"
+    image: "../../assets/images/felinos/herpailurus-yagouaroundi/hero.jpg"
     alt: "Yaguarundí entre la vegetación del monte chaqueño"
 
 seo:
@@ -20,7 +20,7 @@ stats:
     size:
         - body: "43–83 cm"
         - tail: "28–60 cm"
-        - alzada:
+        - alzada: "30-36 cm"
     diet: "Mamíferos pequeños y medianos, aves, reptiles, peces, insectos y frutos"
     habitat: "Ambientes variados: selvas, bosques chaqueños, montes, sabanas, pajonales y malezales"
     habits: "Terrestre"
@@ -38,7 +38,9 @@ sections:
           Se caracteriza por presentar el cuerpo alargado, la cabeza achatada, orejas pequeñas y redondeadas y cola larga. El pelaje es corto y uniforme sin manchas. En Argentina presenta dos fases de coloración, una pardo rojiza y otra gris oscura o negra. Ambas fases pueden aparecer simultáneamente en una misma población e incluso en una misma camada. Generalmente en bosques húmedos sería más frecuente la variante oscura, mientras que en ambientes secos y abiertos predominan las variantes más claras.
 
           Por su silueta y apariencia el Yaguarundí recuerda más a un mustélido que a un verdadero felino.
-      images: []
+      images:
+          - src: "../../assets/images/felinos/herpailurus-yagouaroundi/appearance.jpg"
+            alt: "Yaguarundí de cuerpo entero mirando hacia atrás"
 
     - id: "behavior"
       title: "Comportamiento"
@@ -52,7 +54,9 @@ sections:
           En cuanto a la reproducción, en zonas tropicales ocurre durante todo el año. La gestación dura entre 63 y 75 días y la camada está formada por 2 a 4 crías. Al mes de edad los jóvenes comienzan a abandonar su refugio y al mes y medio ya son capaces de cazar por sí mismos. A los 2 años comienzan a llevar una vida independiente y entre los 2 y 3 años alcanzan la madurez sexual.
 
           Tanto los machos como las hembras son territoriales. Marcan su territorio por medio de orina, dejando sus heces al descubierto y rasguñando la tierra, troncos y ramas. El Yaguarundí presenta un amplio repertorio de vocalizaciones que incluye unos 13 sonidos diferentes.
-      images: []
+      images:
+          - src: "../../assets/images/felinos/herpailurus-yagouaroundi/behavior.jpg"
+            alt: "Pareja de yaguarundí"
 
     - id: "distribution"
       title: "Hábitat y distribución"
@@ -79,7 +83,9 @@ sections:
           El principal impacto negativo sería la destrucción y fragmentación de su hábitat, incluyendo la conversión a gran escala de las tierras agrícolas, y el agotamiento de los recursos alimenticios.
 
           En nuestro país, si bien es una especie que se observa con cierta frecuencia, esto podría deberse a sus hábitos diurnos y a su posible preferencia por ambientes de borde (caminos y ambientes riparios) frecuentemente transitados por personas, y no a una gran abundancia. Muestras sistemáticas con cámaras trampa indican que su abundancia local sería menor a la de otros felinos sintópicos.
-      images: []
+      images:
+          - src: "../../assets/images/felinos/herpailurus-yagouaroundi/situation.jpg"
+            alt: "Yaguarundí fotografiado en camino rural"
 
 threats:
     - title: "Caza ilegal"
@@ -98,5 +104,35 @@ threats:
       icon: "tree"
       description: "La pérdida de hábitat por agricultura a gran escala."
 
-gallery: []
+gallery:
+    - src: "../../assets/images/felinos/herpailurus-yagouaroundi/gallery/001.jpg"
+      alt: ""
+      autor: "Alexander Oehrle"
+    - src: "../../assets/images/felinos/herpailurus-yagouaroundi/gallery/002.jpg"
+      alt: ""
+      autor: "Anne-Marie Kalus"
+    - src: "../../assets/images/felinos/herpailurus-yagouaroundi/gallery/003.jpg"
+      alt: ""
+      autor: "Anne-Marie Kalus"
+    - src: "../../assets/images/felinos/herpailurus-yagouaroundi/gallery/004.jpg"
+      alt: ""
+      autor: "Anne-Marie Kalus"
+    - src: "../../assets/images/felinos/herpailurus-yagouaroundi/gallery/005.jpg"
+      alt: ""
+      autor: "Anne-Marie Kalus"
+    - src: "../../assets/images/felinos/herpailurus-yagouaroundi/gallery/006.jpg"
+      alt: ""
+      autor: "Alexander Oehrle"
+    - src: "../../assets/images/felinos/herpailurus-yagouaroundi/gallery/007.jpg"
+      alt: ""
+      autor: "Anne-Marie Kalus"
+    - src: "../../assets/images/felinos/herpailurus-yagouaroundi/gallery/008.jpg"
+      alt: ""
+      autor: "Anne-Marie Kalus"
+    - src: "../../assets/images/felinos/herpailurus-yagouaroundi/gallery/009.jpg"
+      alt: ""
+      autor: "Anne-Marie Kalus"
+    - src: "../../assets/images/felinos/herpailurus-yagouaroundi/gallery/010.jpg"
+      alt: ""
+      autor: "Anne-Marie Kalus"
 ---

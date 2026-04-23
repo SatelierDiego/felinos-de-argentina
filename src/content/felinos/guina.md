@@ -4,7 +4,7 @@ slug: "guina"
 hero:
     title: "Guiña"
     subtitle: "El felino más pequeño de América, restringido al bosque valdiviano y las zonas cordilleranas del sur."
-    image: "../../assets/images/felinos/leopardus-jacobitus/leopardus-jacobitus-juan-reppucci-hero.jpg"
+    image: "../../assets/images/felinos/leopardus-jacobita/leopardus-jacobita-juan-reppucci-hero.jpg"
     alt: "Guiña entre la vegetación del bosque patagónico"
 
 seo:

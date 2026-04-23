@@ -4,7 +4,6 @@
 @theme {
     /* ── Fonts ─────────────────────────────────────── */
     --font-sans: "Open Sans", ui-sans-serif, system-ui, sans-serif;
-    --font-serif: "Lora", ui-serif, Georgia, serif;
     --font-display: "Quicksand", "Open Sans", ui-sans-serif, sans-serif;
     --font-mono: ui-monospace, "Cascadia Code", monospace;
 
@@ -25,7 +24,7 @@
     --color-base-950: var(--color-stone-950);
 
     /* Accent: #f0aa5a — énfasis, interacciones, CTA */
-    --color-accent-50:  #fef9ef;
+    --color-accent-50: #fef9ef;
     --color-accent-100: #feefd5;
     --color-accent-200: #fddcaa;
     --color-accent-300: #fbc87e;
@@ -38,7 +37,7 @@
     --color-accent-950: #2c1607;
 
     /* Highlight: #327864 — identidad, secciones destacadas */
-    --color-highlight-50:  #f0faf6;
+    --color-highlight-50: #f0faf6;
     --color-highlight-100: #d6f0e6;
     --color-highlight-200: #aee0cc;
     --color-highlight-300: #7fcbb0;
@@ -51,7 +50,7 @@
     --color-highlight-950: #091710;
 
     /* Alternative: #644628 — marrón, elementos secundarios */
-    --color-alternative-50:  #faf6f1;
+    --color-alternative-50: #faf6f1;
     --color-alternative-100: #f2e8d8;
     --color-alternative-200: #e2ccaf;
     --color-alternative-300: #cfae82;
@@ -74,6 +73,11 @@
     --radius-lg: 0.75rem;
     --radius-xl: 1rem;
     --radius-2xl: 1.5rem;
+
+    --radius-card: var(--radius-md);
+
+    /* ── Shadows ────────────────────────────────────── */
+    --shadow-card: var(--shadow-sm);
 
     /* ── Typography scale ──────────────────────────── */
     --text-display: clamp(2.5rem, 6vw, 5rem);

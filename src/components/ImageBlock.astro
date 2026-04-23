@@ -14,46 +14,22 @@ interface Props {
 }
 
 const { images, position = 'left' } = Astro.props;
-const [first, second] = images;
 ---
 
-{images.length === 1 && first && (
-  <figure class="overflow-hidden rounded shadow-md aspect-[4/3]">
-    <Image
-      src={first.src}
-      alt={first.alt}
-      width={800}
-      height={600}
-      class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-      loading="lazy"
-      decoding="async"
-    />
-  </figure>
-)}
-
-{images.length >= 2 && first && second && (
-  <div class:list={['grid gap-4', position === 'right' ? 'grid-rows-2' : 'grid-rows-2']}>
-    <figure class="overflow-hidden rounded shadow-md aspect-[4/3]">
-      <Image
-        src={first.src}
-        alt={first.alt}
-        width={800}
-        height={600}
-        class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-        loading="lazy"
-        decoding="async"
-      />
-    </figure>
-    <figure class="overflow-hidden rounded shadow-md aspect-[4/3]">
-      <Image
-        src={second.src}
-        alt={second.alt}
-        width={800}
-        height={600}
-        class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-        loading="lazy"
-        decoding="async"
-      />
-    </figure>
-  </div>
-)}
+<div class:list={[images.length >= 2 && 'grid gap-4 grid-rows-2']}>
+  {images.map((img) => (
+    <div class="rounded-card shadow-card">
+      <figure class="overflow-hidden rounded-card aspect-[4/3]">
+        <Image
+          src={img.src}
+          alt={img.alt}
+          width={800}
+          height={600}
+          class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+    </div>
+  ))}
+</div>

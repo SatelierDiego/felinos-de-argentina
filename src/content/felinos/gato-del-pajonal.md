@@ -4,7 +4,7 @@ slug: "gato-del-pajonal"
 hero:
     title: "Gato del Pajonal"
     subtitle: "Un felino misterioso de los pastizales andinos y patagónicos, frecuentemente confundido con el gato andino."
-    image: "../../assets/images/felinos/leopardus-jacobitus/leopardus-jacobitus-juan-reppucci-hero.jpg"
+    image: "../../assets/images/felinos/leopardus-jacobita/leopardus-jacobita-juan-reppucci-hero.jpg"
     alt: "Gato del pajonal entre pajonales"
 
 seo:
