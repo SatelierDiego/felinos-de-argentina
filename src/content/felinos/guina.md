@@ -16,11 +16,11 @@ conservation_status_ar: "Vulnerable"
 conservation_status_iucn: "Vulnerable"
 
 stats:
-    weight: "2–3 kg"
     size:
-        - body: "39–48 cm"
-        - tail: "20–25 cm"
-        - alzada: "20 a 25 cm"
+        - weight: "2–3 kg"
+          body: "39–48 cm"
+          tail: "20–25 cm"
+          height_at_withers: "20 a 25 cm"
     diet: "Roedores (ratón oliváceo, laucha de pies negros, monito de monte), aves, reptiles e invertebrados"
     habitat: "Bosques andinos de Nothofagus y selva valdiviana con sotobosque denso"
     habits: "Terrestre"

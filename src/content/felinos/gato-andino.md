@@ -16,11 +16,11 @@ conservation_status_ar: "En Peligro"
 conservation_status_iucn: "En peligro"
 
 stats:
-    weight: "4–6 kg"
     size:
-        - body: "57–65 cm"
-        - tail: "42–48 cm"
-        - alzada: "30-40 cm"
+        - weight: "4–6 kg"
+          body: "57–65 cm"
+          tail: "42–48 cm"
+          height_at_withers: "30-40 cm"
     diet: "Roedores (chinchillones, pericotes), aves e insectos"
     habitat: "Puna y Altos Andes rocosos, entre 1000 y 5000 msnm"
     habits: "Terrestre"

@@ -16,11 +16,11 @@ conservation_status_ar: "Preocupación menor"
 conservation_status_iucn: "Preocupación menor"
 
 stats:
-    weight: "30–80 kg"
     size:
-        - body: "85–150 cm"
-        - tail: "45–85 cm"
-        - alzada: "60-80 cm"
+        - weight: "30–80 kg"
+          body: "85–150 cm"
+          tail: "45–85 cm"
+          height_at_withers: "60-80 cm"
     diet: "Ungulados medianos y grandes, también aves, roedores e insectos según disponibilidad"
     habitat: "Todos los ambientes: estepa, bosque, selva, monte, yungas y alta montaña hasta 5000 msnm"
     habits: "Terrestre"

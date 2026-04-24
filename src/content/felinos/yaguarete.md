@@ -16,11 +16,11 @@ conservation_status_ar: "En Peligro Crítico"
 conservation_status_iucn: "Casi amenazado"
 
 stats:
-    weight: "50–100 kg"
     size:
-        - body: "100–185 cm"
-        - tail: "45-80 cm"
-        - alzada: "55-75 cm"
+        - weight: "50–100 kg"
+          body: "100–185 cm"
+          tail: "45-80 cm"
+          height_at_withers: "55-75 cm"
     diet: "Tapires, carpinchos, pecaríes, corzuelas, armadillos, yacarés, peces y aves"
     habitat: "Selvas tropicales y subtropicales, bosque chaqueño, esteros y pantanales"
     habits: "Terrestre"

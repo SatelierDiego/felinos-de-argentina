@@ -16,11 +16,11 @@ conservation_status_ar: "Preocupación menor"
 conservation_status_iucn: "Preocupación menor"
 
 stats:
-    weight: "2–8 kg"
     size:
-        - body: "42–66 cm"
-        - tail: "24–36 cm"
-        - alzada: "20 a 35 cm"
+        - weight: "2–8 kg"
+          body: "42–66 cm"
+          tail: "24–36 cm"
+          height_at_withers: "20 a 35 cm"
     diet: "Pequeños mamíferos, aves, reptiles, anfibios y peces"
     habitat: "Ambientes muy variados: sabanas, montes, selvas en galería, desde el nivel del mar hasta 3300 msnm"
     habits: "Terrestre"

@@ -16,11 +16,11 @@ conservation_status_ar: "Vulnerable"
 conservation_status_iucn: "Vulnerable"
 
 stats:
-    weight: "2–3 kg"
     size:
-        - body: "38–59 cm"
-        - tail: "20–42 cm"
-        - alzada: "20 a 30 cm"
+        - weight: "2–3 kg"
+          body: "38–59 cm"
+          tail: "20–42 cm"
+          height_at_withers: "20 a 30 cm"
     diet: "Roedores, aves, lagartijas, ranas e invertebrados"
     habitat: "Selva pedemontana y bosque montano de las Yungas"
     habits: "Terrestre"

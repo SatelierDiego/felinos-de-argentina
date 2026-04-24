@@ -16,11 +16,11 @@ conservation_status_ar: "Vulnerable"
 conservation_status_iucn: "Casi Amenazado"
 
 stats:
-    weight: "3–5 kg"
     size:
-        - body: "53–65 cm"
-        - tail: "23–30 cm"
-        - alzada: "28 a 35 cm"
+        - weight: "3–5 kg"
+          body: "53–65 cm"
+          tail: "23–30 cm"
+          height_at_withers: "28 a 35 cm"
     diet: "Aves terrestres, roedores medianos (cuises, chinchillones, vizcachas) y huevos"
     habitat: "Pastizales altos, matorrales secos, puna, monte, espinal y estepa patagónica"
     habits: "Terrestre"

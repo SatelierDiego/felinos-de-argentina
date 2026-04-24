@@ -16,11 +16,11 @@ conservation_status_ar: "Vulnerable"
 conservation_status_iucn: "Casi amenazado"
 
 stats:
-    weight: "1–5 kg"
     size:
-        - body: "45–80 cm"
-        - tail: "30–50 cm"
-        - alzada: "35-40 cm"
+        - weight: "1–5 kg"
+          body: "45–80 cm"
+          tail: "30–50 cm"
+          height_at_withers: "35-40 cm"
     diet: "Roedores, marsupiales arborícolas, aves, lagartos, peces y excepcionalmente pequeños monos"
     habitat: "Selvas húmedas paranaenses y de yungas; siempre en marco forestal"
     habits: Terrestre

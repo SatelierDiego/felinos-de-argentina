@@ -16,11 +16,11 @@ conservation_status_ar: "Vulnerable"
 conservation_status_iucn: "Vulnerable"
 
 stats:
-    weight: "2–4 kg"
     size:
-        - body: "40–55 cm"
-        - tail: "25–40 cm"
-        - alzada: "22 a 30 cm"
+        - weight: "2–4 kg"
+          body: "40–55 cm"
+          tail: "25–40 cm"
+          height_at_withers: "22 a 30 cm"
     diet: "Mamíferos pequeños (roedores, comadrejas), lagartijas, aves, huevos y anfibios"
     habitat: "Selvas y bosques tropicales y subtropicales; selva paranaense en Misiones"
     habits: "Terrestre"

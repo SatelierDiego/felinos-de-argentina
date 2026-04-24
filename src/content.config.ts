@@ -85,24 +85,24 @@ const felinosCollection = defineCollection({
 			conservation_status_ar: z.string(),
 			conservation_status_iucn: z.string(),
 
-			stats: z
-				.object({
-					silouette: image().optional(),
-					weight: z.string(),
-					size: z.array(
-						z.object({
-							body: z.string().optional(),
-							tail: z.string().optional(),
-							alzada: z.string().nullish(),
-						}),
-					),
-					diet: z.string(),
-					habitat: z.string(),
-					activity: z.string().nullish(),
-					habits: z.string().nullish(),
-					generationTime: z.string().nullish(),
-				})
-				.optional(),
+            stats: z
+                .object({
+                    silouette: image().optional(),
+                    size: z.array(
+                        z.object({
+                            weight: z.string(),
+                            body: z.string().optional(),
+                            tail: z.string().optional(),
+                            height_at_withers: z.string().nullish(),
+                        }),
+                    ),
+                    diet: z.string(),
+                    habitat: z.string(),
+                    activity: z.string().nullish(),
+                    habits: z.string().nullish(),
+                    generationTime: z.string().nullish(),
+                })
+                .optional(),
 
 			sections: z.array(
 				z.object({
@@ -154,26 +154,27 @@ const felinosCollection = defineCollection({
 
 const librosCollection = defineCollection({
 	loader: glob({ pattern: "**/*.md", base: "./src/content/libros" }),
-	schema: z.object({
-		books: z.array(
-			z.object({
-				title: z.string(),
-				authors: z.array(z.string()),
-				editorial: z.string(),
-				year: z.number(),
-				cover: z.string(),
-				description: z.string(),
-				links: z
-					.array(
-						z.object({
-							label: z.string(),
-							url: z.string(),
-						}),
-					)
-					.default([]),
-			}),
-		),
-	}),
+	schema: ({ image }) =>
+		z.object({
+			books: z.array(
+				z.object({
+					title: z.string(),
+					authors: z.array(z.string()),
+					editorial: z.string(),
+					year: z.number(),
+					cover: image(),
+					description: z.string(),
+					links: z
+						.array(
+							z.object({
+								label: z.string(),
+								url: z.string(),
+							}),
+						)
+						.default([]),
+				}),
+			),
+		}),
 });
 
 export const collections = {

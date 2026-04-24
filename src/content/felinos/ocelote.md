@@ -16,11 +16,11 @@ conservation_status_ar: "Vulnerable"
 conservation_status_iucn: "Preocupación menor"
 
 stats:
-    weight: "7–16 kg"
     size:
-        - body: "115–145 cm"
-        - tail: "40–45 cm"
-        - alzada:
+        - weight: "7–16 kg"
+          body: "115–145 cm"
+          tail: "40–45 cm"
+          height_at_withers: null
     diet: "Roedores, aves, reptiles, peces, armadillos, corzuelas y pecaríes"
     habitat: "Selvas tupidas, Chaco Oriental, Yungas y ambientes con densa cobertura vegetal"
     habits: "Terrestre"

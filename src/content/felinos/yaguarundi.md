@@ -17,13 +17,13 @@ conservation_status_iucn: "Preocupación menor"
 
 stats:
     silouette: "/src/assets/images/felinos/herpailurus-yagouaroundi/silouette.svg"
-    weight: "3–8 kg"
     size:
-        - body: "43–83 cm"
-        - tail: "28–60 cm"
-        - alzada: "30-36 cm"
+        - weight: "3–8 kg"
+          body: "43–83 cm"
+          tail: "28–60 cm"
+          height_at_withers: "30-36 cm"
     diet: "Mamíferos pequeños y medianos, aves, reptiles, peces, insectos y frutos"
-    habitat: "Ambientes variados: selvas, bosques chaqueños, montes, sabanas, pajonales y malezales"
+    habitat: "Ambientes variados: selvas, bosques cadaños, montes, sabanas, pajonales y malezales"
     habits: "Terrestre"
     activity: "Diurno"
     generationTime: "6 años"

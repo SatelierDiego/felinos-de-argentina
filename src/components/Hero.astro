@@ -5,46 +5,25 @@ import type { ImageMetadata } from "astro";
 interface Props {
     title: string;
     subtitle: string;
-    image: ImageMetadata | string;
+    image: ImageMetadata;
     alt: string;
 }
 
 const { title, subtitle, image, alt } = Astro.props;
-
-const imageMeta = typeof image !== "string" ? (image as ImageMetadata) : null;
-const imageStr = typeof image === "string" ? (image as string) : null;
 ---
 
 <section class="relative isolate h-[85vh] min-h-[520px] w-full overflow-hidden">
     <!-- Background image -->
-    {
-        imageMeta && (
-            <Image
-                src={imageMeta}
-                alt={alt}
-                width={1920}
-                height={1080}
-                class="absolute inset-0 h-full w-full object-cover"
-                loading="eager"
-                decoding="async"
-                fetchpriority="high"
-            />
-        )
-    }
-    {
-        imageStr && (
-            <img
-                src={imageStr}
-                alt={alt}
-                width="1920"
-                height="1080"
-                class="absolute inset-0 h-full w-full object-cover"
-                loading="eager"
-                decoding="async"
-                fetchpriority="high"
-            />
-        )
-    }
+    <Image
+        src={image}
+        alt={alt}
+        width={1920}
+        height={1080}
+        class="absolute inset-0 h-full w-full object-cover"
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+    />
 
     <!-- Content -->
     <div
