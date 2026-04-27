@@ -1,50 +1,50 @@
 ---
-import { Image } from "astro:assets";
-import type { ImageMetadata } from "astro";
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 
 interface Props {
-    title: string;
-    subtitle: string;
-    image: ImageMetadata;
-    alt: string;
+  title: string;
+  subtitle: string;
+  image: ImageMetadata;
+  alt: string;
 }
 
 const { title, subtitle, image, alt } = Astro.props;
 ---
 
 <section class="relative isolate h-[85vh] min-h-[520px] w-full overflow-hidden">
-    <!-- Background image -->
-    <Image
-        src={image}
-        alt={alt}
-        width={1920}
-        height={1080}
-        class="absolute inset-0 h-full w-full object-cover"
-        loading="eager"
-        decoding="async"
-        fetchpriority="high"
-    />
+  <!-- Background image -->
+  <Image
+    src={image}
+    alt={alt}
+    width={1920}
+    height={1080}
+    class="absolute inset-0 h-full w-full object-cover"
+    loading="eager"
+    decoding="async"
+    fetchpriority="high"
+  />
 
-    <!-- Content -->
-    <div
-        class="relative flex h-full items-end pb-16 px-6 after:content-[''] after:absolute after:inset-0 after:bg-[linear-gradient(to_top_right,rgba(0,0,0,.85)_0%,rgba(0,0,0,0)_60%)]"
-    >
-        <div class="mx-auto w-full max-w-7xl z-10">
-            <h1
-                class="font-display font-bold text-white"
-                style="font-size: var(--text-display); line-height: var(--text-display--line-height);"
-                data-animate="animate-fade-in-up"
-            >
-                {title}
-            </h1>
-            <p
-                class="mt-4 max-w-2xl text-lg text-white/80 leading-relaxed"
-                data-animate="animate-fade-in-up"
-                data-delay="150ms"
-            >
-                {subtitle}
-            </p>
-            <slot />
-        </div>
+  <!-- Content -->
+  <div
+    class="relative flex h-full items-end px-6 pb-16 after:absolute after:inset-0 after:bg-[linear-gradient(to_top_right,rgba(0,0,0,.85)_0%,rgba(0,0,0,0)_60%)] after:content-['']"
+  >
+    <div class="z-10 mx-auto w-full max-w-7xl">
+      <h1
+        class="font-display font-bold text-white"
+        style="font-size: var(--text-display); line-height: var(--text-display--line-height);"
+        data-animate="animate-fade-in-up"
+      >
+        {title}
+      </h1>
+      <p
+        class="mt-4 max-w-2xl text-lg leading-relaxed text-white/80"
+        data-animate="animate-fade-in-up"
+        data-delay="150ms"
+      >
+        {subtitle}
+      </p>
+      <slot />
     </div>
+  </div>
 </section>

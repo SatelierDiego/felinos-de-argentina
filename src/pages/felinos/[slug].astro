@@ -39,7 +39,6 @@ const articleJsonLd = {
     alternateName: data.scientific_name,
   },
 };
-
 ---
 
 <Layout
@@ -51,50 +50,47 @@ const articleJsonLd = {
   jsonLd={[articleJsonLd]}
 >
   <!-- Hero -->
-  <Hero
-    title={data.hero.title}
-    subtitle={data.hero.subtitle}
-    image={data.hero.image}
-    alt={data.hero.alt}
-  />
+  <Hero title={data.hero.title} subtitle={data.hero.subtitle} image={data.hero.image} alt={data.hero.alt} />
 
   <!-- Stats bar -->
-  {data.stats && (
-    <SpeciesStats
-      commonName={data.hero.title}
-      scientificName={data.scientific_name}
-      conservationStatusIucn={data.conservation_status_iucn}
-      conservationStatusAr={data.conservation_status_ar}
-      stats={data.stats}
-    />
-  )}
+  {
+    data.stats && (
+      <SpeciesStats
+        commonName={data.hero.title}
+        scientificName={data.scientific_name}
+        conservationStatusIucn={data.conservation_status_iucn}
+        conservationStatusAr={data.conservation_status_ar}
+        stats={data.stats}
+      />
+    )
+  }
 
   <!-- Content sections — loop uniforme, el mapa viene del MD via section.map -->
-  {data.sections.map((section, i) => (
-    <SectionBlock
-      id={section.id}
-      title={section.title}
-      content={section.content}
-      images={section.images}
-      map={section.map}
-      index={i}
-    />
-  ))}
+  {
+    data.sections.map((section, i) => (
+      <SectionBlock
+        id={section.id}
+        title={section.title}
+        content={section.content}
+        images={section.images}
+        map={section.map}
+        index={i}
+      />
+    ))
+  }
 
   <!-- Threats -->
-  {data.threats.length > 0 && (
-    <div id="amenazas" class="scroll-mt-24">
-      <ThreatGrid threats={data.threats} />
-    </div>
-  )}
+  {
+    data.threats.length > 0 && (
+      <div id="amenazas" class="scroll-mt-24">
+        <ThreatGrid threats={data.threats} />
+      </div>
+    )
+  }
 
   <!-- Gallery -->
-  {data.gallery.length > 0 && (
-    <Gallery items={data.gallery} title="Galería" speciesName={data.hero.title} />
-  )}
+  {data.gallery.length > 0 && <Gallery items={data.gallery} title="Galería" speciesName={data.hero.title} />}
 
   <!-- Bibliography -->
-  {data.bibliography && data.bibliography.length > 0 && (
-    <Bibliography entries={data.bibliography} />
-  )}
+  {data.bibliography && data.bibliography.length > 0 && <Bibliography entries={data.bibliography} />}
 </Layout>

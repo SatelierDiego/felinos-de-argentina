@@ -12,22 +12,22 @@ interface Props {
   conservationStatus: string;
 }
 
-const { slug, title, subtitle, image, alt, scientificName, conservationStatus } =
-  Astro.props;
+const { slug, title, subtitle, image, alt, scientificName, conservationStatus } = Astro.props;
 
 const statusColors: Record<string, string> = {
   'En Peligro': 'bg-danger-400/20 text-danger-600',
-  'Vulnerable': 'bg-accent-100 text-accent-700',
+  Vulnerable: 'bg-accent-100 text-accent-700',
   'Casi amenazado': 'bg-accent-50 text-accent-600',
   'Preocupación menor': 'bg-brand-100 text-brand-700',
 };
-const statusClass =
-  statusColors[conservationStatus] ?? 'bg-base-100 text-base-700';
+const statusClass = statusColors[conservationStatus] ?? 'bg-base-100 text-base-700';
 ---
 
-<article class="group relative flex flex-col rounded-card bg-white shadow-card ring-1 ring-base-100 transition-shadow hover:shadow-lg">
+<article
+  class="group rounded-card shadow-card ring-base-100 relative flex flex-col bg-white ring-1 transition-shadow hover:shadow-lg"
+>
   <!-- Image -->
-  <a href={`/felinos/${slug}/`} class="block overflow-hidden aspect-[3/2]" tabindex="-1" aria-hidden="true">
+  <a href={`/felinos/${slug}/`} class="block aspect-[3/2] overflow-hidden" tabindex="-1" aria-hidden="true">
     <Image
       src={image}
       alt={alt}
@@ -47,23 +47,32 @@ const statusClass =
     </span>
 
     <div>
-      <h2 class="font-display text-xl font-bold text-base-900 leading-snug">
+      <h2 class="font-display text-base-900 text-xl leading-snug font-bold">
         <a href={`/felinos/${slug}/`} class="hover:text-accent-700 transition-colors">
           {title}
         </a>
       </h2>
-      <p class="mt-0.5 text-xs italic text-base-400">{scientificName}</p>
+      <p class="text-base-400 mt-0.5 text-xs italic">{scientificName}</p>
     </div>
 
-    <p class="text-sm text-base-600 leading-relaxed line-clamp-3">{subtitle}</p>
+    <p class="text-base-600 line-clamp-3 text-sm leading-relaxed">{subtitle}</p>
 
     <a
       href={`/felinos/${slug}/`}
-      class="mt-auto inline-flex items-center gap-1.5 text-sm font-medium text-accent-600 hover:text-accent-800 transition-colors"
+      class="text-accent-600 hover:text-accent-800 mt-auto inline-flex items-center gap-1.5 text-sm font-medium transition-colors"
     >
       Leer más
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-        <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
       </svg>
     </a>
   </div>

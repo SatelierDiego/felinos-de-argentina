@@ -7,20 +7,18 @@ const pathname = Astro.url.pathname;
 const felinosActive = pathname === '/felinos/' || pathname.startsWith('/felinos/');
 ---
 
-<header class="sticky top-0 z-50 border-b border-base-200 bg-base-50/90 backdrop-blur-sm">
+<header class="border-base-200 bg-base-50/90 sticky top-0 z-50 border-b backdrop-blur-sm">
   <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-
     <!-- Logo -->
     <a href="/" class="flex items-center gap-2 no-underline" aria-label="Felinos de Argentina – inicio">
-      <span class="font-display text-xl font-bold text-base-900 tracking-tight">
+      <span class="font-display text-base-900 text-xl font-bold tracking-tight">
         Felinos<span class="text-accent-600">AR</span>
       </span>
     </a>
 
     <!-- Nav -->
     <nav aria-label="Navegación principal">
-      <ul class="flex items-center gap-8 list-none m-0 p-0">
-
+      <ul class="m-0 flex list-none items-center gap-8 p-0">
         <!-- Felinos dropdown -->
         <li class="relative" id="felinos-menu">
           <button
@@ -29,9 +27,9 @@ const felinosActive = pathname === '/felinos/' || pathname.startsWith('/felinos/
             aria-expanded="false"
             aria-controls="felinos-dropdown"
             class:list={[
-              'flex items-center gap-1 text-base font-medium transition-colors duration-150 cursor-pointer bg-transparent border-0 p-0',
+              'flex cursor-pointer items-center gap-1 border-0 bg-transparent p-0 text-base font-medium transition-colors duration-150',
               felinosActive
-                ? 'text-accent-600 border-b-2 border-accent-500 pb-0.5'
+                ? 'text-accent-600 border-accent-500 border-b-2 pb-0.5'
                 : 'text-base-600 hover:text-base-900',
             ]}
           >
@@ -44,7 +42,10 @@ const felinosActive = pathname === '/felinos/' || pathname.startsWith('/felinos/
               fill="currentColor"
               aria-hidden="true"
             >
-              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+              <path
+                fill-rule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
             </svg>
           </button>
 
@@ -53,14 +54,14 @@ const felinosActive = pathname === '/felinos/' || pathname.startsWith('/felinos/
             id="felinos-dropdown"
             role="menu"
             aria-labelledby="felinos-trigger"
-            class="absolute left-1/2 -translate-x-1/2 top-full mt-3 hidden w-56 rounded bg-white shadow-lg ring-1 ring-base-200 overflow-hidden"
+            class="ring-base-200 absolute top-full left-1/2 mt-3 hidden w-56 -translate-x-1/2 overflow-hidden rounded bg-white shadow-lg ring-1"
           >
             <!-- Ver todos -->
             <a
               href="/felinos/"
               role="menuitem"
               class:list={[
-                'flex items-center gap-2 px-4 py-2.5 text-xs font-semibold uppercase tracking-widest border-b border-base-100 transition-colors',
+                'border-base-100 flex items-center gap-2 border-b px-4 py-2.5 text-xs font-semibold tracking-widest uppercase transition-colors',
                 pathname === '/felinos/'
                   ? 'text-accent-600 bg-accent-50'
                   : 'text-base-400 hover:text-base-700 hover:bg-base-50',
@@ -70,49 +71,50 @@ const felinosActive = pathname === '/felinos/' || pathname.startsWith('/felinos/
             </a>
 
             <!-- Species list -->
-            {felinos.map((entry) => {
-              const href = `/felinos/${entry.data.slug}/`;
-              const isActive = pathname === href;
-              return (
-                <a
-                  href={href}
-                  role="menuitem"
-                  class:list={[
-                    'flex flex-col px-4 py-3 transition-colors border-b border-base-50 last:border-0',
-                    isActive
-                      ? 'bg-accent-50 text-accent-700'
-                      : 'text-base-700 hover:bg-base-50',
-                  ]}
-                >
-                  <span class="text-sm font-medium leading-snug">{entry.data.hero.title}</span>
-                  <span class="text-xs text-base-400 italic">{entry.data.scientific_name}</span>
-                </a>
-              );
-            })}
+            {
+              felinos.map((entry) => {
+                const href = `/felinos/${entry.data.slug}/`;
+                const isActive = pathname === href;
+                return (
+                  <a
+                    href={href}
+                    role="menuitem"
+                    class:list={[
+                      'border-base-50 flex flex-col border-b px-4 py-3 transition-colors last:border-0',
+                      isActive ? 'bg-accent-50 text-accent-700' : 'text-base-700 hover:bg-base-50',
+                    ]}
+                  >
+                    <span class="text-sm leading-snug font-medium">{entry.data.hero.title}</span>
+                    <span class="text-base-400 text-xs italic">{entry.data.scientific_name}</span>
+                  </a>
+                );
+              })
+            }
           </div>
         </li>
 
         <!-- Libros -->
         <li>
-          {(() => {
-            const isActive = pathname === '/libros/';
-            return (
-              <a
-                href="/libros/"
-                class:list={[
-                  'text-base font-medium transition-colors duration-150 no-underline',
-                  isActive
-                    ? 'text-accent-600 border-b-2 border-accent-500 pb-0.5'
-                    : 'text-base-600 hover:text-base-900',
-                ]}
-                aria-current={isActive ? 'page' : undefined}
-              >
-                Libros
-              </a>
-            );
-          })()}
+          {
+            (() => {
+              const isActive = pathname === '/libros/';
+              return (
+                <a
+                  href="/libros/"
+                  class:list={[
+                    'text-base font-medium no-underline transition-colors duration-150',
+                    isActive
+                      ? 'text-accent-600 border-accent-500 border-b-2 pb-0.5'
+                      : 'text-base-600 hover:text-base-900',
+                  ]}
+                  aria-current={isActive ? 'page' : undefined}
+                >
+                  Libros
+                </a>
+              );
+            })()
+          }
         </li>
-
       </ul>
     </nav>
   </div>

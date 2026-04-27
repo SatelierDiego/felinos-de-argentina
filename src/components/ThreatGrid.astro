@@ -14,27 +14,23 @@ interface Props {
 const { threats } = Astro.props;
 ---
 
-<section class="py-20 bg-base-100" aria-labelledby="threats-heading">
+<section class="bg-background-alt py-20" aria-labelledby="threats-heading">
   <div class="mx-auto max-w-7xl px-6">
     <header class="mb-12 text-center">
-      <h2 id="threats-heading" class="font-display text-3xl font-bold text-base-900">
-        Principales amenazas
-      </h2>
-      <p class="mt-3 text-base-500 max-w-xl mx-auto text-sm">
+      <h2 id="threats-heading" class="font-display text-base-900 text-3xl font-bold">Principales amenazas</h2>
+      <p class="text-base-500 mx-auto mt-3 max-w-xl text-sm">
         Factores que ponen en riesgo la supervivencia de la especie.
       </p>
     </header>
 
-    <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 list-none p-0 m-0">
-      {threats.map((threat) => (
-        <li class="flex">
-          <ThreatCard
-            title={threat.title}
-            icon={threat.icon}
-            description={threat.description}
-          />
-        </li>
-      ))}
+    <ul class="m-0 grid list-none grid-cols-1 gap-6 p-0 sm:grid-cols-2 lg:grid-cols-4">
+      {
+        threats.map((threat) => (
+          <li class="flex">
+            <ThreatCard title={threat.title} icon={threat.icon} description={threat.description} />
+          </li>
+        ))
+      }
     </ul>
   </div>
 </section>

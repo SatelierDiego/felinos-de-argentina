@@ -32,7 +32,7 @@ Build production-ready design systems with Tailwind CSS v4, including CSS-first 
 
 ```css
 /* app.css - Tailwind v4 CSS-first configuration */
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* Define your theme with @theme */
 @theme {
@@ -537,8 +537,8 @@ For advanced animation and dark mode patterns, see [references/advanced-patterns
 
 ```typescript
 // lib/utils.ts
-import { type ClassValue, clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
+import { type ClassValue, clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -546,12 +546,12 @@ export function cn(...inputs: ClassValue[]) {
 
 // Focus ring utility
 export const focusRing = cn(
-  "focus-visible:outline-none focus-visible:ring-2",
-  "focus-visible:ring-ring focus-visible:ring-offset-2",
+  'focus-visible:outline-none focus-visible:ring-2',
+  'focus-visible:ring-ring focus-visible:ring-offset-2'
 );
 
 // Disabled utility
-export const disabled = "disabled:pointer-events-none disabled:opacity-50";
+export const disabled = 'disabled:pointer-events-none disabled:opacity-50';
 ```
 
 For advanced v4 CSS patterns, the full v3-to-v4 migration checklist, and complete best practices, see [references/advanced-patterns.md](references/advanced-patterns.md):

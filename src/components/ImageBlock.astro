@@ -16,20 +16,22 @@ interface Props {
 const { images, position = 'left' } = Astro.props;
 ---
 
-<div class:list={[images.length >= 2 && 'grid gap-4 grid-rows-2']}>
-  {images.map((img) => (
-    <div class="rounded-card shadow-card">
-      <figure class="overflow-hidden rounded-card aspect-[4/3]">
-        <Image
-          src={img.src}
-          alt={img.alt}
-          width={800}
-          height={600}
-          class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-          loading="lazy"
-          decoding="async"
-        />
-      </figure>
-    </div>
-  ))}
+<div class:list={[images.length >= 2 && 'grid grid-rows-2 gap-4']}>
+  {
+    images.map((img) => (
+      <div class="rounded-card shadow-card">
+        <figure class="rounded-card aspect-[4/3] overflow-hidden">
+          <Image
+            src={img.src}
+            alt={img.alt}
+            width={800}
+            height={600}
+            class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+      </div>
+    ))
+  }
 </div>

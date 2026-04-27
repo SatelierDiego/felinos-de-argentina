@@ -43,6 +43,4 @@ const ogImage = image.startsWith('http') ? image : new URL(image, siteUrl).href;
 <meta name="twitter:image" content={ogImage} />
 
 <!-- JSON-LD -->
-{jsonLd.map((schema) => (
-  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-))}
+{jsonLd.map((schema) => <script type="application/ld+json" set:html={JSON.stringify(schema)} />)}

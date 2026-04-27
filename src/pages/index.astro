@@ -1,104 +1,92 @@
 ---
-import { getCollection } from "astro:content";
-import { Image } from "astro:assets";
-import Layout from "../layouts/Layout.astro";
-import SectionBlock from "../components/SectionBlock.astro";
-import SpeciesGrid from "../components/SpeciesGrid.astro";
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import SectionBlock from '../components/SectionBlock.astro';
+import SpeciesGrid from '../components/SpeciesGrid.astro';
 
-const homeEntries = await getCollection("home");
+const homeEntries = await getCollection('home');
 const home = homeEntries[0]!.data;
-const felinosOrdenados = [...home.felinos].sort((a, b) =>
-    a.title.localeCompare(b.title, "es"),
-);
+const felinosOrdenados = [...home.felinos].sort((a, b) => a.title.localeCompare(b.title, 'es'));
 
-const siteUrl = "https://felinosdeargentina.org";
+const siteUrl = 'https://felinosdeargentina.org';
 
 const jsonLd = [
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        name: "Felinos de Argentina",
-        url: siteUrl,
-        description:
-            "Sitio de divulgación sobre los felinos silvestres de Argentina con fines educativos y de conservación.",
-    },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Felinos de Argentina',
+    url: siteUrl,
+    description:
+      'Sitio de divulgación sobre los felinos silvestres de Argentina con fines educativos y de conservación.',
+  },
 ];
 
-const introContent = home.intro.paragraphs.join("\n\n");
-const contentContent = home.content.paragraphs.join("\n\n");
+const introContent = home.intro.paragraphs.join('\n\n');
+const contentContent = home.content.paragraphs.join('\n\n');
 ---
 
 <Layout
-    title="Felinos de Argentina | Conocé los felinos silvestres de Argentina"
-    description="Conocé los felinos silvestres de Argentina: yaguareté, puma, gato andino y más. Información sobre su biología, hábitat y conservación."
-    jsonLd={jsonLd}
+  title="Felinos de Argentina | Conocé los felinos silvestres de Argentina"
+  description="Conocé los felinos silvestres de Argentina: yaguareté, puma, gato andino y más. Información sobre su biología, hábitat y conservación."
+  jsonLd={jsonLd}
 >
-    <!-- ── Hero ─────────────────────────────────────────────────── -->
-    <section
-        class="relative isolate overflow-hidden bg-stone-950 text-white"
-        style="min-height: 88vh;"
-        aria-labelledby="hero-heading"
-    >
-        <Image
-            src={home.hero.image}
-            alt=""
-            width={1920}
-            height={1080}
-            class="absolute inset-0 h-full w-full object-cover"
-            loading="eager"
-            decoding="async"
-            fetchpriority="high"
-        />
-        <div
-            class="absolute inset-0"
-            style="background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.72) 100%);"
-            aria-hidden="true"
-        >
-        </div>
-
-        <div
-            class="relative flex flex-col justify-end h-full"
-            style="min-height: 88vh;"
-        >
-            <div class="mx-auto w-full max-w-7xl px-6 pb-20 md:pb-28">
-                <h1
-                    id="hero-heading"
-                    class="font-display font-bold text-white max-w-2xl text-balance"
-                    style="font-size: var(--text-display); line-height: var(--text-display--line-height);"
-                >
-                    {home.hero.title}
-                </h1>
-                <p
-                    class="mt-5 max-w-lg text-base text-white/70 leading-relaxed"
-                >
-                    {home.hero.subtitle}
-                </p>
-                <div class="mt-8">
-                    <a
-                        href="/felinos/"
-                        class="inline-flex items-center gap-2 border border-white/80 px-6 py-3 text-sm font-semibold text-white uppercase tracking-widest hover:bg-white hover:text-stone-900 transition-[background-color,color] duration-200"
-                    >
-                        Explorar especies
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── Intro ─────────────────────────────────────────────────── -->
-    <SectionBlock id="intro" content={introContent} />
-
-    <!-- ── Highlight ─────────────────────────────────────────────── -->
-    <SectionBlock
-        id="highlight"
-        title={home.highlight.title}
-        content={home.highlight.content}
-        highlight={true}
+  <!-- ── Hero ─────────────────────────────────────────────────── -->
+  <section
+    class="relative isolate overflow-hidden bg-stone-950 text-white"
+    style="min-height: 88vh;"
+    aria-labelledby="hero-heading"
+  >
+    <Image
+      src={home.hero.image}
+      alt=""
+      width={1920}
+      height={1080}
+      class="absolute inset-0 h-full w-full object-cover"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
     />
+    <div
+      class="absolute inset-0"
+      style="background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.72) 100%);"
+      aria-hidden="true"
+    >
+    </div>
 
-    <!-- ── Content ───────────────────────────────────────────────── -->
-    <SectionBlock id="contexto" content={contentContent} />
+    <div class="relative flex h-full flex-col justify-end" style="min-height: 88vh;">
+      <div class="mx-auto w-full max-w-7xl px-6 pb-20 md:pb-28">
+        <h1
+          id="hero-heading"
+          class="font-display max-w-2xl font-bold text-balance text-white"
+          style="font-size: var(--text-display); line-height: var(--text-display--line-height);"
+        >
+          {home.hero.title}
+        </h1>
+        <p class="mt-5 max-w-lg text-base leading-relaxed text-white/70">
+          {home.hero.subtitle}
+        </p>
+        <div class="mt-8">
+          <a
+            href="/felinos/"
+            class="inline-flex items-center gap-2 border border-white/80 px-6 py-3 text-sm font-semibold tracking-widest text-white uppercase transition-[background-color,color] duration-200 hover:bg-white hover:text-stone-900"
+          >
+            Explorar especies
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- ── Species grid ──────────────────────────────────────────── -->
-    <SpeciesGrid felinos={felinosOrdenados} />
+  <!-- ── Intro ─────────────────────────────────────────────────── -->
+  <SectionBlock id="intro" content={introContent} />
+
+  <!-- ── Highlight ─────────────────────────────────────────────── -->
+  <SectionBlock id="highlight" title={home.highlight.title} content={home.highlight.content} highlight={true} />
+
+  <!-- ── Content ───────────────────────────────────────────────── -->
+  <SectionBlock id="contexto" content={contentContent} />
+
+  <!-- ── Species grid ──────────────────────────────────────────── -->
+  <SpeciesGrid felinos={felinosOrdenados} />
 </Layout>

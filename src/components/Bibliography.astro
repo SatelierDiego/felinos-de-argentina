@@ -6,15 +6,16 @@ interface Props {
 const { entries } = Astro.props;
 ---
 
-<section class="border-t border-base-200 bg-base-50 py-12" aria-labelledby="bibliography-heading">
+<section class="border-base-200 bg-base-50 border-t py-12" aria-labelledby="bibliography-heading">
   <div class="mx-auto max-w-7xl px-6">
-    <h2 id="bibliography-heading" class="font-display text-sm font-semibold uppercase tracking-widest text-base-500 mb-6">
+    <h2
+      id="bibliography-heading"
+      class="font-display text-base-500 mb-6 text-sm font-semibold tracking-widest uppercase"
+    >
       Bibliografía
     </h2>
-    <ol class="space-y-3 list-none p-0 m-0">
-      {entries.map((entry) => (
-        <li class="text-xs text-base-500 leading-relaxed">{entry}</li>
-      ))}
+    <ol class="m-0 list-none space-y-3 p-0">
+      {entries.map((entry) => <li class="text-base-500 text-xs leading-relaxed">{entry}</li>)}
     </ol>
   </div>
 </section>

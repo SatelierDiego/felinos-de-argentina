@@ -51,10 +51,10 @@ These technologies are NOT negotiable.
 - Use collections for all dynamic content
 - Components must be reusable and isolated
 - Clear separation:
-    - content
-    - components
-    - layout
-    - pages
+  - content
+  - components
+  - layout
+  - pages
 
 - No global state unless strictly necessary
 - No unnecessary client-side JavaScript

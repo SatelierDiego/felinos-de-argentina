@@ -2,63 +2,47 @@
 const year = new Date().getFullYear();
 ---
 
-<footer class="border-t border-base-200 bg-base-900 text-base-300">
-    <div class="mx-auto max-w-7xl px-6 py-16">
-        <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
-            <!-- Brand -->
-            <div>
-                <p class="font-display text-xl font-bold text-white">
-                    Felinos<span class="text-accent-400">AR</span>
-                </p>
-                <p class="mt-3 text-sm leading-relaxed text-base-400">
-                    Sitio de divulgación sobre los felinos silvestres de
-                    Argentina con fines educativos y de conservación.
-                </p>
-            </div>
+<footer class="border-base-200 bg-base-900 text-base-300 border-t">
+  <div class="mx-auto max-w-7xl px-6 py-16">
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
+      <!-- Brand -->
+      <div>
+        <p class="font-display text-xl font-bold text-white">
+          Felinos<span class="text-accent-400">AR</span>
+        </p>
+        <p class="text-base-400 mt-3 text-sm leading-relaxed">
+          Sitio de divulgación sobre los felinos silvestres de Argentina con fines educativos y de conservación.
+        </p>
+      </div>
 
-            <!-- Nav -->
-            <div>
-                <h3
-                    class="text-xs font-semibold uppercase tracking-widest text-base-500"
-                >
-                    Secciones
-                </h3>
-                <ul class="mt-4 space-y-2 list-none p-0">
-                    <li>
-                        <a
-                            href="/felinos/"
-                            class="text-sm text-base-400 hover:text-white transition-colors"
-                            >Felinos</a>
-                    </li>
-                    <li>
-                        <a
-                            href="/libros/"
-                            class="text-sm text-base-400 hover:text-white transition-colors"
-                            >Libros</a>
-                    </li>
-                </ul>
-            </div>
+      <!-- Nav -->
+      <div>
+        <h3 class="text-base-500 text-xs font-semibold tracking-widest uppercase">Secciones</h3>
+        <ul class="mt-4 list-none space-y-2 p-0">
+          <li>
+            <a href="/felinos/" class="text-base-400 text-sm transition-colors hover:text-white">Felinos</a>
+          </li>
+          <li>
+            <a href="/libros/" class="text-base-400 text-sm transition-colors hover:text-white">Libros</a>
+          </li>
+        </ul>
+      </div>
 
-            <!-- Legal -->
-            <div>
-                <h3
-                    class="text-xs font-semibold uppercase tracking-widest text-base-500"
-                >
-                    Información
-                </h3>
-                <p class="mt-4 text-sm text-base-400">
-                    Todas las fotos pertenecen a sus respectivos autores y no
-                    pueden ser reutilizadas sin su consentimiento. <a
-                        href="/fotografos">Ver listado de fotógrafos</a
-                    >.
-                </p>
-            </div>
-        </div>
-
-        <div class="mt-12 border-t border-base-800 pt-8 text-center">
-            <p class="text-xs text-base-600">
-                &copy; {year} Felinos de Argentina. Todos los derechos reservados.
-            </p>
-        </div>
+      <!-- Legal -->
+      <div>
+        <h3 class="text-base-500 text-xs font-semibold tracking-widest uppercase">Información</h3>
+        <p class="text-base-400 mt-4 text-sm">
+          Todas las fotos pertenecen a sus respectivos autores y no pueden ser reutilizadas sin su consentimiento. <a
+            href="/fotografos">Ver listado de fotógrafos</a
+          >.
+        </p>
+      </div>
     </div>
+
+    <div class="border-base-800 mt-12 border-t pt-8 text-center">
+      <p class="text-base-600 text-xs">
+        &copy; {year} Felinos de Argentina. Todos los derechos reservados.
+      </p>
+    </div>
+  </div>
 </footer>
