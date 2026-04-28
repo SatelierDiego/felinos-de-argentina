@@ -7,17 +7,17 @@ const pathname = Astro.url.pathname;
 const felinosActive = pathname === '/felinos/' || pathname.startsWith('/felinos/');
 ---
 
-<header class="border-base-200 bg-base-50/90 sticky top-0 z-50 border-b backdrop-blur-sm">
+<header class="absolute top-0 left-0 right-0 z-50 bg-gradient-to-b from-black/60 via-black/40 to-transparent">
   <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
     <!-- Logo -->
     <a href="/" class="flex items-center gap-2 no-underline" aria-label="Felinos de Argentina – inicio">
-      <span class="font-display text-base-900 text-xl font-bold tracking-tight">
-        Felinos<span class="text-accent-600">AR</span>
+      <span class="font-display text-white text-xl font-bold tracking-tight">
+        Felinos<span class="text-accent-300">AR</span>
       </span>
     </a>
 
-    <!-- Nav -->
-    <nav aria-label="Navegación principal">
+    <!-- Desktop Nav -->
+    <nav aria-label="Navegación principal" class="hidden md:block">
       <ul class="m-0 flex list-none items-center gap-8 p-0">
         <!-- Felinos dropdown -->
         <li class="relative" id="felinos-menu">
@@ -29,8 +29,8 @@ const felinosActive = pathname === '/felinos/' || pathname.startsWith('/felinos/
             class:list={[
               'flex cursor-pointer items-center gap-1 border-0 bg-transparent p-0 text-base font-medium transition-colors duration-150',
               felinosActive
-                ? 'text-accent-600 border-accent-500 border-b-2 pb-0.5'
-                : 'text-base-600 hover:text-base-900',
+                ? 'text-white border-white border-b-2 pb-0.5'
+                : 'text-white/80 hover:text-white',
             ]}
           >
             Felinos
@@ -54,7 +54,7 @@ const felinosActive = pathname === '/felinos/' || pathname.startsWith('/felinos/
             id="felinos-dropdown"
             role="menu"
             aria-labelledby="felinos-trigger"
-            class="ring-base-200 absolute top-full left-1/2 mt-3 hidden w-56 -translate-x-1/2 overflow-hidden rounded bg-white shadow-lg ring-1"
+            class="ring-base-200 absolute top-full left-1/2 mt-3 hidden w-56 -translate-x-1/2 overflow-hidden rounded bg-white/95 shadow-lg ring-1 backdrop-blur-sm"
           >
             <!-- Ver todos -->
             <a
@@ -63,8 +63,8 @@ const felinosActive = pathname === '/felinos/' || pathname.startsWith('/felinos/
               class:list={[
                 'border-base-100 flex items-center gap-2 border-b px-4 py-2.5 text-xs font-semibold tracking-widest uppercase transition-colors',
                 pathname === '/felinos/'
-                  ? 'text-accent-600 bg-accent-50'
-                  : 'text-base-400 hover:text-base-700 hover:bg-base-50',
+                  ? 'text-accent-600 bg-white/90'
+                  : 'text-base-400 hover:text-base-700 hover:bg-white/90',
               ]}
             >
               Ver todos los felinos
@@ -81,7 +81,7 @@ const felinosActive = pathname === '/felinos/' || pathname.startsWith('/felinos/
                     role="menuitem"
                     class:list={[
                       'border-base-50 flex flex-col border-b px-4 py-3 transition-colors last:border-0',
-                      isActive ? 'bg-accent-50 text-accent-700' : 'text-base-700 hover:bg-base-50',
+                      isActive ? 'bg-white/90 text-accent-700' : 'text-base-700 hover:bg-white/90',
                     ]}
                   >
                     <span class="text-sm leading-snug font-medium">{entry.data.hero.title}</span>
@@ -104,8 +104,8 @@ const felinosActive = pathname === '/felinos/' || pathname.startsWith('/felinos/
                   class:list={[
                     'text-base font-medium no-underline transition-colors duration-150',
                     isActive
-                      ? 'text-accent-600 border-accent-500 border-b-2 pb-0.5'
-                      : 'text-base-600 hover:text-base-900',
+                      ? 'text-white border-white border-b-2 pb-0.5'
+                      : 'text-white/80 hover:text-white',
                   ]}
                   aria-current={isActive ? 'page' : undefined}
                 >
@@ -117,8 +117,148 @@ const felinosActive = pathname === '/felinos/' || pathname.startsWith('/felinos/
         </li>
       </ul>
     </nav>
+
+    <!-- Mobile Burger Button -->
+    <button
+      id="burger-trigger"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      class="flex cursor-pointer items-center justify-center border-0 bg-transparent p-2 text-white md:hidden"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
   </div>
 </header>
+
+<!-- Mobile Menu Drawer -->
+<div
+  id="mobile-menu"
+  role="dialog"
+  aria-labelledby="burger-trigger"
+  aria-modal="true"
+  class="fixed inset-0 z-50 hidden"
+>
+  <!-- Backdrop -->
+  <div id="mobile-backdrop" class="absolute inset-0 bg-black/60"></div>
+
+  <!-- Drawer -->
+  <div class="absolute left-0 top-0 h-full w-72 max-w-[85vw] bg-base-50 px-6 py-4 shadow-xl transform -translate-x-full transition-transform duration-300">
+    <!-- Close button & Logo -->
+    <div class="flex items-center justify-between">
+      <span class="font-display text-base-900 text-xl font-bold tracking-tight">
+        Felinos<span class="text-accent-600">AR</span>
+      </span>
+      <button
+        id="burger-close"
+        aria-label="Cerrar menú"
+        class="flex cursor-pointer items-center justify-center border-0 bg-transparent p-2 text-base-600"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Links -->
+    <nav aria-label="Navegación móvil" class="mt-8">
+      <ul class="m-0 list-none p-0">
+        <li>
+          <a
+            href="/"
+            class:list={[
+              'block border-b border-base-100 px-2 py-3 text-base font-medium no-underline transition-colors',
+              pathname === '/'
+                ? 'text-accent-600 border-accent-500'
+                : 'text-base-700 hover:bg-base-50',
+            ]}
+          >
+            Inicio
+          </a>
+        </li>
+        <li>
+          <button
+            id="mobile-felinos-trigger"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="mobile-felinos-dropdown"
+            class:list={[
+              'flex w-full cursor-pointer items-center justify-between border-b border-base-100 border-none bg-transparent px-2 py-3 text-left text-base font-medium transition-colors',
+              pathname.startsWith('/felinos/')
+                ? 'text-accent-600 border-accent-500'
+                : 'text-base-700 hover:bg-base-50',
+            ]}
+          >
+            Felinos
+            <svg
+              id="mobile-felinos-chevron"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4 transition-transform duration-200"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div id="mobile-felinos-dropdown" class="hidden overflow-hidden">
+            <ul class="m-0 list-none border-t border-base-50 py-1">
+              <li>
+                <a
+                  href="/felinos/"
+                  class:list={[
+                    'block px-6 py-2 text-sm font-medium no-underline transition-colors',
+                    pathname === '/felinos/'
+                      ? 'text-accent-600 bg-accent-50'
+                      : 'text-base-600 hover:bg-base-50',
+                  ]}
+                >
+                  Ver todos
+                </a>
+              </li>
+              {
+                felinos.map((entry) => {
+                  const href = `/felinos/${entry.data.slug}/`;
+                  const isActive = pathname === href;
+                  return (
+                    <li>
+                      <a
+                        href={href}
+                        class:list={[
+                          'block px-6 py-2 text-sm no-underline transition-colors',
+                          isActive
+                            ? 'text-accent-600 bg-accent-50'
+                            : 'text-base-600 hover:bg-base-50',
+                        ]}
+                      >
+                        {entry.data.hero.title}
+                      </a>
+                    </li>
+                  );
+                })
+              }
+            </ul>
+          </div>
+        </li>
+        <li>
+          <a
+            href="/libros/"
+            class:list={[
+              'block border-b border-base-100 px-2 py-3 text-base font-medium no-underline transition-colors',
+              pathname === '/libros/'
+                ? 'text-accent-600 border-accent-500'
+                : 'text-base-700 hover:bg-base-50',
+            ]}
+          >
+            Libros
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
 
 <script>
   const trigger = document.getElementById('felinos-trigger');
@@ -143,13 +283,58 @@ const felinosActive = pathname === '/felinos/' || pathname.startsWith('/felinos/
     isOpen ? close() : open();
   });
 
-  // Close when clicking outside
   document.addEventListener('click', (e) => {
     if (!menu?.contains(e.target as Node)) close();
   });
 
-  // Close on Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') close();
+  });
+
+  // Mobile menu
+  const burgerTrigger = document.getElementById('burger-trigger');
+  const burgerClose = document.getElementById('burger-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileBackdrop = document.getElementById('mobile-backdrop');
+  const drawer = mobileMenu?.querySelector('div[class*="transform"]');
+
+  function openMobileMenu() {
+    mobileMenu?.classList.remove('hidden');
+    burgerTrigger?.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => drawer?.classList.remove('-translate-x-full'), 10);
+  }
+
+  function closeMobileMenu() {
+    drawer?.classList.add('-translate-x-full');
+    burgerTrigger?.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    setTimeout(() => mobileMenu?.classList.add('hidden'), 300);
+  }
+
+  burgerTrigger?.addEventListener('click', openMobileMenu);
+  burgerClose?.addEventListener('click', closeMobileMenu);
+  mobileBackdrop?.addEventListener('click', closeMobileMenu);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMobileMenu();
+  });
+
+  // Mobile felinos dropdown
+  const mobileFelinosTrigger = document.getElementById('mobile-felinos-trigger');
+  const mobileFelinosDropdown = document.getElementById('mobile-felinos-dropdown');
+  const mobileFelinosChevron = document.getElementById('mobile-felinos-chevron');
+
+  mobileFelinosTrigger?.addEventListener('click', () => {
+    const isOpen = mobileFelinosTrigger.getAttribute('aria-expanded') === 'true';
+    if (isOpen) {
+      mobileFelinosDropdown?.classList.add('hidden');
+      mobileFelinosTrigger.setAttribute('aria-expanded', 'false');
+      mobileFelinosChevron?.classList.remove('rotate-180');
+    } else {
+      mobileFelinosDropdown?.classList.remove('hidden');
+      mobileFelinosTrigger.setAttribute('aria-expanded', 'true');
+      mobileFelinosChevron?.classList.add('rotate-180');
+    }
   });
 </script>

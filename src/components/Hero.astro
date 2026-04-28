@@ -1,18 +1,20 @@
 ---
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
+import separator from '../assets/separator_0.svg';
 
 interface Props {
   title: string;
   subtitle: string;
   image: ImageMetadata;
   alt: string;
+  separatorColor?: string;
 }
 
-const { title, subtitle, image, alt } = Astro.props;
+const { title, subtitle, image, alt, separatorColor = '#111111' } = Astro.props;
 ---
 
-<section class="relative isolate h-[85vh] min-h-[520px] w-full overflow-hidden">
+<section class="relative isolate h-[85vh] min-h-130 w-full overflow-hidden">
   <!-- Background image -->
   <Image
     src={image}
@@ -46,5 +48,13 @@ const { title, subtitle, image, alt } = Astro.props;
       </p>
       <slot />
     </div>
+  </div>
+
+  <!-- Separator SVG -->
+  <div
+    class="absolute inset-x-0 bottom-0 h-7 w-full bg-bottom"
+    style={`background-color: ${separatorColor}; -webkit-mask-image: url(${separator.src}); mask-image: url(${separator.src}); -webkit-mask-size: 100% 100%; mask-size: 100% 100%; -webkit-mask-position: center bottom; mask-position: center bottom; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;`}
+    aria-hidden="true"
+  >
   </div>
 </section>
