@@ -1,12 +1,11 @@
 ---
-interface Props {
-  title: string;
-  description: string;
-  canonicalUrl?: string;
-  image?: string;
-  type?: 'website' | 'article';
-  jsonLd?: Record<string, unknown>[];
-}
+import type { SEOProps } from '../types/components/SEO';
+
+interface Props extends SEOProps {}
+
+const siteUrl = 'https://felinosdeargentina.org';
+const siteName = 'Felinos de Argentina';
+const twitterHandle = '@felinosar';
 
 const {
   title,
@@ -15,17 +14,27 @@ const {
   image = '/images/og-default.jpg',
   type = 'website',
   jsonLd = [],
+  noindex = false,
 } = Astro.props;
 
-const siteUrl = 'https://felinosdeargentina.org';
-const canonical = canonicalUrl ?? new URL(Astro.url.pathname, siteUrl).href;
+const canonical = canonicalUrl ?? new URL(Astro.url.pathname.replace(/\/$/, ''), siteUrl).href;
 const ogImage = image.startsWith('http') ? image : new URL(image, siteUrl).href;
 ---
 
 <!-- Primary -->
 <title>{title}</title>
 <meta name="description" content={description} />
+<meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-video-preview:0, max-snippet:160'} />
+<meta name="author" content={siteName} />
+<meta name="googlebot" content="index, follow" />
+<meta name="language" content="Spanish" />
 <link rel="canonical" href={canonical} />
+<link rel="alternate" hreflang="es-AR" href={canonical} />
+<link rel="alternate" hreflang="es" href={canonical} />
+<link rel="alternate" hreflang="en" href={canonical.replace('felinosdeargentina.org', 'felinosdeargentina.org/en')} />
+
+<!-- Theme -->
+<meta name="theme-color" content="#1c1917" />
 
 <!-- Open Graph -->
 <meta property="og:type" content={type} />
@@ -33,14 +42,19 @@ const ogImage = image.startsWith('http') ? image : new URL(image, siteUrl).href;
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={ogImage} />
-<meta property="og:site_name" content="Felinos de Argentina" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content={siteName} />
 <meta property="og:locale" content="es_AR" />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content={twitterHandle} />
+<meta name="twitter:creator" content={twitterHandle} />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImage} />
+<meta name="twitter:url" content={canonical} />
 
 <!-- JSON-LD -->
 {jsonLd.map((schema) => <script type="application/ld+json" set:html={JSON.stringify(schema)} />)}

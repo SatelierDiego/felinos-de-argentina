@@ -1,18 +1,8 @@
 ---
 import { Image } from 'astro:assets';
-import type { ImageMetadata } from 'astro';
+import type { GalleryProps } from '../types/components/gallery';
 
-interface GalleryItem {
-  src: ImageMetadata;
-  alt: string;
-  autor: string;
-}
-
-interface Props {
-  items: GalleryItem[];
-  title?: string;
-  speciesName?: string;
-}
+interface Props extends GalleryProps {}
 
 const { items, title = 'Galería', speciesName } = Astro.props;
 

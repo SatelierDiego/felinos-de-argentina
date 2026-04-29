@@ -1,16 +1,9 @@
 ---
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
+import type { SpeciesCardProps } from '../types/components/SpeciesCard';
 
-interface Props {
-  slug: string;
-  title: string;
-  subtitle: string;
-  image: ImageMetadata;
-  alt: string;
-  scientificName: string;
-  conservationStatus: string;
-}
+interface Props extends SpeciesCardProps {}
 
 const { slug, title, subtitle, image, alt, scientificName, conservationStatus } = Astro.props;
 

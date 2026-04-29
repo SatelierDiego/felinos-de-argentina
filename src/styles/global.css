@@ -3,8 +3,8 @@
 
 @theme {
   /* ── Fonts ─────────────────────────────────────── */
-  --font-sans: 'Open Sans', ui-sans-serif, system-ui, sans-serif;
-  --font-display: 'Quicksand', 'Open Sans', ui-sans-serif, sans-serif;
+  --font-sans: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-quicksand), var(--font-open-sans), ui-sans-serif, sans-serif;
 
   /* ── Semantic design tokens ────────────────────── */
   --color-base: #22160a;

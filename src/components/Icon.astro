@@ -1,23 +1,7 @@
 ---
+import type { IconProps } from '../types/components/Icon';
+
 const { name, class: className = '', ...rest } = Astro.props;
-
-// Handle name prop - remove leading slash if present
-const iconName = name.startsWith('/') ? name.slice(1) : name;
-
-// Construct the path to the icon
-const iconPath = `@/icons/${iconName}.svg`;
-
-let iconContent = '';
-try {
-  // Dynamic import of SVG as raw text
-  // The ?raw query tells Vite to import as string
-  const module = await import(`${iconPath}?raw`);
-  iconContent = module.default;
-} catch (e) {
-  // Fallback: show a warning icon or empty
-  console.warn(`Icon not found: ${iconPath}`);
-  iconContent = '<b>!</b><!-- Icon not found -->';
-}
 ---
 
 <span set:html={iconContent} class={className} {...rest} aria-hidden="true" />
