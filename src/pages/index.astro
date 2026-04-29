@@ -82,7 +82,16 @@ const contentContent = home.content.paragraphs.join('\n\n');
   <SectionBlock id="intro" content={introContent} />
 
   <!-- ── Highlight ─────────────────────────────────────────────── -->
-  <SectionBlock id="highlight" title={home.highlight.title} content={home.highlight.content} highlight={true} />
+  <SectionBlock
+    id="highlight"
+    title={home.highlight.title}
+    content={home.highlight.content}
+    highlight={true}
+    separatorBefore={true}
+    separatorAfter={true}
+    separatorBeforeColor="text-alternative"
+    separatorAfterColor="text-alternative"
+  />
 
   <!-- ── Content ───────────────────────────────────────────────── -->
   <SectionBlock id="contexto" content={contentContent} />
