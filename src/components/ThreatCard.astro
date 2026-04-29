@@ -1,9 +1,7 @@
 ---
-interface Props {
-  title: string;
-  icon: string;
-  description: string;
-}
+import type { ThreatCardProps } from '../types/components/threat';
+
+interface Props extends ThreatCardProps {}
 
 const { title, icon, description } = Astro.props;
 ---

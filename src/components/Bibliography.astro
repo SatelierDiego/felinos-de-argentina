@@ -1,7 +1,7 @@
 ---
-interface Props {
-  entries: string[];
-}
+import type { BibliographyProps } from '../types/components/bibliography';
+
+interface Props extends BibliographyProps {}
 
 const { entries } = Astro.props;
 ---

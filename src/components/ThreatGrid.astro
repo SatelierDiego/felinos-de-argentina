@@ -1,15 +1,8 @@
 ---
 import ThreatCard from './ThreatCard.astro';
+import type { ThreatGridProps } from '../types/components/threat';
 
-interface Threat {
-  title: string;
-  icon: string;
-  description: string;
-}
-
-interface Props {
-  threats: Threat[];
-}
+interface Props extends ThreatGridProps {}
 
 const { threats } = Astro.props;
 ---

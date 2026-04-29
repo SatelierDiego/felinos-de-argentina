@@ -19,6 +19,29 @@ const jsonLd = [
     url: siteUrl,
     description:
       'Sitio de divulgación sobre los felinos silvestres de Argentina con fines educativos y de conservación.',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Felinos de Argentina',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteUrl}/images/logo.png`,
+      },
+    },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${siteUrl}/felinos?search={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Felinos de Argentina',
+    url: siteUrl,
+    sameAs: [],
   },
 ];
 

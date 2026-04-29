@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
@@ -14,6 +14,20 @@ export default defineConfig({
       iconDir: 'src/assets/icons/tabler/outline',
     }),
   ],
+  fonts: [{
+    provider: fontProviders.fontsource(),
+    name: "Open Sans",
+    cssVariable: "--font-open-sans",
+    styles: ["normal"],
+    weights: ["300 800"],
+  },
+  {
+    provider: fontProviders.fontsource(),
+    name: "Quicksand",
+    cssVariable: "--font-quicksand",
+    styles: ["normal"],
+    weights: ["300 700"],
+  }],
   vite: {
     plugins: [tailwindcss()],
   },

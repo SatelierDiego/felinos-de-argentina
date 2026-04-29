@@ -1,22 +1,9 @@
 ---
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
+import type { SpeciesGridProps } from '../types/components/SpeciesGrid';
 
-interface Felino {
-  slug: string;
-  title: string;
-  scientific_name: string;
-  image: {
-    src: ImageMetadata;
-    alt: string;
-  };
-}
-
-interface Props {
-  felinos: Felino[];
-  title?: string;
-  eyebrow?: string;
-}
+interface Props extends SpeciesGridProps {}
 
 const { felinos, title = 'Los felinos de Argentina', eyebrow = 'Biodiversidad felina' } = Astro.props;
 ---
@@ -72,8 +59,9 @@ const { felinos, title = 'Los felinos de Argentina', eyebrow = 'Biodiversidad fe
                 <Image
                   src={felino.image.src}
                   alt={felino.image.alt}
-                  width={400}
-                  height={400}
+                  width={500}
+                  height={500}
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
                   class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none"
                   loading="lazy"
                   decoding="async"

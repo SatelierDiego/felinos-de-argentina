@@ -1,17 +1,9 @@
 ---
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
+import type { ImageBlockProps } from '../types/components/ImageBlock';
 
-interface ImageData {
-  src: ImageMetadata;
-  alt: string;
-}
-
-interface Props {
-  images: ImageData[];
-  /** Which side images appear on when layout is side-by-side */
-  position?: 'left' | 'right';
-}
+interface Props extends ImageBlockProps {}
 
 const { images, position = 'left' } = Astro.props;
 ---
