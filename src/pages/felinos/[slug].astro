@@ -48,9 +48,7 @@ const articleJsonLd = {
   type="article"
   jsonLd={[articleJsonLd]}
 >
-  <!-- Hero -->
-  {
-    /* 
+  <!-- Hero
   <Hero
     title={data.hero.title}
     subtitle={data.hero.subtitle}
@@ -58,8 +56,14 @@ const articleJsonLd = {
     alt={data.hero.alt}
     separatorColor="#4a3f3b"
   />
-  */
-  }
+ -->
+  <Hero
+    title={data.hero.title}
+    subtitle={data.hero.subtitle}
+    image={data.hero.image}
+    alt={data.hero.alt}
+    separatorColor="text-accent"
+  />
 
   <!-- Stats bar -->
   {data.stats && <SpeciesStats commonName={data.hero.title} scientificName={data.scientific_name} stats={data.stats} />}

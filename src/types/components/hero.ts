@@ -1,9 +1,13 @@
 import type { ImageMetadata } from 'astro';
 
 export interface HeroProps {
-  title: string;
-  subtitle: string;
+  title?: string | null;
+  subtitle?: string | null;
   image: ImageMetadata;
   alt: string;
   separatorColor?: string;
+  cta?: {
+    href: string;
+    text: string;
+  };
 }

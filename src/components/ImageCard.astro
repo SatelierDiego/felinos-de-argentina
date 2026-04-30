@@ -1,0 +1,94 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+import type { ImageCardProps } from '../types/components/ImageCard';
+
+interface Props extends ImageCardProps {}
+
+const {
+  src,
+  alt,
+  href,
+  width,
+  height,
+  widths,
+  sizes,
+  imageClass,
+  aspectRatio,
+  showMagnifyingGlass = false,
+  showOverlay = true,
+  overlayTitle,
+  overlaySubtitle,
+  showArrow = false,
+  extraAnchorClass = '',
+  dataAnimate,
+  dataDelay,
+  dataGallery,
+  dataGlightbox,
+  ariaLabel,
+} = Astro.props;
+---
+
+<a
+  href={href}
+  class:list={[
+    'group relative block overflow-hidden cursor-pointer rounded-card',
+    extraAnchorClass,
+  ]}
+  data-animate={dataAnimate}
+  data-delay={dataDelay}
+  data-gallery={dataGallery}
+  data-glightbox={dataGlightbox}
+  aria-label={ariaLabel}
+>
+  <div class="overflow-hidden" style={aspectRatio ? `aspect-ratio: ${aspectRatio}` : undefined}>
+    <Image
+      src={src}
+      alt={alt}
+      width={widths ? undefined : (width ?? src.width)}
+      height={widths ? undefined : (height ?? src.height)}
+      widths={widths}
+      sizes={sizes}
+      class:list={[
+        'absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none',
+        imageClass,
+      ]}
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+
+  {showOverlay && (
+    <>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 motion-reduce:transition-none z-10" />
+
+      {showMagnifyingGlass && (
+        <div class="absolute inset-0 flex items-center justify-center z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 motion-reduce:transition-none">
+          <Icon name="zoom-in" class="text-white drop-shadow-lg" style="width: clamp(24px, 3vw, 40px); height: clamp(24px, 3vw, 40px);" aria-hidden="true" />
+        </div>
+      )}
+
+      {(overlayTitle || overlaySubtitle) && (
+        <div class="absolute inset-0 z-20 flex items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300 motion-reduce:transition-none">
+          <div class:list={[
+            'flex w-full items-end gap-2 p-[clamp(10px,1.5vw,18px)] translate-y-3 group-hover:translate-y-0 transition-transform duration-300 motion-reduce:transition-none',
+            showArrow ? 'justify-between' : '',
+          ]}>
+            <div class="flex min-w-0 flex-col gap-0.5">
+              {overlayTitle && (
+                <p class="truncate leading-snug font-semibold text-white" style="font-size: clamp(13px, 1.4vw, 18px);">{overlayTitle}</p>
+              )}
+              {overlaySubtitle && (
+                <p class=
+                  'truncate text-[clamp(9px,0.85vw,11px)] text-white/60 font-light tracking-[0.07em]' set:html={overlaySubtitle} />
+              )}
+            </div>
+            {showArrow && (
+              <Icon name="arrow-right" class="shrink-0 text-white" style="width: 1.25rem; height: 1.25rem;" aria-hidden="true" />
+            )}
+          </div>
+        </div>
+      )}
+    </>
+  )}
+</a>

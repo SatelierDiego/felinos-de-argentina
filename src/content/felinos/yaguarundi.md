@@ -3,9 +3,9 @@ slug: 'yaguarundi'
 
 hero:
   title: 'Yaguarundí'
-  subtitle: 'Un felino de aspecto inusual, sin manchas y de forma alargada, que habita desde el noroeste hasta el noreste argentino.'
+  subtitle: 'Por su silueta y apariencia el Yaguarundí recuerda más a un mustélido que a un verdadero felino.'
   image: '/src/assets/images/felinos/herpailurus-yagouaroundi/hero.jpg'
-  alt: 'Yaguarundí entre la vegetación del monte chaqueño'
+  alt: 'Yaguarundí entre la vegetación'
 
 seo:
   title: 'Yaguarundí (Herpailurus yagouaroundi) | Felinos de Argentina'

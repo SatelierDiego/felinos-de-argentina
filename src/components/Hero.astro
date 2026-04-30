@@ -1,11 +1,12 @@
 ---
 import { Image } from 'astro:assets';
 import type { HeroProps } from '../types/components/hero';
-import separatorContent from '../assets/separator.svg';
+
+import separatorContent from '../assets/separator.svg?raw';
 
 interface Props extends HeroProps {}
 
-const { title, subtitle, image, alt, separatorColor = '#111111' } = Astro.props;
+const { title = null, subtitle = null, image, alt, separatorColor = 'text-base', cta = null } = Astro.props;
 ---
 
 <section class="relative isolate h-[80vh] min-h-[500px] w-full overflow-hidden md:h-[85vh] md:min-h-130">
@@ -26,26 +27,45 @@ const { title, subtitle, image, alt, separatorColor = '#111111' } = Astro.props;
     class="relative flex h-full items-end px-4 pb-12 after:absolute after:inset-0 after:bg-[linear-gradient(to_top_right,rgba(0,0,0,.85)_0%,rgba(0,0,0,0)_60%)] after:content-[''] md:px-6 md:pb-16 lg:px-8"
   >
     <div class="z-10 mx-auto w-full max-w-7xl">
-      <h1
-        class="font-display font-bold text-white"
-        style="font-size: var(--text-display); line-height: var(--text-display--line-height);"
-        data-animate="animate-fade-in-up"
-      >
-        {title}
-      </h1>
-      <p
-        class="mt-4 max-w-2xl text-lg leading-relaxed text-white/80"
-        data-animate="animate-fade-in-up"
-        data-delay="150ms"
-      >
-        {subtitle}
-      </p>
-      <slot />
+      {
+        title && (
+          <h1
+            class="font-display font-bold text-white"
+            style="font-size: var(--text-display); line-height: var(--text-display--line-height);"
+            data-animate="animate-fade-in-up"
+          >
+            {title}
+          </h1>
+        )
+      }
+      {
+        subtitle && (
+          <p
+            class="mt-4 max-w-2xl text-lg leading-relaxed text-white/80"
+            data-animate="animate-fade-in-up"
+            data-delay="150ms"
+          >
+            {subtitle}
+          </p>
+        )
+      }
+      {
+        cta && (
+          <div class="mt-8">
+            <a
+              href={cta.href}
+              class="inline-flex items-center gap-2 border border-white/80 px-6 py-3 text-sm font-semibold tracking-widest text-white uppercase transition-[background-color,color] duration-200 hover:bg-white hover:text-stone-900"
+            >
+              {cta.text}
+            </a>
+          </div>
+        )
+      }
     </div>
   </div>
 
   <!-- Separator SVG -->
-  <div class:list={['w-full translate-y-6 rotate-180', separatorColor]}>
-    <div set:html={separatorContent} class="h-auto w-full" />
+  <div class:list={['w-full -translate-y-6', separatorColor]}>
+    <div set:html={separatorContent} class="h-auto min-h-8 w-full" />
   </div>
 </section>

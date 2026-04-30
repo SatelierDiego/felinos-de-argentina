@@ -4,6 +4,7 @@ import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import SectionBlock from '../components/SectionBlock.astro';
 import SpeciesGrid from '../components/SpeciesGrid.astro';
+import Hero from '../components/Hero.astro';
 
 const homeEntries = await getCollection('home');
 const home = homeEntries[0]!.data;
@@ -54,7 +55,7 @@ const contentContent = home.content.paragraphs.join('\n\n');
   description="Conocé los felinos silvestres de Argentina: yaguareté, puma, gato andino y más. Información sobre su biología, hábitat y conservación."
   jsonLd={jsonLd}
 >
-  <!-- ── Hero ─────────────────────────────────────────────────── -->
+  <!-- ── Hero ─────────────────────────────────────────────────── 
   <section
     class="relative isolate overflow-hidden bg-stone-950 text-white"
     style="min-height: 88vh;"
@@ -100,6 +101,15 @@ const contentContent = home.content.paragraphs.join('\n\n');
       </div>
     </div>
   </section>
+  -->
+  <Hero
+    title={home.hero.title}
+    subtitle={home.hero.subtitle}
+    image={home.hero.image}
+    alt={home.hero.alt}
+    separatorColor="text-background"
+    cta={home.hero.cta}
+  />
 
   <!-- ── Intro ─────────────────────────────────────────────────── -->
   <SectionBlock id="intro" content={introContent} />

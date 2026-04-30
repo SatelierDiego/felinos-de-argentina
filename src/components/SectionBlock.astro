@@ -18,8 +18,6 @@ const {
   highlight = false,
   separatorBefore = false,
   separatorAfter = false,
-  separatorBeforeColor = 'text-white',
-  separatorAfterColor = 'text-white',
 } = Astro.props;
 const imagesRight = index % 2 === 0;
 const hasImages = images.length > 0;
@@ -36,18 +34,18 @@ const htmlContent = content
 
 <section
   id={id}
-  class:list={['scroll-mt-24', highlight ? 'bg-alternative text-white' : 'bg-background text-base']}
+  class:list={['scroll-mt-24', highlight ? 'bg-highlight text-white' : 'bg-background text-base']}
   aria-labelledby={title ? `section-${id}-heading` : undefined}
 >
   {
     separatorBefore && (
-      <div class:list={['w-full -translate-y-6', separatorBeforeColor]}>
+      <div class='w-full -translate-y-6 text-highlight'>
         <div set:html={separatorContent} class="h-auto w-full" />
       </div>
     )
   }
 
-  <div class="mx-auto max-w-7xl px-6 py-20">
+  <div class:list={['mx-auto max-w-7xl px-6', highlight ? 'py-8' : 'py-24']}>
     <div
       class:list={[
         'grid items-start gap-12',
@@ -84,7 +82,7 @@ const htmlContent = content
 
   {
     separatorAfter && (
-      <div class:list={['w-full translate-y-6 rotate-180', separatorAfterColor]}>
+      <div class='w-full translate-y-6 rotate-180 text-highlight'>
         <div set:html={separatorContent} class="h-auto w-full" />
       </div>
     )

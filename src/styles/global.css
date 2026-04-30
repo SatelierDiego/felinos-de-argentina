@@ -7,13 +7,12 @@
   --font-display: var(--font-quicksand), var(--font-open-sans), ui-sans-serif, sans-serif;
 
   /* ── Semantic design tokens ────────────────────── */
-  --color-base: #22160a;
-  --color-background: #f8f8f2; /* blanco */
-  --color-background-alt: #ede9e6; /* gris */
-  --color-brand: #f0aa5a; /* naranja */
-  --color-accent: #a17a56; /* naranja suave */
-  --color-highlight: #4a5e57; /* verde */
-  --color-alternative: #4a3f3b; /* marron */
+  --color-base: #110F0E; /* onyx */
+  --color-background: #F4F1EA; /* parchment */
+  --color-brand: #f0aa5a; /* brand */
+  --color-accent: #827169; /* taupe */
+  --color-highlight: #A0522D; /* rusty spice */
+  --color-dark: #262321; /* carbon black */
 
   /* ── Spacing scale ─────────────────────────────── */
   --spacing-18: 4.5rem;

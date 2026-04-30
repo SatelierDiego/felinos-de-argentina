@@ -1,6 +1,7 @@
 ---
-import { Image } from 'astro:assets';
+import ImageCard from './ImageCard.astro';
 import type { GalleryProps } from '../types/components/gallery';
+import separatorContent from '../assets/separator.svg?raw';
 
 interface Props extends GalleryProps {}
 
@@ -10,7 +11,7 @@ if (items.length === 0) return;
 
 const galleryId = `gallery-${Math.random().toString(36).slice(2, 8)}`;
 
-const CELL_CLASSES = [
+const cellClasses = [
   'bento-c1',
   'bento-c2',
   'bento-c3',
@@ -24,52 +25,37 @@ const CELL_CLASSES = [
 ];
 ---
 
-<section class="py-20 bg-base">
-  <div class="mx-auto max-w-7xl px-[clamp(12px,2vw,24px)]">
-
-    <div class="bento-gallery">
-      {items.slice(0, 10).map((item, i) => (
-        <a
-          href={item.src.src}
-          class:list={[
-            CELL_CLASSES[i],
-            'glightbox',
-            'group relative overflow-hidden cursor-pointer block',
-            'rounded-card',
-          ]}
-          data-animate="animate-fade-in-up"
-          data-delay={`${i * 80}ms`}
-          data-gallery={galleryId}
-          data-glightbox={`description: © ${item.autor}`}
-          aria-label={`${item.alt} — foto de ${item.autor}`}
-        >
-          <Image
-            src={item.src}
-            alt={item.alt}
-            width={item.src.width}
-            height={item.src.height}
-            class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none"
-            loading="lazy"
-            decoding="async"
-          />
-
-          <!-- Overlay -->
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 motion-reduce:transition-none z-10" />
-
-          <!-- Lupa centrada -->
-          <div class="absolute inset-0 flex items-center justify-center z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 motion-reduce:transition-none">
-            <i class="ph ph-magnifying-glass text-white text-[clamp(24px,3vw,40px)] drop-shadow-lg" aria-hidden="true"></i>
-          </div>
-
-          <!-- Meta -->
-          <div class="absolute bottom-0 left-0 right-0 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-[transform,opacity] duration-300 motion-reduce:transition-none z-20 p-[clamp(10px,1.5vw,18px)]">
-            <p class="text-white leading-snug mb-[3px] text-[clamp(13px,1.4vw,18px)] font-medium">{item.alt}</p>
-            <p class="text-white/60 font-light tracking-[0.07em] uppercase text-[clamp(9px,0.85vw,11px)]">© {item.autor}</p>
-          </div>
-        </a>
-      ))}
+<section class="bg-base">
+  <!-- Separator SVG -->
+  <div class="w-full -translate-y-6 text-base">
+    <div set:html={separatorContent} class="h-auto w-full" />
+  </div>
+  <div class="py-20">
+    <div class="mx-auto max-w-7xl px-[clamp(12px,2vw,24px)]">
+      <div class="bento-gallery">
+        {
+          items
+            .slice(0, 10)
+            .map((item, i) => (
+              <ImageCard
+                src={item.src}
+                alt={item.alt}
+                href={item.src.src}
+                imageClass="absolute inset-0 w-full h-full"
+                showMagnifyingGlass
+                overlayTitle={item.alt}
+                overlaySubtitle={`© ${item.autor}`}
+                ariaLabel={`${item.alt} — foto de ${item.autor}`}
+                data-animate="animate-fade-in-up"
+                data-delay={`${i * 80}ms`}
+                data-gallery={galleryId}
+                data-glightbox={`description: © ${item.autor}`}
+                extraAnchorClass={`glightbox ${cellClasses[i]}`}
+              />
+            ))
+        }
+      </div>
     </div>
-
   </div>
 </section>
 
