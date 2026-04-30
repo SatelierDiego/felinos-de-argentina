@@ -9,14 +9,14 @@ const homeEntries = await getCollection('home');
 const home = homeEntries[0]!.data;
 const felinosOrdenados = [...home.felinos].sort((a, b) => a.title.localeCompare(b.title, 'es'));
 
-const siteUrl = 'https://felinosdeargentina.org';
+const siteUrl = new URL('/', Astro.site);
 
 const jsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'Felinos de Argentina',
-    url: siteUrl,
+    url: siteUrl.href,
     description:
       'Sitio de divulgación sobre los felinos silvestres de Argentina con fines educativos y de conservación.',
     publisher: {
@@ -24,14 +24,14 @@ const jsonLd = [
       name: 'Felinos de Argentina',
       logo: {
         '@type': 'ImageObject',
-        url: `${siteUrl}/images/logo.png`,
+        url: `${siteUrl.origin}/images/logo.png`,
       },
     },
     potentialAction: {
       '@type': 'SearchAction',
       target: {
         '@type': 'EntryPoint',
-        urlTemplate: `${siteUrl}/felinos?search={search_term_string}`,
+        urlTemplate: `${siteUrl.origin}/felinos?search={search_term_string}`,
       },
       'query-input': 'required name=search_term_string',
     },
@@ -40,7 +40,7 @@ const jsonLd = [
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'Felinos de Argentina',
-    url: siteUrl,
+    url: siteUrl.href,
     sameAs: [],
   },
 ];

@@ -23,15 +23,14 @@ interface Props {
 const { entry } = Astro.props;
 const { data } = entry;
 
-const siteUrl = 'https://felinosdeargentina.org';
-
-const pageUrl = `${siteUrl}/felinos/${data.slug}/`;
+const siteUrl = new URL('/', Astro.site);
+const pageUrl = new URL(`/felinos/${data.slug}/`, Astro.site);
 
 const articleJsonLd = {
   '@type': 'Article',
   headline: data.seo.title,
   description: data.seo.description,
-  url: pageUrl,
+  url: pageUrl.href,
   image: `${siteUrl}${data.hero.image.src}`,
   about: {
     '@type': 'Animal',
@@ -44,12 +43,14 @@ const articleJsonLd = {
 <Layout
   title={data.seo.title}
   description={data.seo.description}
-  canonicalUrl={pageUrl}
+  canonicalUrl={pageUrl.href}
   image={data.hero.image.src}
   type="article"
   jsonLd={[articleJsonLd]}
 >
   <!-- Hero -->
+  {
+    /* 
   <Hero
     title={data.hero.title}
     subtitle={data.hero.subtitle}
@@ -57,22 +58,15 @@ const articleJsonLd = {
     alt={data.hero.alt}
     separatorColor="#4a3f3b"
   />
+  */
+  }
 
   <!-- Stats bar -->
-  {
-    data.stats && (
-      <SpeciesStats
-        commonName={data.hero.title}
-        scientificName={data.scientific_name}
-        conservationStatus={data.conservationStatus}
-        stats={data.stats}
-      />
-    )
-  }
+  {data.stats && <SpeciesStats commonName={data.hero.title} scientificName={data.scientific_name} stats={data.stats} />}
 
   <!-- Content sections — loop uniforme, el mapa viene del MD via section.map -->
   {
-    data.sections.map((section, i) => (
+    data.sections.map((section: (typeof data.sections)[number], i: number) => (
       <SectionBlock
         id={section.id}
         title={section.title}

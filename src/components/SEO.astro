@@ -3,7 +3,7 @@ import type { SEOProps } from '../types/components/SEO';
 
 interface Props extends SEOProps {}
 
-const siteUrl = 'https://felinosdeargentina.org';
+const siteUrl = Astro.site?.href;
 const siteName = 'Felinos de Argentina';
 const twitterHandle = '@felinosar';
 
@@ -17,14 +17,19 @@ const {
   noindex = false,
 } = Astro.props;
 
-const canonical = canonicalUrl ?? new URL(Astro.url.pathname.replace(/\/$/, ''), siteUrl).href;
-const ogImage = image.startsWith('http') ? image : new URL(image, siteUrl).href;
+const canonical = canonicalUrl ? new URL(canonicalUrl, siteUrl).href : new URL(Astro.url.pathname, siteUrl).href;
+const ogImage = image?.startsWith('http') ? image : new URL(image ?? '/images/og-default.jpg', siteUrl).href;
 ---
 
 <!-- Primary -->
 <title>{title}</title>
 <meta name="description" content={description} />
-<meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-video-preview:0, max-snippet:160'} />
+<meta
+  name="robots"
+  content={noindex
+    ? 'noindex, nofollow'
+    : 'index, follow, max-image-preview:large, max-video-preview:0, max-snippet:160'}
+/>
 <meta name="author" content={siteName} />
 <meta name="googlebot" content="index, follow" />
 <meta name="language" content="Spanish" />

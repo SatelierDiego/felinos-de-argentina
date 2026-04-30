@@ -12,14 +12,13 @@ function getSlug(scientificName: string): string | undefined {
   return felinosByScientificName.get(scientificName.toLowerCase());
 }
 
-const siteUrl = 'https://felinosdeargentina.org';
-const pageUrl = `${siteUrl}/fotografos/`;
+const pageUrl = new URL(`/fotografos/`, Astro.site);
 ---
 
 <Layout
   title="Fotógrafos | Felinos de Argentina"
   description="Fotógrafos que colaboraron con imágenes para Felinos de Argentina."
-  canonicalUrl={pageUrl}
+  canonicalUrl={pageUrl.href}
 >
   <section class="bg-base-900 py-20 text-white">
     <div class="mx-auto max-w-7xl px-6">

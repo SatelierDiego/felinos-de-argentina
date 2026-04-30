@@ -68,8 +68,8 @@ const status = {
       Ficha del {commonName}
       <span class="text-md font-normal text-stone-300 italic">({scientificName})</span>
     </h1>
-    <div class="flex gap-5">
-      <div class="flex w-1/4 shrink-0 flex-col gap-4 border-r border-stone-700 pr-6">
+    <div class="flex flex-col gap-8 md:flex-row md:gap-5">
+      <div class="flex w-full shrink-0 flex-col gap-4 border-b border-stone-700 pb-6 md:w-1/4 md:border-b-0 md:border-r md:pb-0 md:pr-6">
         {
           stats.silouette && (
             <Image
@@ -112,7 +112,7 @@ const status = {
       <div class="flex flex-1 flex-col gap-4">
         <div class="flex flex-col gap-2">
           <h2 class="text-sm font-bold tracking-[0.18em] text-stone-300 uppercase">Estado de conservación</h2>
-          <div class="flex gap-6">
+          <div class="flex flex-col gap-6 md:flex-row">
             {
               // iterate status entries
               Object.entries(status).map(([key, { label, color }]) => (
@@ -152,7 +152,7 @@ const status = {
             </div>
           </div>
 
-          <div class="mt-2 flex gap-6">
+          <div class="mt-2 flex flex-wrap gap-6">
             {
               stats.habits && (
                 <div class="flex items-start gap-2">

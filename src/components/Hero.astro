@@ -1,14 +1,14 @@
 ---
 import { Image } from 'astro:assets';
 import type { HeroProps } from '../types/components/hero';
-import separator from '../assets/separator_0.svg';
+import separatorContent from '../assets/separator.svg';
 
 interface Props extends HeroProps {}
 
 const { title, subtitle, image, alt, separatorColor = '#111111' } = Astro.props;
 ---
 
-<section class="relative isolate h-[80vh] min-h-[500px] md:h-[85vh] md:min-h-130 w-full overflow-hidden">
+<section class="relative isolate h-[80vh] min-h-[500px] w-full overflow-hidden md:h-[85vh] md:min-h-130">
   <!-- Background image - responsive -->
   <Image
     src={image}
@@ -23,7 +23,7 @@ const { title, subtitle, image, alt, separatorColor = '#111111' } = Astro.props;
 
   <!-- Content -->
   <div
-    class="relative flex h-full items-end px-4 md:px-6 lg:px-8 pb-12 md:pb-16 after:absolute after:inset-0 after:bg-[linear-gradient(to_top_right,rgba(0,0,0,.85)_0%,rgba(0,0,0,0)_60%)] after:content-['']"
+    class="relative flex h-full items-end px-4 pb-12 after:absolute after:inset-0 after:bg-[linear-gradient(to_top_right,rgba(0,0,0,.85)_0%,rgba(0,0,0,0)_60%)] after:content-[''] md:px-6 md:pb-16 lg:px-8"
   >
     <div class="z-10 mx-auto w-full max-w-7xl">
       <h1
@@ -45,10 +45,7 @@ const { title, subtitle, image, alt, separatorColor = '#111111' } = Astro.props;
   </div>
 
   <!-- Separator SVG -->
-  <div
-    class="absolute inset-x-0 bottom-0 h-7 w-full bg-bottom"
-    style={`background-color: ${separatorColor}; -webkit-mask-image: url(${separator.src}); mask-image: url(${separator.src}); -webkit-mask-size: 100% 100%; mask-size: 100% 100%; -webkit-mask-position: center bottom; mask-position: center bottom; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;`}
-    aria-hidden="true"
-  >
+  <div class:list={['w-full translate-y-6 rotate-180', separatorColor]}>
+    <div set:html={separatorContent} class="h-auto w-full" />
   </div>
 </section>
