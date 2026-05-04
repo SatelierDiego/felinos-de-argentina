@@ -31,7 +31,8 @@ stats:
   otherNames: 'huiña, güiña, gato choco, gato moteado chileno, gato de santa cruz'
 
 sections:
-  - id: 'appearance'
+  - type: 'default'
+    id: 'appearance'
     title: 'Tamaño y apariencia'
     content: |
       El Gato Huiña es el felino más pequeño de América y uno de los más pequeños del mundo. Mide de 39 a 48 cm de largo, más 20 a 25 cm de cola, y 42 a 51 cm de alzada en la cruz. Su peso ronda los 2 a 3 kg.
@@ -43,7 +44,8 @@ sections:
       Hay varios registros de individuos melánicos.
     images: []
 
-  - id: 'behavior'
+  - type: 'default'
+    id: 'behavior'
     title: 'Comportamiento'
     content: |
       Es un animal solitario y esquivo, lo que sumado a su pequeño tamaño y coloración críptica lo hace muy difícil de observar en libertad.
@@ -59,7 +61,8 @@ sections:
       Su período de gestación varía de 72 a 78 días, tras el cual da a luz entre 1 y 4 crías.
     images: []
 
-  - id: 'distribution'
+  - type: 'default'
+    id: 'distribution'
     title: 'Hábitat y distribución'
     content: |
       El Gato Huiña evita zonas abiertas y muestra una gran preferencia por ambientes en buen estado de conservación de bosques andinos de *Nothofagus*, especialmente la región de la selva valdiviana, con un sotobosque denso, matorrales, epífitas, lianas y presencia de caña colihue. Sin embargo, es relativamente tolerante a hábitats alterados, encontrándose también en bosques de pino y eucaliptos exóticos, paisajes fragmentados y márgenes de asentamientos rurales, siempre y cuando estos se hallen cerca de bosques primarios nativos.
@@ -76,7 +79,8 @@ sections:
       geojson: '/maps/leopardus-guigna.geojson'
     images: []
 
-  - id: 'situation'
+  - type: 'default'
+    id: 'situation'
     title: 'Situación'
     content: |
       El Gato Huiña es uno de los gatos silvestres más amenazados de Sudamérica, debido a que está muy asociado a los bosques australes de *Nothofagus* sp., los que están siendo constantemente removidos y reemplazados por forestaciones exóticas.
@@ -96,11 +100,11 @@ threats:
     description: 'Está ausente en fragmentos de bosque desconectados, por lo que los corredores son importantes para su conservación.'
 
   - title: 'Caza como represalia'
-    icon: 'warning'
+    icon: 'alert-triangle'
     description: 'Es perseguido por productores rurales cuando ataca aves de corral.'
 
   - title: 'Atropellamientos'
-    icon: 'warning'
+    icon: 'alert-triangle'
     description: 'El peligro de ser atropellado en rutas que atraviesan las zonas donde habita es otra de las amenazas que debe enfrentar.'
 
 bibliography:

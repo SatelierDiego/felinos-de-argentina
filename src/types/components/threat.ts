@@ -6,6 +6,8 @@ export interface Threat {
 
 export interface ThreatGridProps {
   threats: Threat[];
+  separatorBefore?: boolean;
+  separatorAfter?: boolean;
 }
 
 export interface ThreatCardProps extends Threat {}

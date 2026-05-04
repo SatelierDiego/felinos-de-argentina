@@ -4,6 +4,13 @@ fotografos:
     contacto:
       - titulo: 'Sitio web'
         url: 'https://gatoandino.org/'
+        icon: 'world'
+      - titulo: 'Instagram'
+        url: 'https://www.instagram.com/alianza_gato_andino'
+        icon: 'brand-instagram'
+      - titulo: 'Facebook'
+        url: 'https://www.facebook.com/alianzagatoandino/'
+        icon: 'brand-facebook'
     felinos:
       - 'Leopardus jacobita'
       - 'Leopardus colocolo'
@@ -14,6 +21,10 @@ fotografos:
       - 'Puma concolor'
 
   - nombre: 'Alexander Oehrle'
+    contacto:
+      - titulo: 'Wildlife Reference Photos'
+        url: 'https://wildlifereferencephotos.com/'
+        icon: 'world'
     felinos:
       - 'Herpailurus yagouaroundi'
       - 'Leopardus geoffroyi'
@@ -25,6 +36,16 @@ fotografos:
       - 'Leopardus guigna'
 
   - nombre: 'Anne-Marie Kalus'
+    contacto:
+      - titulo: 'Flickr'
+        url: 'https://flickr.com/photos/annemariekalus'
+        icon: 'brand-flickr'
+      - titulo: 'Sitio web'
+        url: 'https://annmariekalus.com/'
+        icon: 'world'
+      - titulo: 'LinkedIn'
+        url: 'https://linkedin.com/in/anne-marie-kalus-64a5952'
+        icon: 'brand-linkedin'
     felinos:
       - 'Herpailurus yagouaroundi'
       - 'Leopardus geoffroyi'
@@ -40,6 +61,10 @@ fotografos:
       - 'Leopardus jacobita'
 
   - nombre: 'Arjan Haverkamp'
+    contacto:
+      - titulo: 'Flickr'
+        url: 'https://www.flickr.com/photos/ajhaverkamp/'
+        icon: 'brand-flickr'
     felinos:
       - 'Leopardus geoffroyi'
 
@@ -48,6 +73,10 @@ fotografos:
       - 'Leopardus geoffroyi'
 
   - nombre: 'Claudio Molfino'
+    contacto:
+      - titulo: 'Flickr'
+        url: 'https://www.flickr.com/photos/claudiomolfino/'
+        icon: 'brand-flickr'
     felinos:
       - 'Herpailurus yagouaroundi'
       - 'Panthera onca'
@@ -75,6 +104,13 @@ fotografos:
       - 'Leopardus pardalis'
 
   - nombre: 'Eduardo Minte Hess'
+    contacto:
+      - titulo: 'Instagram'
+        url: 'https://www.instagram.com/emintehess'
+        icon: 'brand-instagram'
+      - titulo: 'Sitio web'
+        url: 'http://www.eduardominte.com'
+        icon: 'world'
     felinos:
       - 'Leopardus guigna'
 
@@ -118,6 +154,13 @@ fotografos:
       - 'Leopardus pardalis'
 
   - nombre: 'Jim Sanderson'
+    contacto:
+      - titulo: 'Re:wild'
+        url: 'https://www.rewild.org/team/jim-sanderson-ph-d'
+        icon: 'world'
+      - titulo: 'Small Wild Cat Conservation Foundation'
+        url: 'https://www.smallcats.org'
+        icon: 'world'
     felinos:
       - 'Leopardus guigna'
       - 'Leopardus jacobita'
@@ -130,8 +173,10 @@ fotografos:
     contacto:
       - titulo: 'Instagram'
         url: 'https://www.instagram.com/juanreppucci'
+        icon: 'brand-instagram'
       - titulo: 'Alianza Gato Andino'
         url: 'https://gatoandino.org/'
+        icon: 'world'
     felinos:
       - 'Leopardus jacobita'
       - 'Leopardus geoffroyi'
@@ -174,6 +219,16 @@ fotografos:
       - 'Leopardus geoffroyi'
 
   - nombre: 'Sebastian Kennerknecht'
+    contacto:
+      - titulo: 'Sitio web'
+        url: 'https://www.pumapix.com/'
+        icon: 'world'
+      - titulo: 'Instagram'
+        url: 'https://www.instagram.com/sebastiankennerknecht'
+        icon: 'brand-instagram'
+      - titulo: 'Facebook'
+        url: 'https://www.facebook.com/pumapix'
+        icon: 'brand-facebook'
     felinos:
       - 'Leopardus colocolo'
       - 'Leopardus geoffroyi'
@@ -182,4 +237,42 @@ fotografos:
   - nombre: 'Sebastián Perez Astutti'
     felinos:
       - 'Leopardus colocolo'
+
+  - nombre: 'Rocído Reyes'
+    contacto:
+      - titulo: 'Alianza Gato Andino'
+        url: 'https://gatoandino.org/'
+        icon: 'world'
+    felinos:
+      - 'Leopardus colocolo'
+
+  - nombre: 'Franco Elgueta'
+    contacto:
+      - titulo: 'Instagram'
+        url: 'https://www.instagram.com/pajaro.austral'
+        icon: 'brand-instagram'
+    felinos:
+      - 'Leopardus colocolo'
+
+  - nombre: 'Diego Carús'
+    contacto:
+      - titulo: 'Aves Argentinas'
+        url: 'http://www.avesargentinas.org.ar/diego-carus'
+        icon: 'world'
+      - titulo: 'EcoRegistros'
+        url: 'http://www.ecoregistros.com.ar/DiegoCarus'
+        icon: 'world'
+    felinos:
+      - 'Leopardus geoffroyi'
+
+  - nombre: 'Pablo Preliasco'
+    contacto:
+      - titulo: 'iNaturalist'
+        url: 'https://www.inaturalist.org/people/preli'
+        icon: 'world'
+      - titulo: 'Fundación Vida Silvestre'
+        url: 'https://www.vidasilvestre.org.ar/'
+        icon: 'world'
+    felinos:
+      - 'Leopardus geoffroyi'
 ---

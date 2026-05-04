@@ -28,4 +28,6 @@ export interface SpeciesStatsProps {
   scientificName: string;
   commonName: string;
   stats: Stats;
+  separatorBefore?: boolean;
+  separatorAfter?: boolean;
 }

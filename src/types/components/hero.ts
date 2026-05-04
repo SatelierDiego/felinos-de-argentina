@@ -5,7 +5,7 @@ export interface HeroProps {
   subtitle?: string | null;
   image: ImageMetadata;
   alt: string;
-  separatorColor?: string;
+  size?: 'full' | 'narrow';
   cta?: {
     href: string;
     text: string;

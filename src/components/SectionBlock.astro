@@ -1,5 +1,6 @@
 ---
-import type { ImageMetadata } from 'astro';
+import { marked } from 'marked';
+
 import ImageBlock from './ImageBlock.astro';
 import LeafletMap from './LeafletMap.astro';
 import type { SectionBlockProps } from '../types/components/SectionBlock';
@@ -15,7 +16,6 @@ const {
   images = [],
   map,
   index = 0,
-  highlight = false,
   separatorBefore = false,
   separatorAfter = false,
 } = Astro.props;
@@ -23,29 +23,23 @@ const imagesRight = index % 2 === 0;
 const hasImages = images.length > 0;
 const hasRightCol = hasImages || !!map;
 
-// Convert plain text with *italic* to simple HTML
-const htmlContent = content
-  .replace(/\*([^*]+)\*/g, '<em>$1</em>')
-  .split('\n\n')
-  .filter(Boolean)
-  .map((p: string) => `<p>${p.trim()}</p>`)
-  .join('');
+const htmlContent = marked.parse(content) as string;
 ---
 
 <section
   id={id}
-  class:list={['scroll-mt-24', highlight ? 'bg-highlight text-white' : 'bg-background text-base']}
+  class="bg-background scroll-mt-24 text-base"
   aria-labelledby={title ? `section-${id}-heading` : undefined}
 >
   {
     separatorBefore && (
-      <div class='w-full -translate-y-6 text-highlight'>
-        <div set:html={separatorContent} class="h-auto w-full" />
+      <div class="text-background w-full overflow-hidden -translate-y-6">
+        <div set:html={separatorContent} class="h-auto min-w-[2000px] w-full" />
       </div>
     )
   }
 
-  <div class:list={['mx-auto max-w-7xl px-6', highlight ? 'py-8' : 'py-24']}>
+  <div class="mx-auto max-w-7xl px-6 py-24">
     <div
       class:list={[
         'grid items-start gap-12',
@@ -54,13 +48,10 @@ const htmlContent = content
       ]}
     >
       <!-- Text -->
-      <div class="m-auto flex max-w-4xl flex-col justify-center" data-animate="animate-fade-in-up">
+      <div class="m-auto flex max-w-4xl flex-col justify-center" data-reveal data-animation="animate-fade-in-up">
         {
           title && (
-            <h2
-              id={`section-${id}-heading`}
-              class:list={['font-display mb-6 text-3xl font-bold', highlight ? 'text-white' : 'text-base']}
-            >
+            <h2 id={`section-${id}-heading`} class="font-display mb-6 text-3xl text-base font-bold">
               {title}
             </h2>
           )
@@ -71,7 +62,7 @@ const htmlContent = content
       <!-- Right column: images and/or map -->
       {
         hasRightCol && (
-          <div class="flex flex-col gap-6" data-animate="animate-fade-in-up" data-delay="150ms">
+          <div class="flex flex-col gap-6" data-reveal data-animation="animate-fade-in-up" data-delay="150">
             {map && <LeafletMap lat={map.lat} lng={map.lng} zoom={map.zoom} geojson={map.geojson} label={title} />}
             {hasImages && <ImageBlock images={images} position={imagesRight ? 'right' : 'left'} />}
           </div>
@@ -82,8 +73,8 @@ const htmlContent = content
 
   {
     separatorAfter && (
-      <div class='w-full translate-y-6 rotate-180 text-highlight'>
-        <div set:html={separatorContent} class="h-auto w-full" />
+      <div class="text-background w-full overflow-hidden translate-y-6 rotate-180">
+        <div set:html={separatorContent} class="h-auto min-w-[2000px] w-full" />
       </div>
     )
   }

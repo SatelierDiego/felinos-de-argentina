@@ -31,7 +31,8 @@ stats:
   otherNames: 'gato pintado, tirica grande, gato brasilero, gato tigre grande'
 
 sections:
-  - id: 'appearance'
+  - type: 'default'
+    id: 'appearance'
     title: 'Tamaño y apariencia'
     content: |
       El Margay es un felino silvestre con aspecto de pequeño Ocelote (*Leopardus pardalis*), pero al contrario de éste presenta el rinario negro —no rosado— y la cola proporcionalmente más larga, representando ésta aproximadamente un 40% del largo total del animal, que varía entre los 90 y los 120 cm con un peso que va de los 2 a los 5 kg.
@@ -43,7 +44,8 @@ sections:
       Su pelaje es denso y grueso, lo que le vale en algunas zonas el nombre de "gato peludo". El Margay no presenta un dimorfismo sexual notable.
     images: []
 
-  - id: 'behavior'
+  - type: 'default'
+    id: 'behavior'
     title: 'Comportamiento'
     content: |
       Por sus grandes habilidades para moverse en el estrato arbóreo se lo ha supuesto durante mucho tiempo un felino arborícola; sin embargo existe evidencia suficiente para afirmar que sus hábitos son principalmente terrestres, aunque utiliza los árboles para descansar y, en ocasiones, cazar a sus presas.
@@ -57,7 +59,8 @@ sections:
       El período de gestación es de 76 a 84 días, luego de lo cual tiene 1 o 2 crías. Su capacidad reproductiva comienza a los 2 años de vida y pueden alcanzar una longevidad de hasta 22 años.
     images: []
 
-  - id: 'distribution'
+  - type: 'default'
+    id: 'distribution'
     title: 'Hábitat y distribución'
     content: |
       El Margay está asociado fuertemente a selvas húmedas de la zona paranaense o de yungas, no encontrándoselo en la región chaqueña. Se lo puede hallar en zonas degradadas o antropizadas, pero siempre en el marco de un ambiente forestal. Sin embargo es menos tolerante a la modificación de su hábitat que otros felinos.
@@ -72,7 +75,8 @@ sections:
       geojson: '/maps/leopardus-wiedii.geojson'
     images: []
 
-  - id: 'situation'
+  - type: 'default'
+    id: 'situation'
     title: 'Situación'
     content: |
       Al igual que otros felinos manchados, el Margay debió padecer históricamente una gran presión de caza con fines peleteros. Aunque su comercio no es el de otras épocas, aún a mediados de la década del 90 su piel seguía siendo traficada en el mercado ilegal. También se lo ha buscado para mascotismo.
@@ -88,11 +92,11 @@ threats:
     description: 'La expansión de la frontera agropecuaria, el desarrollo urbano y las forestaciones destruyen el hábitat forestal que requiere la especie.'
 
   - title: 'Caza ilegal'
-    icon: 'warning'
+    icon: 'alert-triangle'
     description: 'Persiste la caza ilegal para comercializar su piel y por ataques a animales de granja.'
 
   - title: 'Tráfico para mascotismo'
-    icon: 'warning'
+    icon: 'alert-triangle'
     description: 'El tráfico ilegal de ejemplares vivos para mascotas es otra de las amenazas que enfrenta el Margay.'
 
 bibliography:

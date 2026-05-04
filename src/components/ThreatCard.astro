@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon/components';
 import type { ThreatCardProps } from '../types/components/threat';
 
 interface Props extends ThreatCardProps {}
@@ -10,7 +11,7 @@ const { title, icon, description } = Astro.props;
   class="rounded-card shadow-card ring-base-100 flex h-full w-full flex-col gap-4 bg-white p-6 ring-1 transition-shadow hover:shadow-md"
 >
   <div class="bg-accent-50 text-accent-600 flex h-12 w-12 items-center justify-center rounded">
-    <i class={`ph ph-${icon}`} style="font-size: 1.5rem;" aria-hidden="true"></i>
+    <Icon name={icon} class="text-accent-600" aria-hidden="true" />
   </div>
   <h3 class="font-display text-base-900 text-lg font-bold">{title}</h3>
   <p class="text-base-600 text-sm leading-relaxed">{description}</p>

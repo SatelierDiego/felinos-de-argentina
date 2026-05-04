@@ -31,7 +31,8 @@ stats:
   otherNames: 'tilcayo, gato tigre menor, oncilla, gato tigre del norte'
 
 sections:
-  - id: 'appearance'
+  - type: 'default'
+    id: 'appearance'
     title: 'Tamaño y apariencia'
     content: |
       El Tigrina es uno de los felinos más pequeños de Argentina, con un peso de entre 2 y 3 kg. Su cuerpo compacto y su cola relativamente larga le otorgan gran agilidad tanto en el suelo como en la vegetación.
@@ -41,7 +42,8 @@ sections:
       Es morfológicamente muy similar al <a href="/felinos/tirica">Tirica (*Leopardus guttulus*)</a> , del que fue separado taxonómicamente en 2013 mediante análisis moleculares. En la práctica, la distribución geográfica —las Yungas del noroeste para *L. tigrinus* y Misiones para *L. guttulus*— es el criterio más útil para diferenciarlos en Argentina.
     images: []
 
-  - id: 'behavior'
+  - type: 'default'
+    id: 'behavior'
     title: 'Comportamiento'
     content: |
       El Tigrina lleva una vida solitaria y sus hábitos son principalmente nocturnos y crepusculares. Es una especie terrestre con capacidad de trepar cuando las circunstancias lo requieren.
@@ -53,7 +55,8 @@ sections:
       Los datos reproductivos provienen en gran parte de individuos en cautividad. La gestación dura entre 55 y 76 días, sin estacionalidad marcada y las camadas son de una cría, raramente dos o tres.
     images: []
 
-  - id: 'distribution'
+  - type: 'default'
+    id: 'distribution'
     title: 'Hábitat y distribución'
     content: |
       En Argentina, el Tigrina es exclusivo de la ecorregión de las Yungas. Su presencia está confirmada en las provincias de Jujuy y Salta, ocupando los pisos de selva pedemontana, selva montana y bosque montano entre los 600 y los 2.500 metros sobre el nivel del mar. No existen registros confirmados en Tucumán ni en Catamarca.
@@ -68,7 +71,8 @@ sections:
       geojson: '/maps/leopardus-tigrinus.geojson'
     images: []
 
-  - id: 'situation'
+  - type: 'default'
+    id: 'situation'
     title: 'Situación'
     content: |
       El Tigrina está categorizado como Vulnerable (VU) tanto a nivel nacional (SAREM 2019, criterio A2c) como a nivel global (UICN 2016). En evaluaciones nacionales previas fue considerado Amenazado.
@@ -90,7 +94,7 @@ threats:
     description: 'La ganadería extensiva, la extracción forestal selectiva y la construcción de rutas y canales fragmentan y deterioran el bosque remanente.'
 
   - title: 'Caza ilegal'
-    icon: 'warning'
+    icon: 'alert-triangle'
     description: 'La especie es cazada por represalia ante la depredación de aves de corral y, en menor medida, por comercio ilegal de pieles y mascotas.'
 
   - title: 'Depredación por perros'

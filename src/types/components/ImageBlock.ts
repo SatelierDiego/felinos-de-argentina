@@ -3,6 +3,7 @@ import type { ImageMetadata } from 'astro';
 export interface ImageData {
   src: ImageMetadata;
   alt: string;
+  credit?: string;
 }
 
 export interface ImageBlockProps {

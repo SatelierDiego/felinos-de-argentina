@@ -31,7 +31,8 @@ stats:
   otherNames: 'jaguar, overo, pintado, tigre, tigre americano, nahuel, uturunco, bicho'
 
 sections:
-  - id: 'appearance'
+  - type: 'default'
+    id: 'appearance'
     title: 'Tamaño y apariencia'
     content: |
       El Yaguareté es el felino más grande de América y el tercero del mundo. Mide entre 150 y 170 cm de largo, más 80 cm aproximadamente de cola, con una altura de entre 65 a 80 cm hasta la cruz y un peso de entre 70 y 90 kg, aunque puede llegar a pesar hasta 135 kg.
@@ -41,7 +42,8 @@ sections:
       Sobre ese color tiene manchas en forma de rosetas, similares a las del leopardo, pero el Yaguareté puede tener uno o más puntos en el interior de las manchas más grandes, lo que sirve para diferenciarlos. Existen Yaguaretés negros (melánicos) que tienen manchas color negro brillante sobre un fondo negro opaco. Los ejemplares albinos son muy raros.
     images: []
 
-  - id: 'behavior'
+  - type: 'default'
+    id: 'behavior'
     title: 'Comportamiento'
     content: |
       El Yaguareté es un predador solitario y territorial, que puede estar activo tanto de día como de noche. Es un gran caminador y un excelente nadador, pudiendo cruzar ríos caudalosos y hasta cazar peces y lagartos.
@@ -57,7 +59,8 @@ sections:
       El Yaguareté es el único felino de América, y uno de los cuatro en el mundo, capaz de rugir.
     images: []
 
-  - id: 'distribution'
+  - type: 'default'
+    id: 'distribution'
     title: 'Hábitat y distribución'
     content: |
       El Yaguareté vive en selvas tropicales y subtropicales, selvas de montaña, zonas pantanosas de inundación estacional, sabanas y praderas secas y bosques hasta los 2700 metros de altura. Está estrechamente relacionado con el agua y a menudo prefiere vivir al lado de ríos, pantanales y selvas densas con mucha vegetación.
@@ -74,7 +77,8 @@ sections:
       geojson: '/maps/panthera-onca.geojson'
     images: []
 
-  - id: 'situation'
+  - type: 'default'
+    id: 'situation'
     title: 'Situación'
     content: |
       Se estima que actualmente el Yaguareté ocupa solo un 46% de lo que fuera su distribución histórica a nivel mundial, y en Argentina solo el 5%.
@@ -92,15 +96,15 @@ threats:
     description: 'La expansión de la frontera agrícola y ganadera destruye y fragmenta los grandes bloques de hábitat que requiere la especie.'
 
   - title: 'Reducción de presas'
-    icon: 'warning'
+    icon: 'alert-triangle'
     description: 'La caza furtiva sobre sus presas silvestres reduce la disponibilidad de alimento y aumenta los conflictos con la ganadería.'
 
   - title: 'Caza como represalia'
-    icon: 'warning'
+    icon: 'alert-triangle'
     description: 'Es cazado por ganaderos que lo consideran una amenaza para el ganado, siendo esta una de las principales causas de mortalidad.'
 
   - title: 'Atropellamientos'
-    icon: 'warning'
+    icon: 'alert-triangle'
     description: 'Los atropellamientos en rutas que atraviesan su área de distribución son otra amenaza directa para sus escasas poblaciones.'
 
 bibliography:

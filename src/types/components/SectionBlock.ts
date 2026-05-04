@@ -12,6 +12,14 @@ export interface MapData {
   geojson?: string;
 }
 
+export interface HighlightBlockProps {
+  id: string;
+  title?: string;
+  content: string;
+  separatorBefore?: boolean;
+  separatorAfter?: boolean;
+}
+
 export interface SectionBlockProps {
   id: string;
   title?: string;
@@ -20,8 +28,6 @@ export interface SectionBlockProps {
   map?: MapData;
   /** Even index → images right; odd → images left */
   index?: number;
-  /** Renders the section with a dark brand background (highlight style) */
-  highlight?: boolean;
   separatorBefore?: boolean;
   separatorAfter?: boolean;
   separatorBeforeColor?: string;

@@ -31,7 +31,8 @@ stats:
   otherNames: 'gato onza, gato tigre grande, tiricón, manigordo'
 
 sections:
-  - id: 'appearance'
+  - type: 'default'
+    id: 'appearance'
     title: 'Tamaño y apariencia'
     content: |
       El Ocelote es un felino de tamaño intermedio entre el Tirica (*Leopardus guttulus*) y el Puma (*Puma concolor*). Mide entre 115 y 145 cm de largo total, de los cuales 40 a 45 cm corresponden a la cola. El peso oscila entre los 7 y los 16 kg, siendo el macho más grande y pesado que la hembra.
@@ -43,7 +44,8 @@ sections:
       El Ocelote fue considerado, por su hermoso diseño, uno de los felinos salvajes de más bello pelaje, lo cual le contrajo severas consecuencias debido al intenso tráfico de su cuero.
     images: []
 
-  - id: 'behavior'
+  - type: 'default'
+    id: 'behavior'
     title: 'Comportamiento'
     content: |
       Es una especie tímida, solitaria y sigilosa, de hábitos nocturnos o crepusculares, aunque es posible sorprenderlo a plena luz del día.
@@ -57,7 +59,8 @@ sections:
       Su época de cría abarca desde octubre a enero, y da a luz entre 1 y 4 cachorros. El período de gestación aproximado es de 70 a 85 días. Como todos los gatos necesita de grandes territorios: estudios indican que una población de 500 ocelotes tendría un requerimiento de territorio de poco más de 600.000 hectáreas. En el Parque Nacional Iguazú se estima una densidad de entre 5 y 17 individuos por cada 100 km². Su longevidad máxima en cautiverio fue de 20 años.
     images: []
 
-  - id: 'distribution'
+  - type: 'default'
+    id: 'distribution'
     title: 'Hábitat y distribución'
     content: |
       El Ocelote habita selvas tupidas y enmarañadas donde puede desplazarse por los diferentes estratos sin dificultad. Se lo encuentra en Argentina en la Selva Paranaense (de la que puede extenderse hacia zonas aledañas de selva marginal, junto al curso de los ríos), en el Chaco Oriental y en la Selva de Yungas. Puede habitar en ocasiones ambientes alterados por el hombre, como selvas secundarias o capueras.
@@ -74,7 +77,8 @@ sections:
       geojson: '/maps/leopardus-pardalis.geojson'
     images: []
 
-  - id: 'situation'
+  - type: 'default'
+    id: 'situation'
     title: 'Situación'
     content: |
       Tanto la caza como la destrucción del hábitat por el desmonte y el avance de la frontera urbana representan un peligro para el Ocelote, habiendo reducido sensiblemente sus poblaciones y su área de dispersión. Antiguamente abarcaba las provincias de Entre Ríos, Santa Fe y Corrientes, donde hoy prácticamente se halla extinto.
@@ -90,11 +94,11 @@ threats:
     description: 'La expansión de la frontera agropecuaria, el desarrollo urbano y las forestaciones son la principal amenaza para el Ocelote.'
 
   - title: 'Caza ilegal'
-    icon: 'warning'
+    icon: 'alert-triangle'
     description: 'Persiste la caza ilegal para comercializar su piel y la caza por ataques a animales de granja.'
 
   - title: 'Tráfico para mascotismo'
-    icon: 'cage'
+    icon: 'prison'
     description: 'El tráfico ilegal de ejemplares vivos para mascotas es otra de las amenazas que enfrenta el Ocelote.'
 
 bibliography:

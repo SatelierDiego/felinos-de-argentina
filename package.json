@@ -17,14 +17,15 @@
     "@astrojs/sitemap": "^3.7.2",
     "@fontsource-variable/open-sans": "^5.2.7",
     "@fontsource-variable/quicksand": "^5.2.10",
-    "@midudev/tailwind-animations": "^1.0.1",
     "@tailwindcss/vite": "^4.2.4",
     "@types/leaflet": "^1.9.21",
-    "astro": "^6.1.10",
+    "astro": "^6.2.1",
     "astro-icon": "^1.1.5",
     "glightbox": "^3.3.1",
     "leaflet": "^1.9.4",
+    "marked": "^15.0.12",
     "sharp": "^0.34.5",
+    "tailwind-animations": "^1.0.1",
     "tailwindcss": "^4.2.4"
   },
   "devDependencies": {

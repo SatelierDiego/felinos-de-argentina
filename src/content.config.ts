@@ -2,6 +2,25 @@ import { defineCollection } from 'astro:content';
 import { z } from 'astro/zod';
 import { glob } from 'astro/loaders';
 
+const homeSectionSchema = z.discriminatedUnion('type', [
+  z.object({
+    type: z.literal('default'),
+    id: z.string(),
+    title: z.string().optional(),
+    content: z.string(),
+    separatorBefore: z.boolean().default(false),
+    separatorAfter: z.boolean().default(false),
+  }),
+  z.object({
+    type: z.literal('highlight'),
+    id: z.string(),
+    title: z.string().optional(),
+    content: z.string(),
+    separatorBefore: z.boolean().default(false),
+    separatorAfter: z.boolean().default(false),
+  }),
+]);
+
 const homeCollection = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/home' }),
   schema: ({ image }) =>
@@ -11,17 +30,9 @@ const homeCollection = defineCollection({
         subtitle: z.string(),
         image: image(),
         alt: z.string(),
+        cta: z.object({ href: z.string(), text: z.string() }).optional(),
       }),
-      intro: z.object({
-        paragraphs: z.array(z.string()),
-      }),
-      highlight: z.object({
-        title: z.string(),
-        content: z.string(),
-      }),
-      content: z.object({
-        paragraphs: z.array(z.string()),
-      }),
+      sections: z.array(homeSectionSchema),
       felinos: z.array(
         z.object({
           slug: z.string(),
@@ -47,6 +58,7 @@ const fotografosCollection = defineCollection({
             z.object({
               titulo: z.string(),
               url: z.string().url(),
+              icon: z.string().optional(),
             })
           )
           .optional(),
@@ -55,8 +67,6 @@ const fotografosCollection = defineCollection({
     ),
   }),
 });
-
-const sectionIdSchema = z.enum(['appearance', 'behavior', 'distribution', 'situation']);
 
 const felinosCollection = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/felinos' }),
@@ -100,14 +110,18 @@ const felinosCollection = defineCollection({
 
       sections: z.array(
         z.object({
-          id: sectionIdSchema,
+          type: z.enum(['default', 'highlight']).default('default'),
+          id: z.string(),
           title: z.string(),
           content: z.string(),
+          separatorBefore: z.boolean().default(false),
+          separatorAfter: z.boolean().default(false),
           images: z
             .array(
               z.object({
                 src: image(),
                 alt: z.string(),
+                credit: z.string().optional(),
               })
             )
             .default([]),

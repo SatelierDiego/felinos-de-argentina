@@ -4,7 +4,7 @@ slug: 'gato-del-pajonal'
 hero:
   title: 'Gato del Pajonal'
   subtitle: 'Un felino misterioso de los pastizales andinos y patagónicos, frecuentemente confundido con el gato andino.'
-  image: '/src/assets/images/headshots/leopardus-colocolo.jpg'
+  image: '/src/assets/images/felinos/leopardus-colocolo/hero.jpg'
   alt: 'Gato del pajonal entre pajonales'
 
 seo:
@@ -14,7 +14,7 @@ seo:
 scientific_name: 'Leopardus colocolo'
 
 stats:
-  silouette: '/src/assets/images/felinos/herpailurus-yagouaroundi/silouette.svg'
+  silouette: '/src/assets/images/felinos/leopardus-colocolo/silouette.svg'
   size:
     weight: '3–5 kg'
     body: '53–65 cm'
@@ -31,7 +31,8 @@ stats:
   otherNames: ''
 
 sections:
-  - id: 'appearance'
+  - type: 'default'
+    id: 'appearance'
     title: 'Tamaño y apariencia'
     content: |
       El Gato del Pajonal es un felino de cabeza redonda, cuerpo robusto y patas cortas, de pelaje largo y con las orejas en punta, lo que recuerda vagamente al lince.
@@ -43,9 +44,12 @@ sections:
       El Gato del Pajonal ha atravesado varios cambios en su clasificación sistemática. Actualmente los llamados Gato del Pajonal (antes *Lynchailurus pajeros*), Gato del Pantanal (antes *Lynchailurus braccatus*) y Gato Colocolo (antes *Lynchailurus colocolo*) han pasado a conformar una única especie: el Gato del Pajonal (*Leopardus colocolo*). Esto explica sus variaciones morfológicas a lo largo de su amplia distribución.
 
       Es posible también encontrar formas melánicas de esta especie.
-    images: []
+    images:
+      - src: '/src/assets/images/felinos/leopardus-colocolo/appearance.jpg'
+        alt: 'Primer plano de Gato del Pajonal'
 
-  - id: 'behavior'
+  - type: 'default'
+    id: 'behavior'
     title: 'Comportamiento'
     content: |
       El Gato del Pajonal es un felino terrestre y acostumbra cazar al nivel del suelo. No suele trepar a los árboles.
@@ -59,9 +63,12 @@ sections:
       Se lo ha visto refugiarse en cuevas de vizcachas, y se sospecha que la gran merma en las poblaciones de estos típicos roedores pampeanos puede haber influido en su enrarecimiento.
 
       Su período de gestación es largo en relación a su tamaño, pudiendo durar entre 80 y 85 días. Suele tener entre 1 y 3 crías. Las hembras alcanzan la madurez sexual a los 2 años y la longevidad promedio de la especie es de 9 años.
-    images: []
+    images:
+      - src: '/src/assets/images/felinos/leopardus-colocolo/behavior.jpg'
+        alt: 'Gato del Pajonal caminando de perfil'
 
-  - id: 'distribution'
+  - type: 'default'
+    id: 'distribution'
     title: 'Hábitat y distribución'
     content: |
       El Gato del Pajonal prefiere zonas de pastos altos y matorrales secos y abiertos, con pocos árboles. Habita las ecorregiones de los Altos Andes, la Puna, el Monte, el Espinal, los límites del Chaco Serrano y de transición, los pastizales de altura en las Yungas, las Pampas secas y la Estepa patagónica (hasta el estrecho de Magallanes).
@@ -78,7 +85,8 @@ sections:
       geojson: '/maps/leopardus-colocolo.geojson'
     images: []
 
-  - id: 'situation'
+  - type: 'default'
+    id: 'situation'
     title: 'Situación'
     content: |
       El Gato del Pajonal sufrió grandes presiones históricas. Entre 1976 y 1979 se exportaron 78.000 pieles; la última exportación legal ocurrió en 1987, cuando salieron de Argentina 10.000 cueros.
@@ -88,15 +96,17 @@ sections:
       La gran modificación de su hábitat, en particular el pastizal pampeano —una de las ecorregiones más amenazadas del país—, ha impactado fuertemente en su tamaño poblacional, eliminando no solo los pastizales que le sirven de refugio sino también su alimento, principalmente roedores.
 
       Sus poblaciones se encuentran hoy gravemente fragmentadas, lo que impide el intercambio genético entre ellas. Se estima que su tamaño poblacional total es inferior a 50.000 individuos con un índice decreciente. Se considera al Gato del Pajonal prácticamente extinto de la pampa húmeda.
-    images: []
+    images:
+      - src: '/src/assets/images/felinos/leopardus-colocolo/situation.jpg'
+        alt: 'Gato del Pajonal capturado por una cámara trampa'
 
 threats:
   - title: 'Pérdida de hábitat'
-    icon: 'tree'
+    icon: 'tractor'
     description: 'El avance de la frontera agropecuaria, la minería y la extracción de petróleo destruyen los pastizales y pajonales que constituyen el hábitat principal de la especie.'
 
   - title: 'Caza como represalia'
-    icon: 'warning'
+    icon: 'alert-triangle'
     description: 'Se lo persigue activamente con perros o cepos por considerarlo dañino para las aves de corral.'
 
   - title: 'Atropellamientos'
@@ -108,5 +118,35 @@ bibliography:
   - 'Pereira, J. & Aprile, G. Felinos de Sudamérica. FVSA / WCS / Traffic.'
   - 'García-Perea, R. (1994). The pampas cat group (genus Lynchailurus Severtzov, 1858): a systematic and biogeographic review. American Museum Novitates.'
 
-gallery: []
+gallery:
+  - src: '/src/assets/images/felinos/leopardus-colocolo/gallery/01.jpg'
+    alt: ''
+    autor: 'Alexander Oehrle'
+  - src: '/src/assets/images/felinos/leopardus-colocolo/gallery/02.jpg'
+    alt: ''
+    autor: 'Anne-Marie Kalus'
+  - src: '/src/assets/images/felinos/leopardus-colocolo/gallery/03.jpg'
+    alt: ''
+    autor: 'Anne-Marie Kalus'
+  - src: '/src/assets/images/felinos/leopardus-colocolo/gallery/04.jpg'
+    alt: ''
+    autor: 'Anne-Marie Kalus'
+  - src: '/src/assets/images/felinos/leopardus-colocolo/gallery/05.jpg'
+    alt: ''
+    autor: 'Anne-Marie Kalus'
+  - src: '/src/assets/images/felinos/leopardus-colocolo/gallery/06.jpg'
+    alt: ''
+    autor: 'Alexander Oehrle'
+  - src: '/src/assets/images/felinos/leopardus-colocolo/gallery/07.jpg'
+    alt: ''
+    autor: 'Anne-Marie Kalus'
+  - src: '/src/assets/images/felinos/leopardus-colocolo/gallery/08.jpg'
+    alt: ''
+    autor: 'Anne-Marie Kalus'
+  - src: '/src/assets/images/felinos/leopardus-colocolo/gallery/09.jpg'
+    alt: ''
+    autor: 'Anne-Marie Kalus'
+  - src: '/src/assets/images/felinos/leopardus-colocolo/gallery/10.jpg'
+    alt: ''
+    autor: 'Anne-Marie Kalus'
 ---

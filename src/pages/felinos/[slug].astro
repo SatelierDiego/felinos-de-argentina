@@ -4,6 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 import Hero from '../../components/Hero.astro';
 import SpeciesStats from '../../components/SpeciesStats.astro';
 import SectionBlock from '../../components/SectionBlock.astro';
+import HighlightBlock from '../../components/HighlightBlock.astro';
 import ThreatGrid from '../../components/ThreatGrid.astro';
 import Gallery from '../../components/Gallery.astro';
 import Bibliography from '../../components/Bibliography.astro';
@@ -48,38 +49,45 @@ const articleJsonLd = {
   type="article"
   jsonLd={[articleJsonLd]}
 >
-  <!-- Hero
-  <Hero
-    title={data.hero.title}
-    subtitle={data.hero.subtitle}
-    image={data.hero.image}
-    alt={data.hero.alt}
-    separatorColor="#4a3f3b"
-  />
- -->
-  <Hero
-    title={data.hero.title}
-    subtitle={data.hero.subtitle}
-    image={data.hero.image}
-    alt={data.hero.alt}
-    separatorColor="text-accent"
-  />
+  <Hero title={data.hero.title} subtitle={data.hero.subtitle} image={data.hero.image} alt={data.hero.alt} />
 
   <!-- Stats bar -->
-  {data.stats && <SpeciesStats commonName={data.hero.title} scientificName={data.scientific_name} stats={data.stats} />}
-
-  <!-- Content sections — loop uniforme, el mapa viene del MD via section.map -->
   {
-    data.sections.map((section: (typeof data.sections)[number], i: number) => (
-      <SectionBlock
-        id={section.id}
-        title={section.title}
-        content={section.content}
-        images={section.images}
-        map={section.map}
-        index={i}
+    data.stats && (
+      <SpeciesStats
+        commonName={data.hero.title}
+        scientificName={data.scientific_name}
+        stats={data.stats}
+        separatorBefore
+        separatorAfter
       />
-    ))
+    )
+  }
+
+  <!-- Content sections -->
+  {
+    data.sections.map((section: (typeof data.sections)[number], i: number) =>
+      section.type === 'highlight' ? (
+        <HighlightBlock
+          id={section.id}
+          title={section.title}
+          content={section.content}
+          separatorBefore={section.separatorBefore}
+          separatorAfter={section.separatorAfter}
+        />
+      ) : (
+        <SectionBlock
+          id={section.id}
+          title={section.title}
+          content={section.content}
+          images={section.images}
+          map={section.map}
+          index={i}
+          separatorBefore={section.separatorBefore}
+          separatorAfter={section.separatorAfter}
+        />
+      )
+    )
   }
 
   <!-- Threats -->

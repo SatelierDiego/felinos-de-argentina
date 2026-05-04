@@ -11,17 +11,24 @@ const { images, position = 'left' } = Astro.props;
 <div class:list={[images.length >= 2 && 'grid grid-rows-2 gap-4']}>
   {
     images.map((img) => (
-      <div class="rounded-card shadow-card">
-        <figure class="rounded-card aspect-[4/3] overflow-hidden">
-          <Image
-            src={img.src}
-            alt={img.alt}
-            width={800}
-            height={600}
-            class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-            loading="lazy"
-            decoding="async"
-          />
+      <div class="">
+        <figure class="">
+          <div class="rounded-card shadow-card aspect-[4/3] overflow-hidden">
+            <Image
+              src={img.src}
+              alt={img.alt}
+              width={800}
+              height={600}
+              class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          {img.credit && (
+            <figcaption class="px-3 py-1.5 text-xs leading-snug text-neutral-500 dark:text-neutral-400">
+              &copy; {img.credit}
+            </figcaption>
+          )}
         </figure>
       </div>
     ))

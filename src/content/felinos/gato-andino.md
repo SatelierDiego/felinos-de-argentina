@@ -31,7 +31,8 @@ stats:
   otherNames: ''
 
 sections:
-  - id: 'appearance'
+  - type: 'default'
+    id: 'appearance'
     title: 'Tamaño y apariencia'
     content: |
       El Gato Andino es un felino mediano, con un tamaño aproximado que dobla al del gato doméstico. Tiene un largo que oscila entre los 57 y los 65 cm a los que hay que sumar entre 42 y 48 cm correspondientes a la cola. Tiene un peso que va desde los 4 a los 6 kg.
@@ -49,7 +50,8 @@ sections:
       - src: '/src/assets/images/felinos/leopardus-jacobita/apariencia-1.jpg'
         alt: 'Gato andino mostrando su pelaje característico'
 
-  - id: 'behavior'
+  - type: 'default'
+    id: 'behavior'
     title: 'Comportamiento'
     content: |
       El Gato Andino es un felino solitario, raro y muy difícil de ver. Ha sido observado durante el día, pero cámaras trampa lo han registrado también por la noche, cuando probablemente le resulta más fácil obtener sus presas. Se supone, en base a estudios, que su actividad es más frecuente durante la noche, siendo también importante en la primera mitad del día.
@@ -65,7 +67,8 @@ sections:
       El Gato Andino es el felino más amenazado de América.
     images: []
 
-  - id: 'distribution'
+  - type: 'default'
+    id: 'distribution'
     title: 'Habitat y distribución'
     content: |
       El Gato Andino habita zonas rocosas de alta montaña en la Puna y los Altos Andes, incluso en el macizo del Aconquija, siempre por encima de los 1000 msnm y hasta los 5000 msnm. También se lo ha hallado en la zona norte de la estepa patagónica.
@@ -86,7 +89,8 @@ sections:
       geojson: '/maps/leopardus-jacobita.geojson'
     images: []
 
-  - id: 'situation'
+  - type: 'default'
+    id: 'situation'
     title: 'Situación'
     content: |
       Durante largo tiempo el Gato Andino resultó un misterio, con escasos avistajes y poca información sobre su ecología y distribución. Su difícil y fragmentado hábitat en concordancia con su escasa densidad, complicaban su conocimiento. Afortunadamente en el último tiempo, gracias al estudio e interés de distintos especialistas esta situación ha comenzado a cambiar.
@@ -108,7 +112,7 @@ threats:
     description: 'Prácticas inapropiadas que degradan el hábitat y generan conflictos con los pobladores locales.'
 
   - title: 'Caza'
-    icon: 'warning'
+    icon: 'alert-triangle'
     description: 'Caza cultural y caza indirecta mediante la reducción de poblaciones de sus presas naturales.'
 
   - title: 'Especies domésticas'

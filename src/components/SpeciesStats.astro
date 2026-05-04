@@ -3,9 +3,11 @@ import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
 import type { SpeciesStatsProps, StatusEntry } from '../types/components/species';
 
+import separatorContent from '../assets/separator.svg?raw';
+
 interface Props extends SpeciesStatsProps {}
 
-const { scientificName, commonName, stats } = Astro.props;
+const { scientificName, commonName, stats, separatorBefore = false, separatorAfter = false } = Astro.props;
 
 const statusBadge: Record<string, { label: string; color: string }> = {
   EX: {
@@ -62,15 +64,22 @@ const status = {
 };
 ---
 
-<section class="bg-alternative bg-accent px-8 py-6">
-  <article class="mx-auto max-w-5xl">
-    <h1 class="font-display mb-4 text-xl leading-tight font-bold text-stone-100">
+<section class="bg-dark">
+  {
+    separatorBefore && (
+      <div class="text-dark w-full overflow-hidden -translate-y-6">
+        <div set:html={separatorContent} class="h-auto min-w-[2000px] w-full" />
+      </div>
+    )
+  }
+  <article class="mx-auto max-w-5xl px-8 py-6" data-reveal data-animation="animate-fade-in-up" data-once>
+    <h1 class="font-display text-background mb-4 text-xl leading-tight font-bold">
       Ficha del {commonName}
-      <span class="text-md font-normal text-stone-300 italic">({scientificName})</span>
+      <span class="text-md text-background/90 font-normal italic">({scientificName})</span>
     </h1>
     <div class="flex flex-col gap-8 md:flex-row md:gap-5">
       <div
-        class="flex w-full shrink-0 flex-col gap-4 border-b border-stone-700 pb-6 md:w-1/4 md:border-r md:border-b-0 md:pr-6 md:pb-0"
+        class="border-background/20 flex w-full shrink-0 flex-col gap-4 border-b pb-6 md:w-1/4 md:border-r md:border-b-0 md:pr-6 md:pb-0"
       >
         {
           stats.silouette && (
@@ -79,7 +88,7 @@ const status = {
               alt={'silueta de ' + commonName}
               width={250}
               height={250}
-              class="mx-auto mt-10"
+              class="mx-auto mt-10 invert-100"
               loading="lazy"
             />
           )
@@ -87,47 +96,47 @@ const status = {
 
         <div class="grid grid-cols-2 gap-x-8 gap-y-4">
           <div>
-            <h2 class="mb-0.5 text-sm font-bold tracking-[0.18em] text-stone-300 uppercase">Peso</h2>
-            <p class="font-display text-sm leading-none text-stone-100">
+            <h2 class="text-background/90 mb-0.5 text-sm font-bold tracking-[0.18em] uppercase">Peso</h2>
+            <p class="font-display text-background text-sm leading-none">
               {stats.size.weight}
             </p>
           </div>
           <div>
-            <h2 class="mb-0.5 text-sm font-bold tracking-[0.18em] text-stone-300 uppercase">Alzada</h2>
-            <p class="font-display text-sm leading-none text-stone-100">
+            <h2 class="text-background/90 mb-0.5 text-sm font-bold tracking-[0.18em] uppercase">Alzada</h2>
+            <p class="font-display text-background text-sm leading-none">
               {stats.size.height_at_withers}
             </p>
           </div>
           <div>
-            <h2 class="mb-0.5 text-sm font-bold tracking-[0.18em] text-stone-300 uppercase">Cuerpo</h2>
-            <p class="font-display text-sm leading-none text-stone-100">
+            <h2 class="text-background/90 mb-0.5 text-sm font-bold tracking-[0.18em] uppercase">Cuerpo</h2>
+            <p class="font-display text-background text-sm leading-none">
               {stats.size.body}
             </p>
           </div>
           <div>
-            <h2 class="mb-0.5 text-sm font-bold tracking-[0.18em] text-stone-300 uppercase">Cola</h2>
-            <p class="font-display text-sm leading-none text-stone-100">{stats.size.tail}</p>
+            <h2 class="text-background/90 mb-0.5 text-sm font-bold tracking-[0.18em] uppercase">Cola</h2>
+            <p class="font-display text-background text-sm leading-none">{stats.size.tail}</p>
           </div>
         </div>
       </div>
 
       <div class="flex flex-1 flex-col gap-4">
         <div class="flex flex-col gap-2">
-          <h2 class="text-sm font-bold tracking-[0.18em] text-stone-300 uppercase">Estado de conservación</h2>
+          <h2 class="text-background/90 text-sm font-bold tracking-[0.18em] uppercase">Estado de conservación</h2>
           <div class="flex flex-col gap-6 md:flex-row">
             {
               // iterate status entries
               Object.entries(status).map(([key, { label, color }]) => (
                 <div>
-                  <h3 class="mb-1 text-sm font-bold tracking-[0.18em] text-stone-400 uppercase">
+                  <h3 class="text-background/80 mb-1 text-sm font-bold tracking-[0.18em] uppercase">
                     {key === 'sarem' ? 'Argentina' : 'IUCN'}
                   </h3>
                   <div class="mb-0.5 flex items-center gap-1.5">
                     <span class:list={['h-4 w-4 shrink-0 rounded-full border border-stone-500', color]} />
-                    <span class="font-display px-2 text-lg leading-none font-bold text-stone-100">
+                    <span class="font-display text-background px-2 text-lg leading-none font-bold">
                       {stats.conservationStatus[key as keyof StatusEntry]}
                     </span>
-                    <span class="text-sm leading-snug text-stone-300">{label}</span>
+                    <span class="text-background/80 text-sm leading-snug">{label}</span>
                   </div>
                 </div>
               ))
@@ -135,20 +144,20 @@ const status = {
           </div>
 
           <div class="mt-2 flex items-start gap-3">
-            <Icon name="bone" class="text-brand mt-0.5 size-6 shrink-0" aria-hidden="true" />
+            <Icon name="bone" class="text-highlight mt-0.5 size-6 shrink-0" aria-hidden="true" />
             <div>
-              <h2 class="mb-0.5 text-sm font-bold tracking-[0.18em] text-stone-300 uppercase">Dieta</h2>
-              <p class="text-sm leading-snug text-stone-100">
+              <h2 class="text-background/90 mb-0.5 text-sm font-bold tracking-[0.18em] uppercase">Dieta</h2>
+              <p class="text-background text-sm leading-snug">
                 {stats.diet}
               </p>
             </div>
           </div>
 
           <div class="mt-2 flex items-start gap-3">
-            <Icon name="map-pin" class="text-accent text-brand mt-0.5 size-6 shrink-0" aria-hidden="true" />
+            <Icon name="map-pin" class="text-highlight mt-0.5 size-6 shrink-0" aria-hidden="true" />
             <div>
-              <h2 class="mb-0.5 text-sm font-bold tracking-[0.18em] text-stone-300 uppercase">Hábitat</h2>
-              <p class="text-sm leading-snug text-stone-100">
+              <h2 class="text-background/90 mb-0.5 text-sm font-bold tracking-[0.18em] uppercase">Hábitat</h2>
+              <p class="text-background text-sm leading-snug">
                 {stats.habitat}
               </p>
             </div>
@@ -158,10 +167,10 @@ const status = {
             {
               stats.habits && (
                 <div class="flex items-start gap-2">
-                  <Icon name="paw" class="text-brand mt-0.5 size-6 shrink-0" aria-hidden="true" />
+                  <Icon name="paw" class="text-highlight mt-0.5 size-6 shrink-0" aria-hidden="true" />
                   <div>
-                    <p class="mb-0.5 text-sm font-bold tracking-[0.18em] text-stone-300 uppercase">Hábitos</p>
-                    <p class="text-sm leading-snug text-stone-300">{stats.habits}</p>
+                    <p class="text-background/90 mb-0.5 text-sm font-bold tracking-[0.18em] uppercase">Hábitos</p>
+                    <p class="text-background text-sm leading-snug">{stats.habits}</p>
                   </div>
                 </div>
               )
@@ -169,31 +178,41 @@ const status = {
             {
               stats.activity && (
                 <div class="flex items-start gap-2">
-                  <Icon name="sun-moon" class="text-brand mt-0.5 size-6 shrink-0" aria-hidden="true" />
+                  <Icon name="sun-moon" class="text-highlight mt-0.5 size-6 shrink-0" aria-hidden="true" />
                   <div>
-                    <p class="mb-0.5 text-sm font-bold tracking-[0.18em] text-stone-300 uppercase">Actividad</p>
-                    <p class="text-sm leading-snug text-stone-300">{stats.activity}</p>
+                    <p class="text-background/90 mb-0.5 text-sm font-bold tracking-[0.18em] uppercase">Actividad</p>
+                    <p class="text-background text-sm leading-snug">{stats.activity}</p>
                   </div>
                 </div>
               )
             }
             <div class="flex items-start gap-2">
-              <Icon name="hourglass" class="text-brand mt-0.5 size-6 shrink-0" aria-hidden="true" />
+              <Icon name="hourglass" class="text-highlight mt-0.5 size-6 shrink-0" aria-hidden="true" />
               <div>
-                <p class="mb-0.5 text-sm font-bold tracking-[0.18em] text-stone-300 uppercase">Tiempo generacional</p>
-                <p class="text-sm leading-snug text-stone-300">{stats.generationTime}</p>
+                <p class="text-background/90 mb-0.5 text-sm font-bold tracking-[0.18em] uppercase">
+                  Tiempo generacional
+                </p>
+                <p class="text-background text-sm leading-snug">{stats.generationTime}</p>
               </div>
             </div>
           </div>
           <div class="mt-2 flex items-start gap-2">
-            <Icon name="notebook" class="text-brand mt-0.5 size-6 shrink-0" aria-hidden="true" />
+            <Icon name="notebook" class="text-highlight mt-0.5 size-6 shrink-0" aria-hidden="true" />
             <div>
-              <p class="mb-0.5 text-sm font-bold tracking-[0.18em] text-stone-300 uppercase">Otros nombres</p>
-              <p class="text-sm leading-snug text-stone-300">{stats.otherNames}</p>
+              <p class="text-background/90 mb-0.5 text-sm font-bold tracking-[0.18em] uppercase">Otros nombres</p>
+              <p class="text-background text-sm leading-snug">{stats.otherNames}</p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </article>
+
+  {
+    separatorAfter && (
+      <div class="text-dark w-full overflow-hidden translate-y-6 rotate-180">
+        <div set:html={separatorContent} class="h-auto min-w-[2000px] w-full" />
+      </div>
+    )
+  }
 </section>

@@ -2,14 +2,17 @@
 import { Image } from 'astro:assets';
 import type { HeroProps } from '../types/components/hero';
 
-import separatorContent from '../assets/separator.svg?raw';
-
 interface Props extends HeroProps {}
 
-const { title = null, subtitle = null, image, alt, separatorColor = 'text-base', cta = null } = Astro.props;
+const { title = null, subtitle = null, image, alt, size = 'full', cta = null } = Astro.props;
 ---
 
-<section class="relative isolate h-[80vh] min-h-[500px] w-full overflow-hidden md:h-[85vh] md:min-h-130">
+<section
+  class:list={[
+    'relative isolate w-full overflow-hidden',
+    size === 'narrow' ? 'h-[50vh] min-h-80 md:h-[50vh] md:min-h-80' : 'h-[80vh] min-h-128 md:h-[85vh] md:min-h-128',
+  ]}
+>
   <!-- Background image - responsive -->
   <Image
     src={image}
@@ -30,9 +33,10 @@ const { title = null, subtitle = null, image, alt, separatorColor = 'text-base',
       {
         title && (
           <h1
-            class="font-display font-bold text-white"
+            class="font-display max-w-xl font-bold text-white text-shadow-xs/20"
             style="font-size: var(--text-display); line-height: var(--text-display--line-height);"
-            data-animate="animate-fade-in-up"
+            data-reveal
+            data-animation="animate-fade-in-up"
           >
             {title}
           </h1>
@@ -41,9 +45,10 @@ const { title = null, subtitle = null, image, alt, separatorColor = 'text-base',
       {
         subtitle && (
           <p
-            class="mt-4 max-w-2xl text-lg leading-relaxed text-white/80"
-            data-animate="animate-fade-in-up"
-            data-delay="150ms"
+            class="mt-4 max-w-xl text-lg leading-relaxed text-white/90 text-shadow-xs/20"
+            data-reveal
+            data-animation="animate-fade-in-up"
+            data-delay="150"
           >
             {subtitle}
           </p>
@@ -62,10 +67,5 @@ const { title = null, subtitle = null, image, alt, separatorColor = 'text-base',
         )
       }
     </div>
-  </div>
-
-  <!-- Separator SVG -->
-  <div class:list={['w-full -translate-y-6', separatorColor]}>
-    <div set:html={separatorContent} class="h-auto min-h-8 w-full" />
   </div>
 </section>

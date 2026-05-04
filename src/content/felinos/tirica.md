@@ -31,7 +31,8 @@ stats:
   otherNames: 'chiví, gato atigrado, tigrillo, gato tigre del sur'
 
 sections:
-  - id: 'appearance'
+  - type: 'default'
+    id: 'appearance'
     title: 'Tamaño y apariencia'
     content: |
       El Tirica es uno de los felinos más pequeños. Mide entre 40 a 55 cm de largo de cabeza y cuerpo más 25 a 40 cm de cola. La altura es de unos 22 a 30 cm y su peso ronda entre 1,5 y 3 kg. El macho es ligeramente más grande que la hembra.
@@ -45,7 +46,8 @@ sections:
       Su voz es muy similar al maullido de los gatos domésticos. En el Tirica los casos de melanismo son frecuentes.
     images: []
 
-  - id: 'behavior'
+  - type: 'default'
+    id: 'behavior'
     title: 'Comportamiento'
     content: |
       Se conoce muy poco sobre sus costumbres en estado silvestre.
@@ -57,7 +59,8 @@ sections:
       En cuanto a la reproducción, según datos de cautiverio, el período de gestación es de 74 a 78 días, al cabo del cual nacen 1 o 2 crías por camada. Los jóvenes alcanzan la madurez sexual a los 2 años aproximadamente. Se estima que en estado silvestre alcanza una edad de 12 a 15 años y en cautiverio llega a vivir hasta los 20 años.
     images: []
 
-  - id: 'distribution'
+  - type: 'default'
+    id: 'distribution'
     title: 'Hábitat y distribución'
     content: |
       Al Tirica se lo encuentra en selvas y bosques tropicales y subtropicales, desde el nivel del mar hasta los 2.000 metros de altura. Desde el sur de Brasil, este de Paraguay, y norte de Argentina.
@@ -72,7 +75,8 @@ sections:
       geojson: '/maps/leopardus-guttulus.geojson'
     images: []
 
-  - id: 'situation'
+  - type: 'default'
+    id: 'situation'
     title: 'Situación'
     content: |
       Actualmente el principal problema del Tirica son los desmontes y la transformación ambiental, aunque se cree que mientras queden selvas vestigiales o capueras donde refugiarse y alimentarse podría subsistir sin inconvenientes.
@@ -94,7 +98,7 @@ threats:
     description: 'Son frecuentemente atropellamientos en rutas y caminos.'
 
   - title: 'Caza ilegal'
-    icon: 'warning'
+    icon: 'alert-triangle'
     description: 'La caza ilegal relacionada al mascotismo y la caza por ataques a animales de corral impactan negativamente en sus poblaciones.'
 
 bibliography:

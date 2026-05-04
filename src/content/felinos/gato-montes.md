@@ -31,7 +31,8 @@ stats:
   otherNames: ''
 
 sections:
-  - id: 'appearance'
+  - type: 'default'
+    id: 'appearance'
     title: 'Tamaño y apariencia'
     content: |
       Por su apariencia y tamaño el Gato Montés puede confundirse con un gato doméstico, sobre todo en los frecuentes casos de melanismo.
@@ -45,7 +46,8 @@ sections:
       Su amplia distribución geográfica en Argentina va de la mano con una considerable variación de tamaño y coloración: los ejemplares del sur son de mayor tamaño y coloración más pálida; los del norte son más oscuros y presentan un alto porcentaje de melanismo; y por lo general los ejemplares del oeste poseen manchas de menor tamaño. El macho es mayor y más robusto que la hembra.
     images: []
 
-  - id: 'behavior'
+  - type: 'default'
+    id: 'behavior'
     title: 'Comportamiento'
     content: |
       El Gato Montés es de hábitos principalmente crepusculares y nocturnos.
@@ -61,7 +63,8 @@ sections:
       El Gato Montés puede llegar a vivir hasta los 14 o 15 años en estado silvestre y unos 21 años en cautiverio.
     images: []
 
-  - id: 'distribution'
+  - type: 'default'
+    id: 'distribution'
     title: 'Hábitat y distribución'
     content: |
       El Gato Montés vive en ambientes muy variados, desde el nivel del mar hasta los 3300 metros de altura. Es muy frecuente en sabanas, montes y a lo largo de las selvas en galería, principalmente en los sitios arbolados o rocosos; incluso se lo suele encontrar en ambientes modificados.
@@ -76,7 +79,8 @@ sections:
       geojson: '/maps/leopardus-geoffroyi.geojson'
     images: []
 
-  - id: 'situation'
+  - type: 'default'
+    id: 'situation'
     title: 'Situación'
     content: |
       El Gato Montés es la especie más común de felino silvestre del sur de América del Sur y por el momento no presenta serios problemas de conservación.
@@ -90,7 +94,7 @@ sections:
 
 threats:
   - title: 'Caza ilegal'
-    icon: 'warning'
+    icon: 'alert-triangle'
     description: 'Se lo sigue cazando ilegalmente por su piel y, sobre todo, en represalia por depredación sobre aves de corral.'
 
   - title: 'Atropellamientos'

@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import '@midudev/tailwind-animations';
+@import 'tailwind-animations';
 
 @theme {
   /* ── Fonts ─────────────────────────────────────── */
@@ -7,11 +7,11 @@
   --font-display: var(--font-quicksand), var(--font-open-sans), ui-sans-serif, sans-serif;
 
   /* ── Semantic design tokens ────────────────────── */
-  --color-base: #110F0E; /* onyx */
-  --color-background: #F4F1EA; /* parchment */
+  --color-base: #110f0e; /* onyx */
+  --color-background: #f4f1ea; /* parchment */
   --color-brand: #f0aa5a; /* brand */
-  --color-accent: #827169; /* taupe */
-  --color-highlight: #A0522D; /* rusty spice */
+  --color-accent: #bcae9e; /* dusty taupe */
+  --color-highlight: #a0522d; /* rusty spice */
   --color-dark: #262321; /* carbon black */
 
   /* ── Spacing scale ─────────────────────────────── */
@@ -28,11 +28,8 @@
 
   --radius-card: var(--radius-md);
 
-  /* ── Shadows ────────────────────────────────────── */
-  --shadow-card: var(--shadow-sm);
-
   /* ── Typography scale ──────────────────────────── */
-  --text-display: clamp(2.5rem, 6vw, 5rem);
+  --text-display: clamp(2rem, 4vw, 5rem);
   --text-display--line-height: 1.05;
   --text-headline: clamp(1.75rem, 3.5vw, 3rem);
   --text-headline--line-height: 1.15;
@@ -44,7 +41,7 @@
     scroll-behavior: smooth;
     font-family: var(--font-sans);
     color: var(--color-base-900);
-    background-color: var(--color-base-50);
+    background-color: var(--color-background);
   }
 
   h1,
@@ -60,20 +57,18 @@
   }
 
   ::selection {
-    background-color: var(--color-accent-200);
+    background-color: var(--color-highlight);
     color: var(--color-base-900);
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-accent-500);
+    outline: 2px solid var(--color-highlight);
     outline-offset: 3px;
     border-radius: var(--radius-sm);
   }
 
   a {
-    color: var(--color-accent-700);
-    text-decoration: underline;
-    text-underline-offset: 2px;
+    color: var(--color-highlight);
   }
 
   a:hover {
@@ -96,51 +91,8 @@
   z-index: 0;
 }
 
-/* ── Image error placeholder ───────────────────── */
-/*
- * Tailwind v4 utility: .image-not-found
- * JS adds this class to the parent of any broken <img>.
- * ::before  → background fill + SVG map icon
- * ::after   → "Imagen no encontrada" label
- */
-@utility image-not-found {
-  position: relative;
-
-  & > img {
-    visibility: hidden;
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-color: #e7e5e4;
-    background-image:
-      radial-gradient(rgb(0 0 0 / 0.1) 1px, transparent 1px),
-      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'/%3E%3Cpath d='M104,208H40a8,8,0,0,1-8-8V56a8,8,0,0,1,8-8H216a8,8,0,0,1,8,8V88l-48,16-16,40-40,16Z' fill='none' stroke='%2378716c' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'/%3E%3Cpath d='M137.73,208l7.94-23.8,39-15.58,15.58-39,23.8-7.94V200a8,8,0,0,1-8,8Z' fill='none' stroke='%2378716c' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'/%3E%3Cpath d='M32,168.69l54.34-54.35a8,8,0,0,1,11.32,0l39,39' fill='none' stroke='%2378716c' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'/%3E%3C/svg%3E");
-    background-repeat: repeat, no-repeat;
-    background-size:
-      20px 20px,
-      auto;
-    background-position:
-      0 0,
-      center calc(50% - 1.25rem);
-  }
-
-  &::after {
-    content: 'Imagen no encontrada';
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding-bottom: calc(50% - 3.5rem);
-    color: #78716c;
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
+@utility shadow-card {
+  @apply shadow-md/30;
 }
 
 /* ── Bento gallery grid ─────────────────────────── */

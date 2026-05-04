@@ -2,12 +2,21 @@
 import ThreatCard from './ThreatCard.astro';
 import type { ThreatGridProps } from '../types/components/threat';
 
+import separatorContent from '../assets/separator.svg?raw';
+
 interface Props extends ThreatGridProps {}
 
-const { threats } = Astro.props;
+const { threats, separatorBefore = false, separatorAfter = false } = Astro.props;
 ---
 
-<section class="bg-accent py-20" aria-labelledby="threats-heading">
+<section class="bg-accent/30 py-20" aria-labelledby="threats-heading">
+  {
+    separatorBefore && (
+      <div class="text-accent/30 w-full overflow-hidden -translate-y-6">
+        <div set:html={separatorContent} class="h-auto min-w-[2000px] w-full" />
+      </div>
+    )
+  }
   <div class="mx-auto max-w-7xl px-6">
     <header class="mb-12 text-center">
       <h2 id="threats-heading" class="font-display text-base-900 text-3xl font-bold">Principales amenazas</h2>
@@ -26,4 +35,12 @@ const { threats } = Astro.props;
       }
     </ul>
   </div>
+
+  {
+    separatorAfter && (
+      <div class="text-accent/30 w-full overflow-hidden translate-y-6 rotate-180">
+        <div set:html={separatorContent} class="h-auto min-w-[2000px] w-full" />
+      </div>
+    )
+  }
 </section>

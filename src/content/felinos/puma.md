@@ -31,7 +31,8 @@ stats:
   otherNames: 'león americano, león bayo, león de montaña'
 
 sections:
-  - id: 'appearance'
+  - type: 'default'
+    id: 'appearance'
     title: 'Tamaño y apariencia'
     content: |
       El Puma mide entre 85 a 150 cm de largo (cabeza y cuerpo) más 45 a 85 cm de cola. Su peso va desde los 34 a 105 kg (excepcionalmente hasta 120 kg), siendo el macho más robusto que la hembra.
@@ -43,7 +44,8 @@ sections:
       El Puma tiene grandes patas; proporcionalmente las mayores patas traseras en la familia de los felinos, característica que le permite un gran salto y una gran capacidad de carrera corta. Tanto el tamaño como la coloración varían geográficamente: en Argentina los ejemplares de la Patagonia son más grandes, de pelaje más denso y de color grisáceo o leonado, y hacia el norte son de menor tamaño y de coloración rojiza.
     images: []
 
-  - id: 'behavior'
+  - type: 'default'
+    id: 'behavior'
     title: 'Comportamiento'
     content: |
       Por lo general el Puma es solitario y de hábitos preferentemente crepusculares y nocturnos, con picos de actividad al anochecer y al amanecer; pasa la mayor parte del día descansando en oquedades rocosas, encaramado en las ramas de los árboles, o escondido entre pastos altos.
@@ -57,7 +59,8 @@ sections:
       La reproducción se da durante cualquier época del año. Luego de un período de gestación de 82 a 96 días, la hembra da a luz en el interior de un tronco hueco o alguna grieta rocosa una camada de 1 a 6 crías (3 en promedio). Los jóvenes permanecen junto a su madre hasta los 2 años y alcanzan la madurez sexual a los 2 o 3 años. La esperanza de vida en la naturaleza se estima entre 8 y 13 años y en cautiverio llega a vivir hasta 20 años.
     images: []
 
-  - id: 'distribution'
+  - type: 'default'
+    id: 'distribution'
     title: 'Hábitat y distribución'
     content: |
       El Puma se encuentra prácticamente en todo tipo de ambientes, incluyendo bosques, selvas, montes, sabanas, áreas montañosas y serranas, praderas y desiertos. Desde el nivel del mar hasta los 5000 metros de altura en los Andes. Sus hábitats preferidos son los cañones, escarpes, terrenos rocosos y la selva densa, pero igualmente puede vivir en zonas abiertas con poca vegetación y adaptarse a ambientes degradados.
@@ -72,7 +75,8 @@ sections:
       geojson: '/maps/puma-concolor.geojson'
     images: []
 
-  - id: 'situation'
+  - type: 'default'
+    id: 'situation'
     title: 'Situación'
     content: |
       Por contar con una gran distribución geográfica, las poblaciones de Puma se consideran estables. Si bien se ha extinguido o estaría disminuyendo en varias regiones de su amplia distribución, hay datos que muestran que estaría recolonizando algunas zonas.
@@ -88,15 +92,15 @@ threats:
     description: 'El avance de la frontera agrícola-ganadera reduce y fragmenta los grandes bloques de hábitat que requiere para sus amplios rangos de movimiento.'
 
   - title: 'Caza como represalia'
-    icon: 'warning'
+    icon: 'alert-triangle'
     description: 'Se lo caza por ataques a ganado y por considerarse una amenaza para la vida humana.'
 
   - title: 'Caza deportiva'
-    icon: 'warning'
+    icon: 'alert-triangle'
     description: 'La caza deportiva legal e ilegal del puma y la de sus presas silvestres impactan en sus poblaciones.'
 
   - title: 'Atropellamientos'
-    icon: 'warning'
+    icon: 'alert-triangle'
     description: 'Los atropellamientos en rutas y caminos son una causa de mortalidad directa y creciente.'
 
 bibliography:

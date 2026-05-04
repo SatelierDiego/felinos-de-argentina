@@ -17,7 +17,7 @@ const statusClass = statusColors[conservationStatus] ?? 'bg-base-100 text-base-7
 ---
 
 <article
-  class="group rounded-card shadow-card ring-base-100 relative flex flex-col bg-white ring-1 transition-shadow hover:shadow-lg"
+  class="rounded-card shadow-card ring-accent/20 flex h-full flex-col overflow-hidden bg-white ring-1"
 >
   <!-- Image -->
   <a href={`/felinos/${slug}/`} class="block aspect-[3/2] overflow-hidden" tabindex="-1" aria-hidden="true">
@@ -26,33 +26,33 @@ const statusClass = statusColors[conservationStatus] ?? 'bg-base-100 text-base-7
       alt={alt}
       width={600}
       height={400}
-      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+      class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
       loading="lazy"
       decoding="async"
     />
   </a>
 
   <!-- Body -->
-  <div class="flex flex-1 flex-col gap-3 p-6">
+  <div class="flex min-w-0 flex-1 flex-col gap-3 p-5">
     <!-- Status badge -->
     <span class:list={['inline-flex w-fit items-center rounded-full px-2.5 py-0.5 text-xs font-medium', statusClass]}>
       {conservationStatus}
     </span>
 
-    <div>
-      <h2 class="font-display text-base-900 text-xl leading-snug font-bold">
-        <a href={`/felinos/${slug}/`} class="hover:text-accent-700 transition-colors">
+    <div class="flex flex-col gap-1">
+      <h2 class="font-display text-base text-lg leading-snug font-bold">
+        <a href={`/felinos/${slug}/`} class="hover:text-highlight transition-colors">
           {title}
         </a>
       </h2>
-      <p class="text-base-400 mt-0.5 text-xs italic">{scientificName}</p>
+      <p class="text-base/60 text-xs italic">{scientificName}</p>
     </div>
 
-    <p class="text-base-600 line-clamp-3 text-sm leading-relaxed">{subtitle}</p>
+    <p class="flex-1 text-base/80 text-sm leading-relaxed line-clamp-3">{subtitle}</p>
 
     <a
       href={`/felinos/${slug}/`}
-      class="text-accent-600 hover:text-accent-800 mt-auto inline-flex items-center gap-1.5 text-sm font-medium transition-colors"
+      class="text-highlight hover:text-highlight/80 mt-auto inline-flex items-center gap-1.5 text-sm font-medium transition-colors"
     >
       Leer más
       <svg

@@ -37,5 +37,9 @@ const { title, description, canonicalUrl, image, type, jsonLd } = Astro.props;
       <slot />
     </main>
     <Footer />
+    <script>
+      import { initReveal } from '../utils/reveal';
+      initReveal();
+    </script>
   </body>
 </html>

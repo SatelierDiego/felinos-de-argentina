@@ -25,18 +25,17 @@ const cellClasses = [
 ];
 ---
 
-<section class="bg-base">
+<section class="bg-dark">
   <!-- Separator SVG -->
-  <div class="w-full -translate-y-6 text-base">
-    <div set:html={separatorContent} class="h-auto w-full" />
+  <div class="text-dark w-full overflow-hidden -translate-y-6">
+    <div set:html={separatorContent} class="h-auto min-w-[2000px] w-full" />
   </div>
   <div class="py-20">
     <div class="mx-auto max-w-7xl px-[clamp(12px,2vw,24px)]">
       <div class="bento-gallery">
         {
-          items
-            .slice(0, 10)
-            .map((item, i) => (
+          items.slice(0, 10).map((item, i) => (
+            <div class={cellClasses[i]} data-reveal data-animation="animate-fade-in-up" data-delay={i * 80}>
               <ImageCard
                 src={item.src}
                 alt={item.alt}
@@ -46,13 +45,12 @@ const cellClasses = [
                 overlayTitle={item.alt}
                 overlaySubtitle={`© ${item.autor}`}
                 ariaLabel={`${item.alt} — foto de ${item.autor}`}
-                data-animate="animate-fade-in-up"
-                data-delay={`${i * 80}ms`}
                 data-gallery={galleryId}
                 data-glightbox={`description: © ${item.autor}`}
-                extraAnchorClass={`glightbox ${cellClasses[i]}`}
+                extraAnchorClass="glightbox h-full"
               />
-            ))
+            </div>
+          ))
         }
       </div>
     </div>

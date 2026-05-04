@@ -17,8 +17,6 @@ export interface ImageCardProps {
   overlaySubtitleHtml?: string;
   overlaySubtitleItalic?: boolean;
   showArrow?: boolean;
-  dataAnimate?: string;
-  dataDelay?: string;
   dataGallery?: string;
   dataGlightbox?: string;
   ariaLabel?: string;
