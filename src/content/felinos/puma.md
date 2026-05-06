@@ -14,7 +14,7 @@ seo:
 scientific_name: 'Puma concolor'
 
 stats:
-  silouette: '/src/assets/images/felinos/herpailurus-yagouaroundi/silouette.svg'
+  silouette: '/src/assets/images/felinos/silhouette-svgs/puma-concolor.svg'
   size:
     weight: '30-80 kg'
     body: '85-150 cm'

@@ -14,7 +14,7 @@ seo:
 scientific_name: 'Leopardus geoffroyi'
 
 stats:
-  silouette: '/src/assets/images/felinos/herpailurus-yagouaroundi/silouette.svg'
+  silouette: '/src/assets/images/felinos/silhouette-svgs/leopardus-geoffroyi.svg'
   size:
     weight: '2–8 kg'
     body: '42–66 cm'

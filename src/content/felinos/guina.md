@@ -14,7 +14,7 @@ seo:
 scientific_name: 'Leopardus guigna'
 
 stats:
-  silouette: '/src/assets/images/felinos/herpailurus-yagouaroundi/silouette.svg'
+  silouette: '/src/assets/images/felinos/silhouette-svgs/leopardus-guigna.svg'
   size:
     weight: '2–3 kg'
     body: '39–48 cm'

@@ -57,29 +57,30 @@ const jsonLd = [
     subtitle={home.hero.subtitle}
     image={home.hero.image}
     alt={home.hero.alt}
-    separatorColor="text-background"
     cta={home.hero.cta}
   />
 
-  {home.sections.map((section) =>
-    section.type === 'highlight' ? (
-      <HighlightBlock
-        id={section.id}
-        title={section.title}
-        content={section.content}
-        separatorBefore={section.separatorBefore}
-        separatorAfter={section.separatorAfter}
-      />
-    ) : (
-      <SectionBlock
-        id={section.id}
-        title={section.title}
-        content={section.content}
-        separatorBefore={section.separatorBefore}
-        separatorAfter={section.separatorAfter}
-      />
+  {
+    home.sections.map((section) =>
+      section.type === 'highlight' ? (
+        <HighlightBlock
+          id={section.id}
+          title={section.title}
+          content={section.content}
+          separatorBefore={section.separatorBefore}
+          separatorAfter={section.separatorAfter}
+        />
+      ) : (
+        <SectionBlock
+          id={section.id}
+          title={section.title}
+          content={section.content}
+          separatorBefore={section.separatorBefore}
+          separatorAfter={section.separatorAfter}
+        />
+      )
     )
-  )}
+  }
 
   <!-- ── Species grid ──────────────────────────────────────────── -->
   <SpeciesGrid felinos={felinosOrdenados} />

@@ -14,7 +14,7 @@ seo:
 scientific_name: 'Panthera onca'
 
 stats:
-  silouette: '/src/assets/images/felinos/herpailurus-yagouaroundi/silouette.svg'
+  silouette: '/src/assets/images/felinos/silhouette-svgs/panthera-onca.svg'
   size:
     weight: '50–100 kg'
     body: '100–185 cm'

@@ -14,7 +14,7 @@ seo:
 scientific_name: 'Leopardus wiedii'
 
 stats:
-  silouette: '/src/assets/images/felinos/herpailurus-yagouaroundi/silouette.svg'
+  silouette: '/src/assets/images/felinos/silhouette-svgs/leopardus-wiedii.svg'
   size:
     weight: '1–5 kg'
     body: '45–80 cm'

@@ -14,7 +14,7 @@ seo:
 scientific_name: 'Leopardus pardalis'
 
 stats:
-  silouette: '/src/assets/images/felinos/herpailurus-yagouaroundi/silouette.svg'
+  silouette: '/src/assets/images/felinos/silhouette-svgs/leopardus-pardalis.svg'
   size:
     weight: '7–16 kg'
     body: '115–145 cm'

@@ -40,7 +40,7 @@
   html {
     scroll-behavior: smooth;
     font-family: var(--font-sans);
-    color: var(--color-base-900);
+    color: var(--color-base);
     background-color: var(--color-background);
   }
 
@@ -58,7 +58,7 @@
 
   ::selection {
     background-color: var(--color-highlight);
-    color: var(--color-base-900);
+    color: var(--color-base);
   }
 
   :focus-visible {
@@ -72,17 +72,13 @@
   }
 
   a:hover {
-    color: var(--color-accent-900);
+    color: color-mix(in srgb, var(--color-highlight) 80%, transparent);
   }
 }
 
 /* ── Prose-like rich text ──────────────────────── */
 .prose-content p + p {
   margin-top: 1.25rem;
-}
-
-.prose-content em {
-  font-style: italic;
 }
 
 /* ── Leaflet overrides ─────────────────────────── */
@@ -92,7 +88,7 @@
 }
 
 @utility shadow-card {
-  @apply shadow-md/30;
+  box-shadow: @apply shadow-md/30;
 }
 
 /* ── Bento gallery grid ─────────────────────────── */
@@ -115,7 +111,6 @@
   grid-row: 1 / 3;
   min-height: clamp(260px, 32vw, 480px);
   @media (max-width: 900px) {
-    grid-column: 1 / 3;
     grid-row: 1;
     min-height: clamp(200px, 45vw, 360px);
   }
@@ -135,7 +130,6 @@
     min-height: clamp(120px, 22vw, 220px);
   }
   @media (max-width: 540px) {
-    grid-column: 1;
     grid-row: 2;
     min-height: 200px;
   }
@@ -165,7 +159,6 @@
     min-height: clamp(120px, 22vw, 220px);
   }
   @media (max-width: 540px) {
-    grid-column: 1;
     grid-row: 4;
     min-height: 200px;
   }
@@ -195,7 +188,6 @@
     min-height: clamp(120px, 22vw, 220px);
   }
   @media (max-width: 540px) {
-    grid-column: 1;
     grid-row: 6;
     min-height: 200px;
   }
@@ -240,7 +232,6 @@
     min-height: clamp(120px, 22vw, 220px);
   }
   @media (max-width: 540px) {
-    grid-column: 1;
     grid-row: 9;
     min-height: 200px;
   }

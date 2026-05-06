@@ -14,7 +14,7 @@ seo:
 scientific_name: 'Leopardus colocolo'
 
 stats:
-  silouette: '/src/assets/images/felinos/leopardus-colocolo/silouette.svg'
+  silouette: '/src/assets/images/felinos/silhouette-svgs/leopardus-colocolo.svg'
   size:
     weight: '3–5 kg'
     body: '53–65 cm'

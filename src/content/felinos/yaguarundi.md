@@ -14,7 +14,7 @@ seo:
 scientific_name: 'Herpailurus yagouaroundi'
 
 stats:
-  silouette: '/src/assets/images/felinos/herpailurus-yagouaroundi/silouette.svg'
+  silouette: '/src/assets/images/felinos/silhouette-svgs/herpailurus-yagouaroundi.svg'
   size:
     weight: '3–8 kg'
     body: '43–83 cm'

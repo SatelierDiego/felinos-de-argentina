@@ -14,7 +14,7 @@ seo:
 scientific_name: 'Leopardus jacobita'
 
 stats:
-  silouette: '/src/assets/images/felinos/herpailurus-yagouaroundi/silouette.svg'
+  silouette: '/src/assets/images/felinos/silhouette-svgs/leopardus-jacobita.svg'
   size:
     weight: '4–6 kg'
     body: '57–65 cm'

@@ -14,7 +14,7 @@ seo:
 scientific_name: 'Leopardus tigrinus'
 
 stats:
-  silouette: '/src/assets/images/felinos/herpailurus-yagouaroundi/silouette.svg'
+  silouette: '/src/assets/images/felinos/silhouette-svgs/leopardus-tigrinus.svg'
   size:
     weight: '2–3 kg'
     body: '38–59 cm'
